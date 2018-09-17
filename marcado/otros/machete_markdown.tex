@@ -1,0 +1,102 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = es_AR
+% arara: pdflatex
+% arara: pdflatex
+% arara: pdflatex
+% arara: clean: {files: [machete_markdown.aux, machete_markdown.out, machete_markdown.log]}
+% arara: clean: {files: [machete_markdown.fls, machete_markdown.fdb_latexmk, machete_markdown.synctex.gz]}
+
+\documentclass[12pt, addpoints]{../../common/epyl_exam_template}
+
+\title{Machete de Markdown}
+\date{Primer semestre 2018}
+
+\begin{document}
+    \makeexamheader
+    \makeexamtitle
+    \examrule
+
+    \begin{lstlisting}[language=markdown]
+# Yo soy un titulo
+
+Yo también soy un titulo exactamente igual
+==========================================
+
+Con dos iguales basta, pero se ve mejor el de arriba
+==
+
+## Yo soy un subtitulo
+
+Igual que yo
+------------
+
+Con dos también basta
+--
+
+### Yo soy un titulo mucho menos importante
+#### Yo aun menos importante
+##### Yo todavía menos
+###### A mi ya ni me registran como titulo, pero lo soy
+
+Esto es texto normal, si uno quiere comenzar un nuevo párrafo (*\Suppressnumber*)
+basta dejar dos lineas de espacio.(*\Reactivatenumber*)
+
+Este por ejemplo, es un nuevo párrafo. Se pueden agregar en el (*\Suppressnumber*)
+palabras en *itálica*, que es lo mismo que _cursiva_ o a veces
+llamada también *oblicua*.(*\Reactivatenumber*)
+
+También podemos poner en **negrita** o en __mas oscurito__ una (*\Suppressnumber*)
+palabra o frase. Además valen links o enlaces usando
+[Texto del enlace](url_a_enlazar). Por lo tanto
+[Ir a Google](http://google.com) es un buen ejemplo.(*\Reactivatenumber*)
+
+Ademas, se puede de forma similar poner imágenes con (*\Suppressnumber*)
+![Descripción de la imagen](url de la imagen),
+![markdown](https://bournetocode.com/projects/
+AQA_AS_Theory/pages/img/markdown.jpg)(*\Reactivatenumber*)
+
+Con tres guiones medios, se puede lograr una linea de separación, (*\Suppressnumber*)
+pero ojo, hay q asegurarse de que no se pegue al texto porque de lo
+contrario se entiende como subtitulo. (*\Reactivatenumber*)
+
+---
+
+También vale si se genera toda la linea, y queda mas bonito
+
+---------------------------------------------------------------------
+
+Veamos ahora algunas listas, por ejemplo una lista numerada
+
+1. Donde yo soy el primer elemento
+2. Yo el segundo
+3. Y yo el tercero
+
+En realidad para ponerse técnicos, no hace falta que indique 1, 2, 3.
+
+1. Primero
+1. Segundo
+1. Tercero
+
+También es una lista numerada. Ahora vamos a las listas no numeradas:
+
+* Yo soy el primer elemento
+* Yo el segundo
+* Yo el tercero
+
+- También podemos usar signo de menos para los ítems
++ O signos de mas, es indistinto
+
+* Si se indenta, entonces se tienen listas dentro de listas
+  + Como esta
+  + Que se observa aquí
+
+Se pueden mezclar numeradas y no numeradas
+
+* El primero tiene dos partes
+  1. Primero
+  2. Segundo
+* El segundo solo una
+  1. Que es esta
+    \end{lstlisting}
+
+\end{document}

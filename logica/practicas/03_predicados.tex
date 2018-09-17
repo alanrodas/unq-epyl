@@ -1,0 +1,505 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = es_AR
+% arara: pdflatex
+% arara: pdflatex
+% arara: pdflatex
+% arara: clean: {files: [01_conectivas.aux, 01_conectivas.out, 01_conectivas.log]}
+% arara: clean: {files: [01_conectivas.fdb_latexmk, 01_conectivas.fls, 01_conectivas.vrb, 01_conectivas.synctex.gz]}
+
+%% Add the word "answers" to document class parameters in order to print the solutions.
+\documentclass[12pt, addpoints]{../../common/epyl_exam_template}
+
+\title{Práctica 2.3 - Lógica de Predicados}
+\date{2018.1}
+
+\begin{document}
+\makeexamheader
+\makeexamtitle
+\examrule
+\begin{questions}
+  \question
+    Identifique en las siguientes oraciones cuales son los individuos de los que
+    se habla, y cuales las propiedades que se menciona de los mismos. Escriba las
+    propiedades utilizando parámetros.
+    \begin{parts}
+      \part La Tierra es un planeta.
+      \begin{solution}
+        constante: La Tierra\\
+        propiedad: $x$ es un planeta
+      \end{solution}
+      \part Jorge está cansado.
+      \begin{solution}
+        constante: Jorge\\
+        propiedad: $x$ está cansado
+      \end{solution}
+      \part Paula canta.
+      \begin{solution}
+        constante: Paula\\
+        propiedad: $x$ canta
+      \end{solution}
+      \part El Chingolo es un pájaro.
+      \begin{solution}
+        constante: El Chingolo\\
+        propiedad: $x$ es un pájaro
+      \end{solution}
+      \part Argentina es un país.
+      \begin{solution}
+        constante: Argentina\\
+        propiedad: $x$ es un país
+      \end{solution}
+      \part Argentina es un equipo de fútbol.
+      \begin{solution}
+        constante: Argentina\\
+        propiedad: $x$ es un equipo de fútbol
+      \end{solution}
+      \part El triángulo es una figura geométrica.
+      \begin{solution}
+        constante: El triangulo\\
+        propiedad: $x$ es una figura geométrica
+      \end{solution}
+  \end{parts}
+
+  \question
+    Identifique en las siguientes oraciones cuales son los individuos de los que
+    se habla, y cuales son las relaciones entre los mismos. Escriba las relaciones
+    utilizando parámetros.
+    \begin{parts}
+      \part Pablo es hermano de Dario.
+      \begin{solution}
+        constantes: Pablo, Darío\\
+        relación: $x$ es hermano de $y$
+      \end{solution}
+      \part Argentina juega contra Islandia.
+      \begin{solution}
+        constantes: Argentina, Islandia\\
+        relación: $x$ juega contra $y$
+      \end{solution}
+      \part Maria es madre de Catalina.
+      \begin{solution}
+        constantes: María, Catalina\\
+        relación: $x$ es hermano de $y$
+      \end{solution}
+      \part Pedro es padre de Catalina.
+      \begin{solution}
+        constantes: Pedro, Catalina\\
+        relación: $x$ es padre de $y$
+      \end{solution}
+      \part Catalina es hermana de Felipe.
+      \begin{solution}
+        constantes: Catalina, Felipe\\
+        relación: $x$ es hermana de $y$
+      \end{solution}
+    \end{parts}
+
+  \question
+    Dadas las siguientes propiedades y relaciones:
+    \begin{itemize}
+      \item $x$ es hombre
+      \item $x$ es mayor de edad
+      \item $x$ es argentino
+      \item $x$ votó a $y$
+    \end{itemize}
+    Busque equivalencias para las siguientes propiedades utilizando las dadas y
+    las conectivas que conoce.
+    \begin{parts}
+      \part $x$ es mujer
+      \begin{solution}
+        $x$ es mujer = $\lnot$ ($x$ es hombre)
+      \end{solution}
+      \part $x$ es una persona
+      \begin{solution}
+        $x$ es una persona = ($x$ es hombre) $\lor$ ($x$ es mujer)
+      \end{solution}
+      \part $x$ puede votar
+      \begin{solution}
+        $x$ puede votar =\\
+        \quad ($x$ es una persona) $\land$ ($x$ es mayor de edad) $\land$ ($x$ es argentino)
+      \end{solution}
+      \part $x$ se votó a si mismo
+      \begin{solution}
+        $x$ se votó a si mismo = ($x$ puede votar) $\land$ ($x$ voto a $x$)
+      \end{solution}
+    \end{parts}
+
+  \question
+    Considere las siguientes expresiones que representan una famosa variación del
+    juego piedra-papel-tijeras
+    
+    \begin{itemize}
+      \item Las tijeras cortan al papel.
+      \item El papel envuelve a la piedra.
+      \item La piedra aplasta al lagarto.
+      \item El lagarto envenena a Spock.
+      \item Spock destruye las tijeras.
+      \item Las tijeras decapitan al lagarto.
+      \item El lagarto se come al papel.
+      \item El papel desautoriza a Spock.
+      \item Spock vaporiza la roca.
+      \item La piedra aplasta las tijeras.
+    \end{itemize}
+
+    Tenga en cuenta que la expresión ``tijera corta al papel'' representa que
+    la tijera vence al papel. Es decir, toda expresión, cualquiera sea, puede
+    ser reformulada en término de, el \textbf{primer elemento vence al segundo}.
+
+    Se pide complete la tablas a continuación para expresar quien vence a quien
+    en dicho juego.
+
+    \begin{tabular}{| l | c | c | c | c | c |}
+      \hline
+      $x$ vence a $y$ & Piedra & Papel & Tijera & Lagarto & Spock \\
+      \hline
+      Piedra  &&&&& \\
+      \hline
+      Papel   &&&&& \\
+      \hline
+      Tijera  &&&&& \\
+      \hline
+      Lagarto &&&&& \\
+      \hline
+      Spock   &&&&& \\
+      \hline
+    \end{tabular}
+
+    \begin{solution}
+      \begin{tabular}{| l | c | c | c | c | c |}
+        \hline
+        $x$ vence a $y$ & Piedra & Papel & Tijera & Lagarto & Spock \\
+        \hline
+        Piedra  & \false & \false & \true & \true & \false \\
+        \hline
+        Papel   & \true & \false & \false & \false & \true \\
+        \hline
+        Tijera  & \false & \true & \false & \true & \false \\
+        \hline
+        Lagarto & \false & \true & \false & \false & \true \\
+        \hline
+        Spock   & \true & \false & \true & \false & \false \\
+        \hline
+      \end{tabular}
+    \end{solution}
+
+
+  \question
+    Pasar del lenguaje natural al lenguaje formal de la lógica de predicados
+    las siguientes expresiones:
+    \begin{parts}
+      \part Catalina disfruta de correr
+        \begin{solution}
+          catalina = Catalina\\
+          DisfrutaDeCorrer($x$) = $x$ disfruta de correr\\
+          ~\\
+          DisfrutaDeCorrer(catalina)
+        \end{solution}
+      \part Mario adora las monedas
+        \begin{solution}
+          mario = Mario\\
+          AdoraLasMonedas($x$) = $x$ adora las monedas\\
+          ~\\
+          AdoraLasMonedas(mario)
+        \end{solution}
+      \part Buenos Aires es una provincia y está altamente poblada
+        \begin{solution}
+          ba = Buenos Aires\\
+          EsProvincia($x$) = $x$ es una provincia\\
+          AltamentePob($x$) = $x$ está altamente poblada\\
+          ~\\
+          EsProvincia(ba) $\land$ AltamentePob(ba)
+        \end{solution}
+      \part Está pintada de Rojo o está pintada de Azul
+        \begin{solution}
+          rojo = Rojo\\
+          azul = Azul\\
+          PintadaDe($x$) = está pintada de $x$\\
+          ~\\
+          PintadaDe(rojo) $\lor$ PintadaDe(azul)
+        \end{solution}
+      \part No es cierto que Rin Tin Tin sea un bulldog
+        \begin{solution}
+          rtt = Rin Tin Tin\\
+          EsBulldog($x$) = $x$ es un bulldog\\
+          ~\\
+          $\lnot$ EsBulldog(rtt)
+        \end{solution}
+      \part
+        Maria es amiga de Luis
+        \begin{solution}
+          maria = Maria\\
+          luis = Luis\\
+          Amiga($x$, $y$) = $x$ es amiga de $y$\\
+          ~\\
+          Amiga(maria, luis)
+        \end{solution}
+      \part
+        Linux utiliza licencia GPL y FreeBSD utiliza licencia BSD
+        \begin{solution}
+          linux = Linux\\
+          freebsd = FreeBSD\\
+          gpl = Licencia GPL\\
+          bsd = Licencia BSD\\
+          UsaLicencia($x$, $y$) = $x$ utiliza la licencia $y$\\
+          ~\\
+          UsaLicencia(linux, gpl) $\land$ UsaLicencia(freebsd, bsd)
+        \end{solution}
+      \part
+        No es cierto que Ubuntu utilice el núcleo illumos, pero si usa el núcleo Linux
+        \begin{solution}
+          linux = Linux\\
+          illumos = illumos\\
+          ubuntu = Ubuntu\\
+          Nucleo($x$, $y$) = $x$ utiliza el núcleo $y$\\
+          ~\\
+          ($\lnot$ Nucleo(ubuntu, illumos)) $\land$ Nucleo(ubuntu, linux)
+        \end{solution}
+      \part
+        Bill Gates, Steve Jobs y Larry Ellison son grandes empresarios del software.
+        \begin{solution}
+          gates = Bill Gates\\
+          jobs = Steve Jobs\\
+          ellison = Larry Ellison\\
+          GranEmpresario($x$) = $x$ es un gran empresario de la industria del software\\
+          ~\\
+          GranEmpresario(gates) $\land$ GranEmpresario(jobs) $\land$ GranEmpresario(ellison)
+        \end{solution}
+      \part
+        $a$ es más grande que $b$ y que $c$
+        \begin{solution}
+          a = $a$\\
+          b = $b$\\
+          c = $c$\\
+          MasGrande($x$, $y$) = $x$ mas grande que $y$\\
+          ~\\
+          MasGrande(a, b) $\land$ MasGrande(a, c) \\
+          o también\\
+          a > b $\land$ a > c
+        \end{solution}
+      \part
+        $a$ está entre $b$ y $c$
+        \begin{solution}
+          a = $a$\\
+          b = $b$\\
+          c = $c$\\
+          Entre($x$, $y$, $z$) = $x$ esta entre $y$ y $z$\\
+          ~\\
+          Entre(a, b, c) $\lor$ Entre(a, c, b) \\
+          o también\\
+          b < a < c $\lor$ b > a > c
+        \end{solution}
+      \part
+        Todos tienen mucho sueño
+        \begin{solution}
+          Sueño($x$) = $x$ tiene mucho sueño\\
+          ~\\
+          $\forall a.$ Sueño($a$) \\
+          Interesante mostrar\\
+          $\forall x.$ Sueño($x$)
+        \end{solution}
+      \part
+        Alguien confía en Pedro
+        \begin{solution}
+          pedro = Pedro\\
+          ConfiaEn($x$, $y$) = $x$ confía en $y$\\
+          ~\\
+          $\exists a.$ ConfiaEn($a$, pedro)
+        \end{solution}
+      \part
+        Messi hace jugar a todos
+        \begin{solution}
+          messi = Messi\\
+          HaceJugar($x$, $y$) = $x$ hace jugar a $y$\\
+          ~\\
+          $\forall a.$ HaceJugar(messi, $a$)
+        \end{solution}
+      \part
+        Luis no quiere a nadie
+        \begin{solution}
+          luis = Luis\\
+          QuiereA($x$, $y$) = $x$ quiere a $y$\\
+          ~\\
+          $\nexists a.$ QuiereA(luis, $a$)
+        \end{solution}
+      \part
+        Alguien quiere a todos
+        \begin{solution}
+          QuiereA($x$, $y$) = $x$ quiere a $y$\\
+          ~\\
+          $\exists a.\forall b.$ QuiereA($a$, $b$)
+        \end{solution}
+      \part
+        Todos quieren a alguien
+        \begin{solution}
+          QuiereA($x$, $y$) = $x$ quiere a $y$\\
+          ~\\
+          $\forall a.\exists b.$ QuiereA($a$, $b$)
+        \end{solution}
+    \end{parts}
+
+    \question
+      Dadas las constantes, funciones y predicados, que se muestran a continuación
+      \begin{itemize}
+        \item c = Carlos
+        \item l = Luis
+        \item a = Ana
+        \item m = María
+        \item H($x$) = $x$ es un hombre
+        \item P($x$, $y$) = $x$ es progenitor biológico de $y$
+      \end{itemize}
+      se pide buscar la fórmula para las expresiones siguientes:
+      \begin{parts}
+        \part Carlos es padre de Ana
+          \begin{solution}
+            $H(c) \land P(c, a)$
+          \end{solution}
+        \part María es la madre de Carlos
+          \begin{solution}
+            $\lnot H(m) \land P(m, c)$
+          \end{solution}
+        \part Ana tiene una madre
+          \begin{solution}
+            $\exists x. \lnot H(x) \land P(x, a)$
+          \end{solution}
+        \part Luis es abuelo (materno o paterno) de Ana
+          \begin{solution}
+            $H(l) \land \exists x. P(l, x) \land P(x, a)$
+          \end{solution}
+        \part Todos tienen una madre
+          \begin{solution}
+            $\forall x. \exists y. \lnot H(y) \land P(y, x)$
+          \end{solution}
+        \part Hay alguien que tiene un hermano (o hermanastro)
+          \begin{solution}
+            $\exists x. \exists y. \exists z. P(z, x) \land P(z, y)$
+          \end{solution}
+        \part Nadie tiene dos padres
+          \begin{solution}
+            $\nexists x. \exists y. \exists z. P(y, x) \land P(z, x)$
+          \end{solution}
+        \part Nadie es progenitor de todos
+          \begin{solution}
+            $\nexists x. \forall y.P(x, y)$
+          \end{solution}
+      \end{parts}
+
+  \question
+    Las siguientes reglas rigen a todos los sistemas planetarios del universo.
+
+    \begin{itemize}
+      \item Todo elemento es o bien una estrella, o bien un planeta o bien un satélite.
+      \item Si un elemento es un satélite entonces no es ni una estrella ni un planeta.
+      \item Si un elemento es un planeta entonces no es ni una estrella ni un satélite.
+      \item Si un elemento es una estrella entonces no es ni un planeta ni un satélite.
+      \item Todo elemento que no sea una estrella orbíta a otro elemento.
+      \item Todo elemento orbitado por planetas es una estrella.
+      \item Todo elemento que orbíte un planeta es un satélite.
+      \item Ningún elemento se orbíta a si mismo.
+    \end{itemize}
+
+    Sabiendo esto, y considerando todas las siguientes proposiciones como verdaderas,
+    se pide complete las propiedades y relaciones de un sistema planetario descubierto
+    en la galaxia M31.
+
+    \begin{itemize}
+      \item Existe un solo elemento que es una estrella.
+      \item Todos los planetas orbítan alrededor de Apolo.
+      \item Afrodita orbíta a Hermes o es un planeta.
+      \item Gaia orbíta a Apolo.
+      \item Selene orbíta a Gaia.
+      \item Hermes no es un satélite ni una estrella.
+      \item Timor no es un planeta.
+      \item Nadie orbíta a Hermes.
+      \item Existen dos elementos que orbítan a Ares.
+      \item Metus es un satélite y no orbÍta ni a Gaia ni a Afrodita.
+    \end{itemize}
+
+    \centerline{\begin{tabular}{| l | c | c | c |}
+      \hline
+      & $x$ es un planeta & $x$ es un satélite & $x$ es una estrella \\
+      \hline
+      Hermes &&& \\
+      \hline
+      Afrodita &&& \\
+      \hline
+      Gaia &&& \\
+      \hline
+      Ares &&& \\
+      \hline
+      Selene &&& \\
+      \hline
+      Timor &&& \\
+      \hline
+      Metus &&& \\
+      \hline
+      Apolo &&& \\
+      \hline
+    \end{tabular}}
+
+    \centerline{\begin{tabular}{| l | c | c | c | c | c | c | c | c |}
+      \hline
+      $x$ orbíta a $y$ & Hermes & Afrodita & Gaia & Ares & Selene & Timor & Metus & Apolo \\
+      \hline
+      Hermes &&&&&&&& \\
+      \hline
+      Afrodita &&&&&&&& \\
+      \hline
+      Gaia &&&&&&&& \\
+      \hline
+      Ares &&&&&&&& \\
+      \hline
+      Selene &&&&&&&& \\
+      \hline
+      Timor &&&&&&&& \\
+      \hline
+      Metus &&&&&&&& \\
+      \hline
+      Apolo &&&&&&&& \\
+      \hline
+    \end{tabular}}
+
+    \begin{solution}
+      \centerline{\begin{tabular}{| l | c | c | c |}
+        \hline
+        & $x$ es un planeta & $x$ es un satélite & $x$ es una estrella \\
+        \hline
+        Hermes & \true & \false & \false \\
+        \hline
+        Afrodita & \true & \false & \false \\
+        \hline
+        Gaia & \true & \false & \false \\
+        \hline
+        Ares & \true & \false & \false \\
+        \hline
+        Selene & \false & \true & \false \\
+        \hline
+        Timor & \false & \true & \false \\
+        \hline
+        Metus & \false & \true & \false \\
+        \hline
+        Apolo & \false & \false & \true \\
+        \hline
+      \end{tabular}}
+  
+      \centerline{\begin{tabular}{| l | c | c | c | c | c | c | c | c |}
+        \hline
+        $x$ orbíta a $y$ & Hermes & Afrodita & Gaia & Ares & Selene & Timor & Metus & Apolo \\
+        \hline
+        Hermes & \false & \false & \false & \false & \false & \false & \false & \true \\
+        \hline
+        Afrodita & \false & \false & \false & \false & \false & \false & \false & \true \\
+        \hline
+        Gaia & \false & \false & \false & \false & \false & \false & \false & \true \\
+        \hline
+        Ares & \false & \false & \false & \false & \false & \false & \false & \true \\
+        \hline
+        Selene & \false & \false & \true & \false & \false & \false & \false & \false \\
+        \hline
+        Timor & \false & \false & \false & \true & \false & \false & \false & \false \\
+        \hline
+        Metus & \false & \false & \false & \true & \false & \false & \false & \false \\
+        \hline
+        Apolo & \false & \false & \false & \false & \false & \false & \false & \false \\
+        \hline
+      \end{tabular}}
+    \end{solution}
+
+  \end{questions}
+\end{document}

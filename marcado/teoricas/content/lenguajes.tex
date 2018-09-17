@@ -1,0 +1,337 @@
+\section{Lenguajes.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lenguajes}
+	\begin{block}{Lenguaje}
+		\bolder{Vamos a llamar lenguaje a un conjunto de símbolos y reglas que
+			determinan textos que son válidos y textos que no lo son.}
+	\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Idiomas}
+  \begin{columns}
+    \begin{column}{0.46\textwidth}
+      Los idiomas que hablamos todos los días son lenguajes.
+      \jump
+      Cada uno tiene su propio conjunto de símbolos (letras, números, signos de
+      puntuación, etc.) y de reglas (palabras válidas, reglas gramaticales, etc.)
+      \jump
+      Generalmente se denomina “lenguaje natural” al lenguaje que uno emplea para
+      comunicarse habitualmente, es decir, a nuestro idioma.
+    \end{column}
+
+    \begin{column}{0.46\textwidth}
+      \image[scale=0.5]{img/idiomas.png}{Banderas de distintos países.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Idiomas Artificiales}
+  Hay idiomas que consisten en lenguajes artificiales, con distintas finalidades:
+  artísticas, filantrópicas, científicas, etc.
+  \jump
+  El Klingon, el Esperanto, el Lojban son algunos ejemplos.
+  \jump
+  \image[scale=0.45]{img/idiomas_artificiales.png}{Banderas de los lenguajes de idiomas artificiales.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Sintaxis}
+  Todo lenguaje tiene una sintaxis.
+  \jump
+  La sintaxis consiste en los símbolos y las reglas que determinan cómo disponer
+  los mismos.
+  \jump
+  Si un texto contiene solamente símbolos válidos, dispuestos correctamente de
+  forma tal que se cumplen todas las reglas, entonces ese texto es parte del lenguaje,
+  caso contrario no lo será.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Sintaxis, orden y reglas de composición}
+  Siempre hay un orden, por ejemplo, en español, al hacer una pregunta se deben
+  colocar los signos de interrogación que delimitan la pregunta (¿?).
+  \jump
+  \bolder{¿Cuál es tu nombre?}
+  \jump
+  En inglés, una pregunta está delimitada por la forma de la oración, terminando
+  con el signo de interrogación de cierre (?).
+  \jump
+  \bolder{What is your name?}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Semántica}
+  Todo lenguaje tiene además una semántica.
+  \jump
+  La semántica indica qué significa una determinada secuencia de símbolos.
+  Por ejemplo, que representación mental nos genera al leer la palabra ``Pelota''
+  o ``Correr''.
+  \jump
+  Es eso que generalmente vemos descrito en el diccionario, aunque la semántica
+  varía de acuerdo al contexto.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Yodalang: Lenguaje de ejemplo}
+  Por ejemplo, podemos definir un lenguaje que contenga como símbolos solo
+  las letras del idioma español en mayúscula, y el espacio en blanco:
+  \jump
+  \textbf{A, B, C, D, E, F, G, H, I, J, K, L, M, N, Ñ, O, P, Q, R, S, T, U, V, W, X, Y, Z.}
+  \jump
+  También vamos a aceptar las letras acentuadas.
+  \jump
+  Y como reglas, vamos a definir que los símbolos se pueden agrupar uno tras
+  otro, formando palabras como en el español, pero que a diferencia de este
+  idioma, en cada renglón solo puede haber tres palabras (o sea, solo puede
+  haber dos espacios por renglón).
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Yodalang: Sintaxis}
+  En el lenguaje que definimos estas frases son válidas:
+  \begin{itemize}
+    \item \success{VÁLIDO ESTO ES.}
+    \item \success{INVÁLIDO ESTO NO.}
+    \item \success{VENCER SITH DEBES.}
+  \end{itemize}
+  \jump
+  Estas frases no lo son:
+  \begin{itemize}
+    \item \error{VÁLIDO ESTO NO ES.}
+    \item \error{DARTH VADER TU PADRE ES.}
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Yodalang: Semántica}
+  En el lenguaje que definimos esas frases no significan absolutamente nada,
+  pues nunca definimos su semántica.
+  \jump
+  Deberíamos, para definir el lenguaje, decir que significa cada palabra de
+  nuestro lenguaje para determinar qué es lo que se debe interpretar de cada
+  renglón, y como las frases deben ser interpretadas.
+  \jump
+  \textit{Ojo, cómo usamos los mismos símbolos del español, y las mismas
+  palabras, nuestra mente tiende a asociar automáticamente un significado, pero
+  esto no es válido.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Yodalang: Semántica, continuación}
+  Sin definir la semántica, es imposible determinar qué significa una frase:
+  \jump
+  \bolder{VENCER SITH DEBES.}
+  \begin{itemize}
+    \item ¿Debemos interpretar \textbf{``Debes vencer a los Sith''} o
+      \textbf{``Sith, debes vencer''}?
+    \item ¿Será que \textbf{``VENCER SITH DEBES''} es lo mismo que
+      \textbf{``DEBES SITH VENCER''}?
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Yodalang: Desambiguación}
+  Un humano puede entender lenguajes con sintaxis y semánticas complejas gracias
+  a que puede pensar y desambiguar.
+  \jump
+  \bolder{Las computadoras no pueden desambiguar ni entender contextos}.
+  \jump
+  Los lenguajes que las computadoras pueden comprender y procesar suelen tener
+  una sintaxis sencilla y una semántica sin ambigüedades.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Lenguajes de Marcado.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lenguajes de Marcado}
+  Un lenguaje de marcado es un lenguaje en donde algunos símbolos cobran un
+  significado especial. Son marcas que indican algo, por ejemplo qué función
+  cumple un determinado texto, o cómo debería verse en pantalla con algún
+  visualizador.
+  \jump
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+      Ej. Whatsapp.
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \image[scale=0.5]{img/whatsapp.png}{Whatsapp mostrando mensajes con estilos y el código de marcado que lo genera}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lenguajes de marcado: Utilidad}
+  \begin{itemize}
+    \item Un lenguaje de marcado sirve para comunicar contenido de forma semántica.
+    \item Un lenguaje de marcado no es un lenguaje de programación.
+    \item Los lenguajes de marcado son utilizados en la industria editorial y de
+      la comunicación, así como entre autores, editores e impresores.
+    \item Los lenguajes de marcado son ampliamente usado para generar documentación
+      que acompaña a proyectos de software.
+    \item El lenguaje de marcado más popular, HTML, sirve para diseñar y
+      estructurar un sitio web.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lenguajes de marcado: Características}
+  Suelen ser \bolder{fáciles de leer y escribir por humanos}, pero no contienen
+  ambigüedades de ningún tipo en su semántica, permitiendo que sean
+  \bolder{interpretables por una computadora}.
+  \jump
+  Hay muchos lenguaje de marcado (cada lenguaje tiene su conjunto específico de reglas)
+  \jump
+  Cada lenguaje de marcado tiene una \bolder{utilidad específica}: generar
+  documentos en PDF, escribir documentación de proyectos, describir páginas web, etc.
+  \jump
+  Vamos a mencionar algunos de ellos.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{LaTeX.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{LaTeX}
+  \bolder{LaTeX} es un lenguaje que incluye marcas que \bolder{permiten generar
+  documentos listos para imprimir} (PDF o similares).
+  \jump
+  Es un lenguaje muy complejo, pero muy poderoso.
+  \jump
+  Es el lenguaje utilizado habitualmente para escribir papers científicos, tesis
+  de licenciatura, libros técnicos, y mucho más.
+  \jump
+  \textit{\colored{Lo van a tener que usar en algún punto de la carrera, tanto
+  para entregar TPs como para el trabajo final de la carrera.}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{LaTeX: Ejemplo}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \image[scale=0.35]{img/latex_code.png}{Código que genera un documento LaTeX}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \image[scale=0.35]{img/latex_compiled.png}{El documento LaTeX compilado en un documento}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{BBCode.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{BBCode}
+  \bolder{BBCode} es un lenguaje de marcado que es \bolder{utilizado en foros de
+  internet} para embellecer los mensajes que envían los usuarios.
+  \jump
+  El código BBCode permite marcar que texto irá en negrita, subrayado, determinar
+  el color, etc.
+  \jump
+  El código BBCode permite incluso agregar emoticones y cosas similares
+  escribiendo simplemente una marca en el texto.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{BBCode: Ejemplo}
+  Puede verse un ejemplo completo en:
+  \colored{\href{http://www.roleplayerguild.com/bbcode}{http://www.roleplayerguild.com/bbcode}}
+  \image[scale=0.47]{img/bbcode.png}{Muestra de las posibilidades de BBCode.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{WikiText.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{WikiText}
+  Es un lenguaje de marcado \bolder{diseñado específicamente para páginas de wikis},
+  por ejemplo Wikipedia.
+  \jump
+  Incluye marcas de estilo, como negrita, resaltado, etc. pero el símbolo usado
+  para esas marcas depende del software que se utilice para la wiki.
+  \jump
+  Wikipedia ha propuesto un estándar conocido como MediaWiki que ha sido
+  ampliamente adoptado.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{WikiText: Ejemplo}
+  \image[scale=0.43]{img/wikitext.png}{Muestra de codigo de WikiText en Wikipedia}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Markdown.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown}
+  Es un lenguaje de marcado \bolder{diseñado para maximizar la facilidad de lectura},
+  tanto en su entrada como en su salida.
+  \jump
+  Se inspira fuertemente en convenciones usadas al momento de enviar correos
+  electrónicos en texto plano.
+  \jump
+  Muchos sistemas de blogs permiten escribir artículos en código Markdown.
+  \jump
+  En programación es ampliamente utilizado para escribir documentación de los
+  programas.
+  \jump
+  \textit{Veremos más de este lenguaje en las próximas clases}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{HTML}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{HTML}
+  \bolder{HyperText Markup Language} (HTML) es un lenguaje de marcado que sirve para
+  \bolder{describir páginas web}.
+  \jump
+  Es el lenguaje de marcado más extendido en su uso.
+  \jump
+  El principio básico del HTML son las \bolder{etiquetas}, que actúan de marcas para
+  indicar distintos tipos de contenidos en un sitio web.
+  \jump
+  HTML se orienta a describir qué contenidos van a ser presentados en un sitio
+  web, y estructurarlos de forma semántica.
+  \jump
+  \textit{También lo veremos en profundidad en la próxima clase}
+\end{frame}

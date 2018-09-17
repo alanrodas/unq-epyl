@@ -1,0 +1,1383 @@
+
+\begin{frame}{Donde la metáfora se queda corta}
+  Hasta ahora vimos como la lógica nos ayuda a responder preguntas.
+  \jump
+  De hecho, vimos como, si tuviéramos verdulero místico al cual poder
+  preguntarle cosas, podríamos hacer varias preguntas a partir de preguntas más
+  simples.
+  \jump
+  Pero en la vida real, no vamos a tener ningún verdulero que nos responda
+  nuestras preguntas, ni solo vamos a querer preguntar sobre verduras.
+  \jump
+  En general, tampoco vamos a preguntar cosas al aire, sino que vamos a hacer
+  afirmaciones sobre el mundo, las cuales, a priori, pueden ser verdaderas o
+  falsas, y que deberán ser sometidas a contrastación empírica.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejemplos de afirmaciones}
+  Podríamos pensar en el siguiente ejemplo:
+  \jump
+  \colored{La Tierra es plana}
+  \jump
+  Consideremos entonces dicha afirmación. ¿Será \fulltrue o \fullfalse?
+  \jump
+  Hoy, cualquier persona en su sano juicio (o sea, no los que creen cualquier
+  cosa que ven en Youtube) diría que esa afirmación es válida.
+  O sea, que si fuera una pregunta, \colored{``¿La Tierra es plana?''},
+  entonces, algún ser místico (¿Dios?) nos respondería \fullfalse.
+  \jump
+  Pero si hubiéramos hecho la pregunta hace 1500 o 2000 años, probablemente
+  nuestra intuición y conocimiento nos habrían dicho que la respuesta obvia era
+  \fullfalse.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejemplos de afirmaciones}
+  Podríamos pensar también en
+  \jump
+  \colored{La Tierra gira alrededor del sol}
+  \jump
+  \colored{La enfermedades son causadas por animales microscópicos}
+  \jump
+  Todas estas afirmaciones fueron consideradas falsas, pero luego pasaron a
+  considerarse verdaderas cuando el estado de la ciencia y la técnica fue
+  avanzando.
+  \jump
+  Podríamos considerar que son, de alguna forma, preguntas encubiertas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Sobre las afirmaciones}
+  A la lógica, en tanto se usa para analizar la realidad, no le interesan las
+  preguntas dirigidas a un ser místico, sino el análisis de las afirmaciones
+  que hacemos, y como una serie de afirmaciones se relacionan con otras.
+  \jump
+  Así, nuestra analogía de la lógica como algo que nos responde preguntas llega
+  hasta este punto.
+  \jump
+  Eso no significa que los conceptos que vimos hasta ahora no nos sirvan, pero
+  vamos a ver como estos encajan en el formalismo lógico más sencillo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introducción a la lógica proposicional.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lógica proposicional}
+  \begin{block}{Lógica proposicional}
+    La \bolder{lógica proposicional} o \bolder{lógica de orden cero} es la
+    rama de la lógica matemática que estudia proposiciones, los métodos de
+    vincularlas mediante conectores lógicos y las relaciones y propiedades
+    que se derivan de esos procedimientos.
+  \end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Proposiciones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Proposiciones}
+  \begin{block}{Proposición}
+    Entidad atómica de la lógica proposicional, portadora de valor de verdad
+  \end{block}
+  \jump
+  Una proposición es una oración que afirma o cuenta algo, sobre lo que podemos
+  decir que es cierto o no lo es.
+  \jump
+  Es, podríamos decir, la posibilidad de que eso se cumpla.
+  \jump
+  Las proposiciones, usan la \bolder{función informativa} del lenguaje
+  (también llamada a veces \bolder{descriptiva} o \bolder{aseverativa}).
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Funciones del lenguaje}
+  Puede ser útil pues repasar las funciones del lenguaje para tener más claro
+  que cosas son proposiciones y que cosas no lo son:
+  \jump
+  \small{
+  \centerline{\begin{tabular}{|l | p{2.5cm} | p{6cm}|}
+    \hline
+    Imperativo & ¡Ven a verme!	&	Le damos una orden o instrucción a otra persona. \\
+    \hline
+    Exclamativo & ¡Viva la libertad! & Expresamos una emoción o un deseo. \\
+    \hline
+    Interrogativo & ¿Está lloviendo? & Solicitamos información sobre un evento o situación. \\
+    \hline
+    Informativo & El trabajo es muy complicado. & Transmitimos información que puede ser falsa o verdadera. En este caso el trabajo puede ser cierto que sea complicado, o puede ser falso y el trabajo en realidad ser sencillo. \\
+    \hline
+  \end{tabular}
+  }}
+  \jump
+  \bolder{Solo la función informativa corresponde a una proposición.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejemplos de proposiciones}
+  A continuación hay algunos ejemplos de proposiciones.
+  Determinemos, según nuestro criterio, cuales son \fulltrue y
+  cuales son \fullfalse.
+  \begin{itemize}
+    \item La Tierra es plana
+    \item Está lloviendo en este lugar
+    \item La UNQ está en Bernal
+    \item Argentina ganó el mundial de 1978
+    \item Los perros tienen cuatro patas (salvo amputaciones)
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejemplos de proposiciones - Cont}
+  Algunos ejemplos en donde en donde para poder responder las
+  proposiciones necesitamos información que, a priori no
+  conocemos.
+  \begin{itemize}
+    \item Todas las células eucariotas tienen pared celular
+    \item El transistor más pequeño del mundo mide 14nm
+    \item Argentina ganará el mundial FIFA Rusia 2018
+    \item Toyota es uno de los mayores fabricantes de autos del mundo
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Uso de conectivas en proposiciones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Oraciones compuestas}
+  Hay casos en donde las oraciones son un poco más complejas. Pensemos el
+  siguiente ejemplo:
+  \jump
+  \colored{El avión se estrelló en la cordillera o realizó un aterrizaje de emergencia}
+  \jump
+  Si miramos la oración, veremos que, en realidad, hay dos partes bien
+  demarcadas. Es decir, si esto fuera una pregunta, sería una pregunta
+  compuesta de dos partes: \colored{``¿El avión se estrelló en la cordillera?''}
+  y \colored{``¿El avión realizó un aterrizaje de emergencia?''}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Oraciones compuestas - Cont}
+  El truco está en que la oración contiene una conectiva, ``o'', que nos indica
+  que la misma puede separarse en dos partes.
+  \jump
+  El avión se estrelló en la cordillera \colored{o} realizó un aterrizaje de emergencia
+  \jump
+  Esto nos indica que \bolder{la oración está formada por dos proposiciones}.
+  \jump
+  \bolder{El valor de verdad de la oración, dependerá entonces del valor
+  de verdad de las proposiciones y de la conectiva que las une} (de
+  la misma forma que sucedía cuando uníamos preguntas)
+  \jump
+  \bolder{Las proposiciones (tantas como se quiera) pueden unirse en formas tan
+  complejas como sea necesario, usando las conectivas de conjunción, disyunción y negación}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Proposiciones compuestas}
+  Llamamos a las proposiciones que no tienen conectivas
+  \bolder{proposiciones atómicas} y a las que tienen conectivas y están
+  formadas por otras proposiciones \bolder{proposiciones compuestas}.
+  \jump
+  Una proposiciones compuesta puede estar formada a su vez por otras
+  proposiciones compuestas, o por proposiciones simples.
+  \jump
+  Eventualmente, siempre debe haber una proposición simple.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conectivas en el lenguaje natural}
+  Veamos ahora el siguiente caso
+  \jump
+  \colored{Tal vez el avión se estrelló en la cordillera , tal vez realizó un aterrizaje de emergencia.}
+  \jump
+  Si analizamos la oración, veremos que no cambia el significado con respecto a
+  la anterior, aunque tiene una diferencia en su redacción.
+  \jump
+  \bolder{En el lenguaje natural las conectivas pueden tomar diversas formas.}
+  \jump
+  Algunas resultan bastante obvias, otras a las que estamos menos habituados,
+  resultan al principio complicadas de interpretar correctamente.
+  \jump
+  A continuación mostramos algunos ejemplos de formas que pueden tomar diversas
+  conectivas:
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conectivas en el lenguaje natural}
+  \begin{tabular}{| l | p{8cm} |}
+    \hline
+    Conjunción & y, también, además, adicionalmente, en adición, ahora,
+                incluso, inclusive, así mismo, de igual forma, del mismo modo,
+                igualmente, sin embargo, no obstante, pero, pese ..., empero,
+                aunque, aun así, a pesar de que, tanto como, al igual que,
+                por otra parte, más, mas, ``no... ni...'' (el ``ni'' también es una negación),
+                aparte, así mismo, ``por otro lado'' \\
+    \hline
+    Disyunción &  o, ``tal vez ..., tal vez ...'', de pronto, de pronto también,
+                  aunque de pronto, puede, aunque puede \\
+    \hline
+    Negación & no, no es cierto que, no es verdad que, ni (también indica conjunción) \\
+    \hline
+  \end{tabular}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Análisis del lenguaje natural}
+  Pensemos ahora la siguiente oración:
+  \jump
+  \colored{El avión se estrelló en la cordillera o realizó un aterrizaje de emergencia y
+  se encuentra incomunicado.}
+  \jump
+  Como primer paso, intentemos buscar las conectivas que hay en dicha oración,
+  e identifiquemos las afirmaciones por partes.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Análisis del lenguaje natural - Cont}
+  Tenemos aquí 2 conectivas, ``o'' e ``y ''.
+  \jump
+  El avión se estrelló en la cordillera \colored{o} realizó un aterrizaje de
+  emergencia \colored{y} se encuentra incomunicado.
+  \jump
+  Esto divide la oración en tres partes:
+  \begin{enumerate}
+    \item El avión se estrelló en la cordillera
+    \item El avión realizó un aterrizaje de emergencia
+    \item El avión se encuentra incomunicado
+  \end{enumerate}
+  \jump
+  \small{Notece que la oración no dice explicitamente ``El avión se encuentra incomunicado'',
+  sino solamente ``se encuentra incomunicado''. Pero ahí hay un sujeto tácito.
+  Si pensamos quien se encuentra incomunicado, claramente refiere al avión.
+  \jump
+  Al momento de realizar el análisis, es conveniente transcribir cada proposición,
+  entera colocando claramente el sujeto y el predicado.
+  }
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Análisis del lenguaje natural - Cont}
+  Ahora bien, tenemos una oración que tendrá un valor de verdad, y que está
+  compuesta por tres proposiciones más pequeñas y dos conectivas, una conjunción
+  y una disyunción.
+  \jump
+  Pero, ¿Cuál es la formula que corresponde a dicha oración?
+  \jump
+  Para simplificar la fórmula asignemos una letra a cada oración:
+  \begin{itemize}
+    \item e = El avión se estrelló en la cordillera
+    \item a = El avión realizó un aterrizaje de emergencia
+    \item i = El avión se encuentra incomunicado
+  \end{itemize}
+  \jump
+  De esta forma, cuando nombremos a ``e'' en la fórmula, sabremos que se
+  corresponde con la proposición ``El avión se estrelló en la cordillera''.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Análisis del lenguaje natural - Cont}
+  Tenemos entonces que la formula es:
+  \jump
+  \centerline{\bolder{$e \lor a \land i$}}
+  \jump
+  Pero, como ya vimos la clase pasada, las conectivas actúan entre dos preguntas,
+  en este caso, entre dos proposiciones. Para desambiguar, necesitamos colocar
+  paréntesis. Tenemos entonces dos posibilidades:
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centerline{\bolder{$(e \lor a) \land i$}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centerline{\bolder{$e \lor (a \land i)$}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Análisis del lenguaje natural - Cont}
+  ¿Será lo mismo una que la otra?. Para analizarlo, basta con ver la tabla de
+  verdad, y ver que las valuaciones que hacen que la primer fórmula sea \fulltrue,
+  no son necesariamente las mismas que hacen que la segunda lo sea.
+  \jump
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centerline{
+        \begin{tabular}{c c c | c || c}
+          $e$ & $a$ & $i$ & $e \lor a$ & $(e \lor a) \land i$ \\
+          \hline
+          \true  & \true  & \true  & \true  & \true  \\
+          \true  & \true  & \false & \true  & \false \\
+          \true  & \false & \true  & \true  & \true  \\
+          \true  & \false & \false & \true  & \false \\
+          \false & \true  & \true  & \true  & \true  \\
+          \false & \true  & \false & \true  & \false \\
+          \false & \false & \true  & \false & \false \\
+          \false & \false & \false & \false & \false \\
+        \end{tabular}
+      }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centerline{
+        \begin{tabular}{c c c | c || c}
+          $e$ & $a$ & $i$ & $a \land i$ & $e \lor (a \land i)$ \\
+          \hline
+          \true  & \true  & \true  & \true  & \true  \\
+          \true  & \true  & \false & \false & \true  \\
+          \true  & \false & \true  & \false & \true  \\
+          \true  & \false & \false & \false & \true  \\
+          \false & \true  & \true  & \true  & \true  \\
+          \false & \true  & \false & \false & \false \\
+          \false & \false & \true  & \false & \false \\
+          \false & \false & \false & \false & \false \\
+        \end{tabular}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Análisis del lenguaje natural}
+  Entonces, ¿Qué fórmula corresponde a la frase? ¿Cuál usamos?
+  \jump
+  Para muchas disciplinas que utilizan la lógica como ciencia de apoyo poder
+  analizar correctamente una oración es de vital importancia.
+  \jump
+  Imaginemos por ejemplo un abogado que intenta probar la inocencia de su
+  cliente, o un sociólogo intentando analizar un discurso político.
+  \jump
+  Por ese motivo las ciencias empíricas y formales intentan evitar el uso de
+  lenguaje ambiguo dentro de sus libros, e intentar dejar muy en claro qué
+  fórmula es la que corresponde a un texto, mediante la misma redacción.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Proposiciones ocultas}
+  Más aún, tomemos el siguiente ejemplo:
+  \jump
+  \colored{La luz está prendida o la luz está apagada}
+  \jump
+  A simple vista, claramente hay dos proposiciones y una conectiva, ``o''.
+  \begin{enumerate}
+    \item La luz está prendida
+    \item La luz está apagada
+  \end{enumerate}
+  \jump
+  Sin embargo, conociendo la naturaleza de las luces, sabemos que una luz tiene
+  solo dos estados, prendida o apagada (olvidemos las luces con atenuación). Si
+  una luz no está prendida, entonces está apagada, y si no está apagada, entonces
+  está prendida.
+  \jump
+  Es decir, nuestras dos proposiciones son complementarias, por lo tanto, una
+  expresarse en términos de la otra utilizando la conectiva de negación.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Proposiciones ocultas}
+  Así, la frase anterior puede reescribirse como:
+  \jump
+  \colored{La luz está prendida o la luz no está prendida}
+  \jump
+  Ahora si, vemos claramente que hay una sola proposición (``La luz está prendida'')
+  y dos conectivas, ``o'' y ``no''.
+  \jump
+  La lógica nos permite razonar mejor acerca de lo que dice el lenguaje natural,
+  pues este es muy amplio y ambiguo. Sin embargo, analizar el lenguaje natural
+  requiere mucha práctica y observación cuidadosa sobre lo que estamos diciendo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Razonamientos.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Oraciones que se relacionan}
+  Hasta ahora venimos analizando oraciones, que puede darse el caso que sean
+  proposiciones, u oraciones compuestas por proposiciones y conectivas.
+  \jump
+  La gracia de la lógica es poder comprender como varias oraciones se
+  interrelacionan, y poder extraer información útil de dichas relaciones.
+  \jump
+  El pasar la oración a una fórmula, no es el objetivo final, sino que es
+  una parte del proceso que nos va a permitir expresar y analizar las oraciones
+  y sus relaciones.
+  \jump
+  \bolder{El objetivo final es poder elaborar y analizar razonamientos}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos}
+  \begin{block}{Razonamiento}
+    Un razonamiento es la actividad de la mente que permite inferir
+    necesariamente una conclusión a partir de una serie de premisas.
+  \end{block}
+  \jump
+  Las \bolder{premisas} no son más que \bolder{proposiciones} con las que
+  contamos a priori como información que \bolder{asumimos como verdadera}.
+  \jump
+  Una \bolder{conclusión} es simplemente una \bolder{nueva proposición}, la
+  cual, \bolder{si el razonamiento es correcto y las premisas eran efectivamente
+  verdaderas, será verdadera}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Razonamientos en el lenguaje natural}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos en el lenguaje natural}
+  Al momento de hablar, elaboramos muchos razonamientos. Expresamos posibilidades
+  en base a hipótesis que poseemos previamente. Pensemos en el siguiente ejemplo:
+  \jump
+  \colored{La Tierra es plana o es redonda. La Tierra no es plana. Por lo tanto,
+  la Tierra es redonda.}
+  \jump
+  Tenemos nuestra hipótesis, ``La tierra es plana o redonda'', no hay otra
+  posibilidad. Como llegamos a dicha hipótesis no es relevante.
+  \jump
+  Tenemos un conocimiento adicional, ``La tierra no es plana''. Tampoco sabemos
+  como arribamos a eso, tal vez como resultado de un experimento. Nuevamente,
+  no importa.
+  \jump
+  Elaboramos una conclusión en base a la hipótesis y al conocimiento adicional,
+  ``La tierra es redonda''.
+  \jump
+  Pero, ¿Cómo sabemos que es un razonamiento? Porque encontramos un indicador
+  de conclusión.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Indicadores de conclusión}
+  Un indicador de conclusión es una palabra (o conjunto de palabras) que indica
+  que la oración que viene a continuación corresponde a la conclusión de una
+  serie de premisas que fueron expresadas anteriormente.
+  \jump
+  Algunos ejemplos son:
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Por lo tanto
+        \item En consecuencia
+        \item Se concluye que
+        \item Se deduce
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Por ende
+        \item Luego
+        \item Entonces
+        \item Así pues
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \jump
+  Nuevamente, el lenguaje natural es muy amplio, y por tanto hay muchas
+  posibilidades, poder identificar claramente cuando se habla de una conclusión
+  es muy útil para gente que estudia las ciencias sociales. A nosotros nos va
+  a interesar, pero más nos va a importar ver que los razonamientos tengan sentido.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos en el lenguaje natural}
+  Volviendo al ejemplo, tenemos tres oraciones, de las cuales,
+  dos son premisas, y una es conclusión.
+  \jump
+  \begin{itemize}
+    \item La Tierra es plana o es redonda.
+    \item La Tierra no es plana.
+    \item la Tierra es redonda.
+  \end{itemize}
+  \jump
+  Si analizamos el conjunto de oraciones, y buscamos las conectivas
+  podremos ver que en realidad hay solo dos proposiciones base:
+  ``La Tierra es plana'' y ``La Tierra es redonda''. Luego, las
+  oraciones son proposiciones compuestas con estas dos y conectivas.
+  \jump
+  Extrapolemos la fórmula
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos en el lenguaje más formal}
+  Nos quedarían las siguientes tres oraciones:
+  \begin{itemize}
+    \item La Tierra es plana $\lor$ La Tierra es redonda.
+    \item $\lnot$ La Tierra es plana.
+    \item La Tierra es redonda.
+  \end{itemize}
+  \jump
+  \bolder{Los razonamientos pueden tener muchas premisas, pero siempre hay
+  una única conclusión}.
+  \jump
+  \bolder{Por tanto, en un razonamiento solo puede haber un único indicador
+  de conclusión}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos en el lenguaje más formal}
+  Los razonamientos suelen escribirse en lenguaje formal colocando cada
+  premisa en un renglón aparte, y la conclusión como última línea, separando
+  las premisas de la conclusión por una línea horizontal.
+  \jump
+  \colored{
+    \begin{lreasoning}
+      \lpremise{La Tierra es plana $\lor$ La Tierra es redonda}
+      \lpremise{$\lnot$ La Tierra es plana}
+      \lconclusion{La Tierra es redonda}
+    \end{lreasoning}
+  }
+  \jump
+  Otra forma de escribir lo mismo es:
+  \jump
+  \colored{La Tierra es plana $\lor$ La Tierra es redonda, $\lnot$ La Tierra es
+    plana $\lseq$ La Tierra es redonda}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Otro formato de razonamientos}
+  Veamos ahora el siguiente razonamiento:
+  \jump
+  \colored{Sabemos que la Tierra es redonda. Esto es así porque la Tierra es
+  redonda o plana. Y sabemos que la Tierra no es plana}
+  \jump
+  Si pensamos lo que nos cuenta la oración, veremos que es lo mismo que lo que
+  nos decía la anterior. Dada la información de que la Tierra no es plana, y
+  nuestra hipótesis, podemos saber que la Tierra es redonda.
+  \jump
+  Pero aquí no hay un indicador de conclusión. De hecho, la conclusión está
+  antes que el resto de la información. En este caso tenemos \bolder{indicadores
+  de premisa}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Indicadores de premisa}
+  Un indicador de premisa es una palabra (o conjunto de palabras) que indica
+  que la oración o conjunto de oraciones que viene a continuación corresponde
+  a premisas de una conclusión que fue expresada anteriormente.
+  \jump
+  Algunos ejemplos son:
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Dado qué
+        \item Ya qué
+        \item Esto es así porque
+        \item Porque
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Esto se sigue de 
+        \item En vista de que 
+        \item Pues
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \jump
+  Además, observemos como en este último ejemplo, hay partes de la oración que
+  no añaden valor relevante, sino que simplemente brindan estructura y estilo,
+  como es el caso de ``Sabemos que''.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cuando vale un razonamiento}
+  A simple vista pareciera que el razonamiento anterior tiene mucho sentido,
+  por lo tanto, esperamos que valga.
+  \jump
+  ¿Pero que significa ``que valga''?
+  \jump
+  Como ya dijimos, \bolder{un razonamiento vale cuando, si las premisas son \fulltrue,
+  entonces la conclusión necesariamente es \fulltrue}. En otras palabras,
+  decimos que \bolder{las premisas implican lógicamente la conclusión}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Implicación}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Implicación}
+  Para analizar si una serie de premisas \bolder{implica lógicamente}
+  la conclusión, primero tenemos que agregar una nueva conectiva, la
+  \bolder{implicación}.
+  \jump
+  La implicación une dos proposiciones, llamadas \bolder{antecedente} y
+  \bolder{consecuente}.
+  \jump
+  La implicación lo que dice es qué, de cumplirse el antecedente,
+  el consecuente debe también cumplirse si o si para que la implicación
+  sea cierta. Es decir, si el antecedente es \fulltrue, entonces el
+  consecuente también debe ser \fulltrue.
+  \jump
+  La implicación no nos dice que pasa con el consecuente en el caso de que
+  no se cumpla el antecedente. De ser el antecedente \fullfalse, el consecuente
+  puede valer tanto \fullfalse como \fulltrue.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Implicación - Cont}
+  Asumamos entonces dos proposiciones cualquiera, $p$ y $q$, donde $p$ será
+  el antecedente y $q$ será el consecuente.
+  \jump
+  El signo de implicación es $\lthen$, y diremos que $p$ implica lógicamente a
+  $q$ escribiendo ``$p \lthen q$''. El signo suele leerse coloquialmente como
+  ``entonces'' (es decir, leemos ``p entonces q'').
+  \jump
+  A la implicación le corresponde la siguiente tabla de verdad:
+  \centerline{
+    \begin{tabular}{c c | c}
+      $p$ & $q$ & $p \lthen q$ \\
+      \hline
+      \true  & \true  & \true \\
+      \true  & \false & \false \\
+      \false & \true  & \true \\
+      \false & \false & \true \\
+    \end{tabular}
+  }
+  \jump
+  El caso en que el antecedente es falso suele prestarse a confusión.
+  Recordemos que la implicación solo me dice que pasa si el antecedente se
+  cumple, no en caso contrario.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Prueba de validez de un razonamiento}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Probando si un razonamiento tiene sentido}
+  Ahora si podemos probar si un razonamiento es válido o no. Podemos hacer
+  esto mediante el proceso de tabla de verdad.
+  \jump
+  Para ello tenemos que tomar cada fórmula correspondiente a una premisa, y
+  unirlas a todas en una única fórmula, utilizando conjunciones. Debemos recordar
+  de colocar la fórmula que corresponde a cada premisa entre paréntesis para evitar
+  ambigüedades.
+  \jump
+  Así en el ejemplo anterior tenemos dos premisas:
+  \begin{itemize}
+    \item La Tierra es plana $\lor$ La Tierra es redonda.
+    \item $\lnot$ La Tierra es plana.
+  \end{itemize}
+  \jump
+  Si las unimos nos queda la siguiente fórmula:\\
+  \colored{(La Tierra es plana $\lor$ La Tierra es redonda) $\land$ ($\lnot$ La Tierra es plana)}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Probando si un razonamiento tiene sentido}
+  Ahora, esta nueva fórmula deberá implicar lógicamente a la conclusión. Ponemos
+  tanto a todas las premisas, como a la conclusión entre paréntesis y armamos una
+  única formula, donde las premisas implican a la conclusión.
+  \jump
+  \colored{((La Tierra es plana $\lor$ La Tierra es redonda) $\land$ ( $\lnot$ La Tierra es plana)) $\lthen$ (La Tierra es redonda)}
+  \jump
+  Como venimos haciendo hasta ahora, asignaremos la letra ``p'' a la proposición
+  ``La Tierra es plana'' y la letra ``r'' a la proposición ``La Tierra es redonda''
+  para poder escribir y trabajar más cómodamente la fórmula.
+  \jump
+  Eso nos da lo siguiente:
+  \colored{$((p \lor r) \land (\lnot p)) \lthen (r)$}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Probando si un razonamiento tiene sentido}
+  Nos es necesario armar la tabla de verdad de dicha fórmula. La dejamos expresada
+  a continuación:
+  \jump
+  \small{\centerline{
+    \begin{tabular}{c c | c | c | c || c}
+      && Premisa 1 & Premisa 2 & & Premisas implican conclusión \\
+      \hline
+      $p$ & $r$ & $p \lor r$ & $\lnot p$ & $(p \lor r) \land (\lnot p)$ & $((p \lor r) \land (\lnot p)) \lthen (r)$ \\
+      \hline
+      \true  & \true  & \true  & \false & \false & \true  \\
+      \true  & \false & \true  & \false & \false & \true  \\
+      \false & \true  & \true  & \true  & \true  & \true  \\
+      \false & \false & \false & \true  & \false & \true  \\
+    \end{tabular}
+  }}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Análisis de la tabla de verdad}
+  Analicemos primero la conjunción de las premisas.
+  Esa tabla solo dará \fulltrue cuando las premisas sean todas \fulltrue.
+  Todos los casos en donde alguna de las premisas era \fullfalse, hace que la
+  conjunción sea \fullfalse.
+  \jump
+  Fijemonos en la implicación final. Si alguna de las premisas era \fullfalse,
+  esto hace que el antecedente de la implicación sea \fullfalse, y por tanto,
+  la implicación es \fulltrue (antecedente falso, da verdadero siempre, sin
+  importar el consecuente).
+  \jump
+  Solo en aquellos casos en donde el antecedente es \fulltrue, puede la implicación
+  dar resultados distintos, y dichos resultados dependen del consecuente. En este
+  caso, el consecuente es la conclusión. Para que la implicación sea \fulltrue,
+  la conclusión debe ser \fulltrue.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Análisis de la tabla de verdad}
+  Recordemos:
+  \jump
+  \bolder{En un razonamiento válido, si las premisas son verdaderas, entonces
+  la conclusión es necesariamente verdadera.}
+  \jump
+  Eso es lo que prueba nuestra tabla de verdad. La conjunción nos marca que
+  todas las premisas deben ser verdadera. En ese momento, la implicación final,
+  nos dará verdadero solo si necesariamente la conclusión también lo es.
+  \jump
+  Si por algún motivo la conclusión nos diera \fullfalse cuando las premisas son
+  todas \fulltrue, la implicación dará \fullfalse por resultado.
+  \jump
+  \bolder{Es decir, si la implicación final es una tautología, entonces se trata
+  de un razonamiento válido. Caso contrario, diremos que el razonamiento es inválido.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Probando si un razonamiento tiene sentido}
+  Recordemos, un razonamiento es válido cuando, si las premisas son verdaderas,
+  entonces la conclusión también lo es.
+  \jump
+  Marquemos primero aquellas filas en donde la primer premisa es verdadera.
+  \jump
+  \small{\centerline{
+    \begin{tabular}{c c | c | c | c || c}
+      && Premisa 1 & Premisa 2 & & Conclusión \\
+      \hline
+      $p$ & $r$ & $p \lor r$ & $\lnot p$ & $(p \lor r) \land (\lnot p)$ & $((p \lor r) \land (\lnot p)) \lthen (r)$ \\
+      \hline
+      \rowcolor{gray}
+      \true  & \true  & \true  & \false & \false & \true  \\
+      \rowcolor{gray}
+      \true  & \false & \true  & \false & \false & \true  \\
+      \rowcolor{gray}
+      \false & \true  & \true  & \true  & \true  & \true  \\
+      \false & \false & \false & \true  & \false & \true  \\
+    \end{tabular}
+  }}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Implicación como condicional}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Otros usos de la implicación}
+  La implicación también puede usarse en oraciones que no necesariamente
+  expresan un razonamiento.
+  \jump
+  Por ejemplo, la siguiente oración:
+  \jump
+  \colored{Si la Tierra es plana entonces nos caeremos por el borde de la misma}
+  \jump
+  Aquí hay dos proposiciones, aunque no se noten a simple vista.
+  \begin{enumerate}
+    \item La Tierra es plana
+    \item Nos caeremos por el borde de la Tierra
+  \end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Implicación como condicional}
+  Decimos que la segunda proposición, ``Nos caeremos por el borde de la Tierra'',
+  está condicionada por la primera ``La Tierra es plana''.
+  \jump
+  Sin embargo, la segunda proposición no se desprende necesariamente de la
+  primera. Podríamos caernos por el borde de la Tierra si la misma fuera cúbica
+  y no plana.
+  \jump
+  Es decir, el valor de verdad de cada una de estas proposiciones es
+  independiente. Por lo tanto, no se trata de un razonamiento.
+  \jump
+  La implicación en este caso actúa como condición. Nos caeremos por el borde
+  necesariamente si la tierra es plana, pero podríamos, o no, caernos en el caso
+  de que no lo sea.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Implicación como condicional}
+  La implicación suele estar dada en el lenguaje natural por palabras similares
+  a las que usamos como indicador de conclusión, como ``entonces'', ``así'',
+  ``luego'', etc.
+  \jump
+  Pensemos en el siguiente ejemplo:
+  \jump
+  \colored{Si la Tierra es plana entonces nos caeremos por el borde. Si la
+    Tierra es redonda entonces no nos caeremos por el borde. La Tierra es
+    redonda o plana. La Tierra no es plana. Por lo tanto, no nos caeremos por
+    el borde.}
+  \jump
+  Note como hay varias palabras que podrían ser indicadores de conclusión.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Implicación como condicional}
+  Si la Tierra es plana \colored{entonces} nos caeremos por el borde. Si la
+  Tierra es redonda \colored{entonces} no nos caeremos por el borde. La Tierra es
+  redonda o plana. La Tierra no es plana. \colored{Por lo tanto}, no nos caeremos
+  por el borde.
+  \jump
+  Recordemos. Todo razonamiento tiene una o más premisas, y una y solo una
+  conclusión. Por tanto, solo puede haber un indicador de conclusión.
+  \jump
+  El problema aquí es que estamos confundiendo indicadores de conclusión, con un
+  indicador de la conectiva de implicación dentro de la oración.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Implicación como condicional}
+  Si analizamos las oraciones y las conectivas, el razonamiento quedará de la
+  siguiente forma:\\
+  \jump
+  \colored{
+    \begin{lreasoning}
+      \lpremise{La Tierra es plana $\lthen$ Nos caeremos por el borde}
+      \lpremise{La Tierra es redonda $\lthen \lnot$ Nos caeremos por el borde}
+      \lpremise{La Tierra es redonda $\lor$ La Tierra es plana}
+      \lpremise{$\lnot$ La Tierra es plana}
+      \lconclusion{$\lnot$ Nos caeremos por el borde}
+    \end{lreasoning}
+  }
+  \jump
+  Como vemos sigue habiendo solo una conclusión, pero hay condiciones dentro
+  de las premisas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Equivalencias lógicas.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Distintos e iguales}
+  Luego de tanto análisis, cabe preguntarse si dos oraciones que intuitivamente
+  creemos que dicen lo mismo, realmente lo hacen.
+  \jump
+  Pensemos en las siguientes dos oraciones
+  \begin{itemize}
+    \item \colored{La Tierra gira alrededor del Sol y La Tierra gira sobre su eje}
+    \item \colored{La Tierra gira sobre su eje y La Tierra gira alrededor del Sol}
+  \end{itemize}
+  \jump
+  Será cierto que estas dos oraciones significan lo mismo, más allá que el orden
+  en el que dicen las cosas no es el mismo. ¿Cómo podemos estar seguros?
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Equivalencia lógica}
+  \begin{block}{Equivalencia lógica}
+    Decimos que dos oraciones son lógicamente equivalentes si para toda valuación
+    posible tiene exactamente el mismo valor de verdad en ambas oraciones.
+  \end{block}
+  \jump
+  Dicho de otra forma, si dos oraciones tienen la misma tabla de verdad, entonces
+  son equivalentes.
+  \jump
+  Ojo, equivalentes no significa iguales. Las oraciones pueden ser distintas,
+  pero en términos lógicos expresan lo mismo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Equivalencia lógica}
+  De hecho, si sabemos que dos oraciones son lógicamente equivalentes, entonces
+  es indistinto cual usemos.
+  \jump
+  Las equivalencias entre formulas son tan útiles que es conveniente poder
+  expresar que una fórmula es equivalente a otra.
+  \jump
+  Sin embargo, no podemos usar el signo de igualdad (``='') pues no es cierto
+  que sean iguales.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Bicondicional}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Bicondicional}
+  El \bolder{bicondicional} o \bolder{doble implicación} es una conectiva que
+  indica equivalencia lógica.
+  \jump
+  Es común encontrarnos dicha conectiva utilizada como una implicación doble,
+  es decir, donde el antecedente implica al consecuente, y el consecuente implica
+  al antecedente.
+  \jump
+  El bicondicional se representa con $\liff$ (una flecha doble) y se suele leer
+  como ``si y solo si''.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Bicondicional}
+  Dadas dos proposiciones cualquiera $p$ y $q$, decimos que $p$ vale si y solo
+  si vale $q$ escribiendo $p \liff q$.
+  \jump
+  El bicondicional tiene la siguiente tabla de verdad:
+  \jump
+  \centerline{
+    \begin{tabular}{c c | c}
+      $p$ & $q$ & $p \liff q$ \\
+      \hline
+      \true  & \true  & \true  \\
+      \true  & \false & \false \\
+      \false & \true  & \false \\
+      \false & \false & \true  \\
+    \end{tabular}  
+  }
+  \jump
+  Como vemos, el bicondicional solo da verdadero cuando ambas proposiciones
+  tienen el mismo valor de verdad.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejemplo Bicondicional}
+  La mejor forma de entenderlo es con algunos ejemplos. Las siguientes son
+  oraciones que suelen traducirse con bicondicionales:
+  \begin{itemize}
+    \item Utilizaré limones para el bizcochuelo si y solo si no hay naranjas en la verdulería.
+    \item La Tierra es redonda si y solo si podemos darle la vuelta sin caernos.
+    \item Si y solo si existe vida inteligente en otros planetas, sufriremos una
+    invasión extraterrestre.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Formalización.}
+\subsection{Variables proposicionales.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Variables proposicionales}
+  A la lógica, en tanto ciencia formal, no le va a interesar tanto las oraciones
+  con las que trabajemos, sino la forma que tienen nuestras proposiciones y
+  razonamientos.
+  \jump
+  Así, no solo vamos a extrapolar siempre la formula para poder trabajarla, sino
+  que vamos a reemplazar las proposiciones atómicas por \bolder{variables proposicionales}.
+  \jump
+  Una \bolder{variable proposicional} consiste en una letra (generalmente, pero
+  no necesariamente, comenzando desde la $p$ y siguiendo el orden alfabético). A
+  dicha letra le corresponde semánticamente una proposición atómica.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Variables proposicionales - Ejemplo}
+  Así por ejemplo, la proposición \colored{``La Tierra gira en torno al Sol y
+  La Tierra gira sobre su eje''}, como ya vimos, está compuesta de dos
+  proposiciones atómicas. A cada proposición atómica le asignaremos una letra:
+  \jump
+  \begin{itemize}
+    \item $p$ = La Tierra gira en torno al Sol
+    \item $q$ = La Tierra gira sobre su eje
+  \end{itemize}
+  \jump
+  De esta forma, la proposición compuesta en lenguaje formal quedaría como
+  ``$p \land q$''.
+  \jump
+  A la asociación de letras con nociones semánticas se la conoce como \bolder{diccionario
+  del lenguaje}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Variables proposicionales - Ejemplo}
+  Pensemos a que frase corresponde la fórmula ``$p \lor q$''.
+  \jump
+  La primer definición que podríamos pensar es:
+  \colored{``La Tierra gira en torno al Sol o La Tierra gira sobre su eje''}
+  \jump
+  Esa definición mantiene a $p$ y a $q$ con las mismas definiciones semánticas
+  que tenían en la formula anterior. Sin embargo, si no se provee información
+  de cual es el diccionario, $p$ y $q$ podrían ser cualquier cosa.
+  \jump
+  Con un diccionario distinto, la siguiente oración también corresponde a la
+  fórmula $p \lor q$: \colored{``Llueve en Buenos Aires o nieva en Bariloche''}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Elección de las variables proposicionales}
+  Es decir que en cada oración que analicemos, podemos reutilizar las mismas
+  letras que ya utilizamos en análisis previos.
+  \jump
+  Si siempre seguimos la lógica de usar las letras comenzando por $p$ y
+  siguiendo por $q$, $r$, etc. dos oraciones que tienen la misma forma
+  deberían producir la misma fórmula.
+  \jump
+  Otra opción es elegir letras que sean representativas de lo que estamos
+  hablando, por ejemplo, la proposición ``La Tierra gira sobre su eje'' podríamos
+  denotarla con la letra $e$, por ``eje''.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Elección de las variables proposicionales}
+  La elección de la letra es arbitraria, y dos fórmulas separadas con la misma
+  forma, aunque distintas letras pueden ser consideradas iguales.
+  \jump
+  Pensemos el ejemplo \colored{``La Tierra gira en torno al Sol y La Tierra gira sobre su eje''}.
+  Si elegimos el siguiente diccionario:
+  \begin{itemize}
+    \item $p$ = La Tierra gira en torno al Sol
+    \item $q$ = La Tierra gira sobre su eje
+  \end{itemize}
+  Obtendremos \colored{``$p \land q$''} como fórmula.
+  \jump
+  Si elegimos el siguiente diccionario:
+  \begin{itemize}
+    \item $s$ = La Tierra gira en torno al Sol
+    \item $e$ = La Tierra gira sobre su eje
+  \end{itemize}
+  Entonces la fórmula será \colored{``$s \land e$''}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Elección de las variables proposicionales}
+  Si las dos fórmulas son independientes, ``$p \land q$'' y $s \land e$ son
+  iguales, pues la letra usada es un producto de una selección arbitraria.
+  \jump
+  Vamos a decir que dos fórmulas son iguales si, modificando la asignación de
+  letras en nuestro diccionario, podemos transformar la primer fórmula en la
+  segunda, o viceversa.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Variables proposicionales en razonamientos}
+  Al analizar un razonamiento, debemos analizar todo el conjunto de oraciones
+  para armar un único diccionario para el razonamiento entero.
+  \jump
+  Esto quiere decir que si una misma proposición aparece dos veces en distintas
+  oraciones, le deberá corresponder la misma variable proposicional en ambas.
+  \jump
+  Por ejemplo, el siguiente razonamiento: \colored{``La Tierra es plana o
+  redonda. La Tierra no es plana. Por lo tanto, la Tierra es redonda.''}
+  \jump
+  En este ejemplo, si analizamos de forma independiente las oraciones ``La Tierra es plana o
+  redonda'' y la conclusión ``la Tierra es redonda'', podríamos acabar asignándole
+  la fórmula ``$p \lor q$'' a la primera, y la fórmula ``$r$'' a la conclusión.
+  Esto no es correcto, pues ``la Tierra es redonda'', debe ser asociado a la misma
+  variable en todas las oraciones del razonamiento.
+  \jump
+  Así, las fórmulas de dicho razonamiento podrían ser ``$p \lor q$'', ``$\lnot p$''
+  y ``$q$''.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Fórmulas que expresan razonamientos}
+  Ya habíamos visto que podemos expresar un razonamiento colocando
+  cada premisa en un nuevo renglón, y finalmente, separada por una
+  linea horizontal, la conclusión debajo.
+  \jump
+  Para el ejemplo anterior, esto quedaría así:\\
+  \jump
+  \colored{
+  \begin{lreasoning}
+    \lpremise{$p \lor q$}
+    \lpremise{$\lnot p$}
+    \lconclusion{$q$}
+  \end{lreasoning}
+  }
+  \jump
+  Otra forma de escribir lo mismo, como ya vimos, es pasar el razonamiento a
+  una única fórmula, uniendo cada premisa con una conjunción, y estas, implicando
+  lógicamente a la conclusión:\\
+  \colored{$((p \lor q) \land (\lnot p)) \lthen (q)$}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Fórmulas que expresan razonamientos}
+  La primera tiene el problema de que requiere bastante espacio para expresar
+  el razonamiento (múltiples renglones).
+  \jump
+  La segunda se vuelve complicada cuando las oraciones tienen muchas conectivas,
+  y no queda claro donde empieza una premisa y donde termina. Además requiere la
+  adición de muchos paréntesis que en ocaciones no ayudan, sino que ensucian
+  la fórmula.
+  \jump
+  Por esto, existe y se usa mucho una tercer forma de escribir un razonamiento,
+  el cual consiste en colocar las fórmulas para cada premisa separadas por comas,
+  colocar un signo especial ``$\lseq$'' (al que llamamos secuente), y luego
+  colocar la conclusión.
+  \jump
+  \colored{$p \lor q, \lnot p \lseq q$}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Fórmulas válidas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Forma de las fórmulas}
+  Como ya vimos, toda conectiva trabaja siempre sobre dos proposiciones (las
+  cuales pueden ser simples o compuestas).
+  \jump
+  Necesitamos adicionar paréntesis para desambiguar acerca de cuales son las
+  proposiciones afectadas por una conectiva.
+  \jump
+  A continuación veamos cuales son las formas que puede adoptar una proposición.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Forma de las fórmulas}
+  \begin{enumerate}
+    \item Toda variable proposicional es una fórmula válida.
+    \item Si \colored{$\Phi$} es una fórmula válida, entonces \colored{($\lnot \Phi$)} también lo es
+    \item Si \colored{$\Phi$} y \colored{$\Psi$} son fórmulas válidas, entonces:
+      \begin{itemize}
+        \item \colored{$(\Phi \land \Psi)$} es una fórmula válida
+        \item \colored{$(\Phi \lor \Psi)$} es una fórmula válida
+        \item \colored{$(\Phi \lthen \Psi)$} es una fórmula válida
+        \item \colored{$(\Phi \liff \Psi)$} es una fórmula válida
+      \end{itemize}
+  \end{enumerate}
+  \jump
+  Note como, si se usa una conectiva, se debe aplicar paréntesis.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Forma de las fórmulas}
+  Así, la siguiente fórmula es válida:
+  \jump
+  \colored{$((p \land q) \liff (\lnot q))$}
+  \jump
+  Pero esta no lo es:
+  \jump
+  \colored{$p \land q \liff \lnot q$}
+  \jump
+  Las reglas de producción de formulas nos indican además que cosas como
+  \colored{$p \lnot q$} o \colored{$p \land \lor q$} no son válidas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Reglas de precedencia}
+  Fórmulas muy grandes tendrán por tanto muchos paréntesis. Para evitar escribir
+  tantos paréntesis podemos definir algunas reglas, que indican como desambiguar
+  situaciones como \colored{$(p \lor q) \liff p$} y \colored{$p \lor (q \liff p)$}
+  cuando se omiten los paréntesis.
+  \jump
+  \begin{enumerate}
+    \item Omitimos siempre los paréntesis más externos
+    \item La negación asocia más fuerte que todos los demás
+    \item La conjunción asocia más fuerte que todas, menos la negación
+    \item La disyunción asocia más fuerte que la implicación y el bicondicional
+    \item La implicación asocia más fuerte que el bicondicional, pero menos que todo el resto
+    \item El bicondicional asocia más débil
+  \end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Reglas de precedencia}
+  Que quiere decir esto. Si tenemos la siguiente fórmula \colored{$\lnot p \lor q$},
+  debemos interpretarla \colored{$((\lnot p) \lor q)$}. Como la negación asocia
+  más fuerte, salvo que haya paréntesis, la negación es lo primero a resolver.
+  \jump
+  De forma similar \colored{$p \lor q \lthen r$} debe interpretarse como
+  \colored{$((p \lor q) \lthen r)$} pues la disyunción asocia más fuerte que
+  la implicación.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Resumen}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Resumen}
+  Recapitulemos hasta acá.
+  \jump
+  \begin{itemize}
+    \item La lógica proposicional o de orden cero, es la lógica que tiene por objeto de
+      estudio las proposiciones.
+    \item Una proposición es una oración escrita utilizando la función informativa del lenguaje.
+    \item Toda proposición tiene un valor de verdad, ya sea \fulltrue o \fullfalse.
+    \item Las proposiciones pueden ser atómicas, es decir sin tener conectivas.
+    \item Las proposiciones pueden unirse entre si con conectivas, para dar lugar a
+      proposiciones compuestas.
+    \item Una proposición puede actuar como premisa, o como conclusión dentro
+      de un razonamiento.
+    \item En una fórmula lógica identificamos cada proposición atómica con una
+      variable proposicional distinta.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Resumen - Cont}
+  \begin{itemize}
+    \item Una razonamiento consiste en una o más premisas y una y solo una
+      conclusión.
+    \item Los razonamientos pueden ser válidos o inválidos.
+    \item Un razonamiento es válido cuando, si las premisas son verdaderas,
+      entonces la conclusión necesariamente es verdadera.
+    \item Podemos probar la validez de los razonamientos mediante el uso de
+      tablas de verdad.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Resumen Conectivas}
+  Conectivas lógicas y sus tablas de verdad:
+  \jump
+  \begin{columns}
+    \begin{column}{0.33\textwidth}
+      \centerline{Conjunción}
+      \centerline{
+        \begin{tabular}{c c | c}
+          $p$ & $q$ & $p \land q$ \\
+          \hline
+          \true  & \true  & \true  \\
+          \true  & \false & \false \\
+          \false & \true  & \false \\
+          \false & \false & \false \\
+        \end{tabular}
+      }
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centerline{Disyunción}
+      \centerline{
+        \begin{tabular}{c c | c}
+          $p$ & $q$ & $p \lor q$ \\
+          \hline
+          \true  & \true  & \true  \\
+          \true  & \false & \true  \\
+          \false & \true  & \true  \\
+          \false & \false & \false \\
+        \end{tabular}
+      }
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centerline{Negación}
+      \centerline{
+        \begin{tabular}{c | c}
+          $p$ & $\lnot p$ \\
+          \hline
+          \true  & \false \\
+          \false & \true  \\
+        \end{tabular}
+      }
+    \end{column}
+  \end{columns}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centerline{Implicación}
+      \centerline{
+        \begin{tabular}{c c | c}
+          $p$ & $q$ & $p \lthen q$ \\
+          \hline
+          \true  & \true  & \true  \\
+          \true  & \false & \false \\
+          \false & \true  & \true  \\
+          \false & \false & \true  \\
+        \end{tabular}
+      }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centerline{Bicondicional}
+      \centerline{
+        \begin{tabular}{c c | c}
+          $p$ & $q$ & $p \liff q$ \\
+          \hline
+          \true  & \true  & \true  \\
+          \true  & \false & \false \\
+          \false & \true  & \false \\
+          \false & \false & \true  \\
+        \end{tabular}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Resumen - Cont}
+  \begin{itemize}
+    \item La lógica trabaja a nivel sintáctico, por lo que le importa la forma,
+      y no el contenido de las proposiciones.
+    \item Una fórmula está compuesta de variables proposicionales y de conectivas
+      que las unen.
+    \item Omitimos paréntesis en las fórmulas con el objetivo de simplificar la
+      lectura, pero las fórmulas no se prestan a ambigüedades.
+  \end{itemize}
+\end{frame}

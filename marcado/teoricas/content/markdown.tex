@@ -1,0 +1,244 @@
+\section{Markdown.}
+\subsection{El lenguaje.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown}
+  Es un lenguaje de marcado \bolder{diseñado para maximizar la facilidad de lectura},
+  tanto en su entrada como en su salida.
+  \jump
+  Se inspira fuertemente en convenciones usadas al momento de enviar correos
+  electrónicos en texto plano.
+  \jump
+  Muchos sistemas de blogs permiten escribir artículos en código Markdown.
+  \jump
+  En programación es ampliamente utilizado para escribir documentación de los
+  programas.
+  \jump
+  \bolder{Su salida suele ser un documento HTML.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Editores y Visualizadores}
+  Se puede utilizar cualquier editor de texto para editar el archivo.
+  \jump
+  Se debe contar con un visualizador específico para Markdown para poder ver el
+  resultado final.
+  \jump
+  Como su salida es un HTML, un visualizador de HTML también puede servir.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Editores}
+  Hay editores de texto específicos para Markdown, que permiten ver tanto la
+  entrada como la salida al mismo tiempo.
+  \jump
+  Hay incluso editores de markdown online, basta contar con conexión a internet.
+  Vamos a estar utilizando el siguiente:
+  \jump
+  \colored{\href{http://dillinger.io/}{http://dillinger.io/}}
+  \jump
+  Pero pueden utilizar también:
+  \jump
+  \bolder{Atom, Sublime Text, Visual Studio Code, etc.}
+  \jump
+  (Algunos pueden requerir complementos para visualizar la salida)
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: ¿Por qué lo usamos?}
+  Para nosotros va a ser de extrema importancia, pues va a ser el
+  formato con el que vamos a enviar mails y documentar nuestros
+  programas (No solo en esta materia sino en toda la carrera).
+  \jump
+  Es un estándar en la industria, por lo que aprenderlo es fundamental
+  para cualquiera que quiera dedicarse a la programación.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Ejemplos de markdown en la industria}
+  El sitio web \bolder{GitHub} que almacena código fuente de muchos programas
+  de \bolder{software libre} (\textit{luego veremos de que se trata eso}) utiliza
+  Markdown como lenguaje para documentar los proyectos.
+  \jump
+  Algunos proyectos en GitHub:
+  \begin{itemize}
+    \item \href{https://github.com/apache/httpd}{Apache HTTPD.}
+    \item \href{https://github.com/cereda/arara}{Arara.}
+    \item \href{https://github.com/scala/scala}{Scala.}
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown como generador de sitios web}
+  Markdown está muy ligado a otro lenguaje de marcado, el HTML. De hecho, la
+  mayoría de los visualizadores de Markdown transforman el mismo en un documento
+  HTML, documento que, como veremos en próximas clases, sirve para definir
+  sitios web.
+  \jump
+  Por ese motivo, muchos visualizadores dan la opción de obtener el archivo HTML
+  a partir de un archivo Markdown. Eso, si bien puede resultar útil en algunos
+  escasos escenarios, no es en absoluto la intención de Markdown.
+  \jump
+  Es decir, \bolder{Markdown no es un lenguaje pensado para armar y describir
+  sitios web}, ni siquiera bosquejos del mismo. Por tanto no debe ser utilizado
+  para ello.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Sintaxis y ejemplos.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Párrafos}
+  \begin{itemize}
+    \item Todo texto escrito, sin marcas aparece tal cual.
+    \item Todo el texto que no tiene saltos de línea conforma un párrafo.
+      Si hay un salto de línea, este aparece en el resultado, pero no se termina
+      el párrafo.
+    \item Si se aplican dos o más saltos de línea consecutivos, entonces se da
+      comienzo a un nuevo párrafo (No importa si hay 20 saltos de línea
+      consecutivos, el resultado no mostrará 20, sino solo el inicio de un nuevo
+      párrafo)
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Párrafos. Visualización}
+  \image[scale=0.4]{img/markdown_parrafos.png}{Resultado de documento Markdown con párrafos.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Títulos}
+  El texto subrayado con signos de igual (=) es un título, el resaltado
+  con signos de menos (-) es un subtítulo.
+  \jump
+  Las almohadillas (\#) también representan título que van de mayor a menor
+  importancia dependiendo de la cantidad de almohadillas consecutivas (máximo 6)
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Títulos. Visualización}
+	\image[scale=0.4]{img/markdown_titulos.png}{Resultado de documento Markdown con titulos.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Énfasis}
+  Colocar texto entre asteriscos (*) o guiones bajos (\_) permite dar énfasis a
+  palabras o frases.
+  \jump
+  \centerline{\colored{*Un asterisco da por resultado italica*.}}
+  \centerline{\colored{\_Un guion bajo tambien es italica\_.}}
+  \centerline{\colored{**Dos asteriscos dan negrita**.}}
+  \centerline{\colored{\_\_Al igual que dos guiones bajos\_\_.}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Énfasis. Visualización}
+	\image[scale=0.4]{img/markdown_enfasis.png}{Resultado de documento Markdown con enfasis.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Citas}
+  En Markdown se puede citar texto utilizando un formato similar al que usan los
+  sistemas correo electrónico, con el carácter de mayor (>).
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Citas. Visualización}
+	\image[scale=0.4]{img/markdown_citas.png}{Resultado de documento Markdown con citas.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Listas}
+  Se pueden generar listas no ordenadas comenzando la línea con asterisco (*),
+  signo de suma (+) o de resta (-) siendo todos equivalentes.
+  \jump
+  Se pueden generar listas numeradas usando el número para el inicio de la línea
+  seguido de un punto (1.).
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Listas. Visualización}
+	\image[scale=0.4]{img/markdown_listas.png}{Resultado de documento Markdown con listas.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Separadores}
+  Se pueden ingresar líneas de separación horizontales usando al menos tres signos
+  de menos consecutivos (---) o tres asteriscos (***) y luego seguirlo de un salto
+  de línea.
+  \jump
+  También es posible agregar varios signos de menos o asteriscos más para
+  representar la misma separación.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Separadores. Visualización}
+	\image[scale=0.4]{img/markdown_separadores.png}{Resultado de documento Markdown con separadores.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Enlaces}
+  Se puede agregar enlaces a un sitio web (links) colocando el texto a mostrar en
+  el enlace entre corchetes seguido por la dirección a la cual se va al
+  presionarlo entre paréntesis.
+  \jump
+  Por ejemplo:
+  \centerline{\colored{[Ir a Google](http://google.com)}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Enlaces. Visualización}
+	\image[scale=0.4]{img/markdown_enlaces.png}{Resultado de documento Markdown con enlaces.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Imágenes}
+  Se pueden insertar imágenes de la misma forma que un link, pero agregando el
+  signo de exclamación antes de los corchetes. En este caso, los corchetes
+  contienen la descripción de la imagen (No deberían quedar vacíos).
+  \jump
+  Por ejemplo:
+  \centerline{\colored{![Descripción de la imágen](http://link\_a\_una\_imagen.jpg)}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Imágenes. Visualización}
+	\image[scale=0.4]{img/markdown_imagenes.png}{Resultado de documento Markdown con imágenes.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Markdown: Otros elementos}
+  Hay muchos otros elementos, como citas, inclusión de código de ejemplos,
+  etc. No es el propósito de este curso ni de esta diapositiva volverlos
+  expertos en Markdown.
+  \jump
+  Si les interesa, siempre se puede encontrar mucha más información en
+  internet. Basta buscar ``sintaxis de markdown'' o algo parecido.
+\end{frame}

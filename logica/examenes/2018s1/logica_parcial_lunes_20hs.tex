@@ -1,0 +1,231 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = es_AR
+%% Add the word "answers" to document class parameters in order to print the solutions.
+\documentclass[10pt, addpoints]{../../../common/epyl_exam_template}
+
+\title{Primer Parcial - Lógica}
+\date{2018.1}
+\professor{Alan Rodas Bonjour}
+\timelimit{2 hs}
+\topic{Lógica}
+\instance{Parcialito}
+
+\renewcommand\examlogo{\includegraphics[scale=0.07]{../../../common/unq_logo.jpg}}
+
+\begin{document}
+\makeexamheader
+\makeexamtitle
+\makeexamextradata
+
+\begin{questions}
+  \question
+  Considerando las siguientes proposiciones como base:\\
+  ~\\
+    \begin{itemize}
+      \item En 1215 el Imperio Mongól llegó a su máxima expansión
+      \item En 1290 el Imperio Mongól llegó a su máxima expansión
+      \item Gengis es padre de Tolui
+      \item Tolui es padre de Kublai
+      \item Gengis fue un Gran Khan del Imperio Mongól
+      \item Kublai fue un Gran Khan del Imperio Mongól
+      \item Gengis gobernó desde 1206 al 1227
+      \item Kublai gobernó desde el 1260 al 1294
+      \item Gengis abolió la esclavitud en el Imperio Mongól
+      \item Kublai abolió la esclavitud en el Imperio Mongól
+    \end{itemize}
+  ~\\
+  Se le pide que exprese las expresiones a continuación en base a las anteriores:
+  \begin{parts}
+      \part \textbf{Kublai es nieto de Gengis}
+      \begin{solution}
+        Gengis es padre de Tolui $\land$\\
+        Tolui es padre de Kublai
+      \end{solution}
+      \part \textbf{Kublai llevó el imperio a su máxima expansión}
+      \begin{solution}
+        Kublai fue un Gran Khan del Imperio Mongól $\land$\\
+        Kublai gobernó desde el 1260 al 1294 $\land$\\
+        En 1290 el Imperio Mongól llegó a su máxima expansión
+      \end{solution}
+      \part \textbf{Un Gran Khan abolió la esclavitud en el Imperio Mongól}
+      \begin{solution}
+        (Gengis fue un Gran Khan del Imperio Mongól $\land$ Gengis abolió la esclavitud el Imperio Mongól)\\
+        $\lor$\\
+        (Kublai fue un Gran Khan del Imperio Mongól $\land$ Kublai abolió la esclavitud en el Imperio Mongól)\\
+      \end{solution}
+      \part \textbf{Kublai tuvo un abuelo fracasado} (pues no llevo al imperio a su máxima expansión)
+      \begin{solution}
+        Kublai es nieto de Gengis $\land$\\
+        Gengis gobernó desde 1206 al 1227 $\land$\\
+        $\lnot$ En 1215 el Imperio Mongól llegó a su máxima expansión
+      \end{solution}
+  \end{parts}
+
+  \jump
+
+  \question
+  Pase los siguientes razonamientos del lenguaje natural al formal de la lógica proposicional.
+  \begin{parts}
+    \part~\\
+    O bien no chequeamos todas las condiciones o bien no respetamos la sintaxis.
+    Esto es así dado que si respetábamos la sintaxis y chequeábamos todas las
+    condiciones, entonces el código se ejecutaría correctamente. Sin embargo, el
+    código no se ejecutó correctamente.
+    \begin{solution}
+        IP = Por lo tanto\\
+        p = El código se ejecutó correctamente\\
+        q = Chequeamos todas las condiciones\\
+        r = Respetamos la sintaxis\\
+        $(q \land r) \lthen p, \lnot p \lseq (\lnot q) \lor (\lnot r)$
+    \end{solution}
+
+    \part~\\
+    Deberíamos confiar en el líder del equipo si y solo si el líder da
+    señales de que el proyecto será un éxito. El líder solo dará señales
+    de que el proyecto será un éxito si hay suficiente dinero. Pero no hay
+    suficiente dinero. Por lo que no deberíamos confiar en el líder.
+    \begin{solution}
+        IC = \\
+        p = Deberíamos confiar en el líder\\
+        q = El proyecto será un éxito\\
+        r = Hay suficiente dinero\\
+        $p \liff q, q \liff r, \lnot r \lseq p$
+    \end{solution}
+  \end{parts}
+  
+  \jump
+  \question
+  Dadas las formulas de los siguientes razonamientos, se pide que pruebe si son
+  válidos o inválidos.
+  \begin{parts}
+      \part $p \lthen q, q \lthen r, \lnot p \lseq \lnot r$
+      \begin{solution} \fullfalse \end{solution}
+      \part $(\lnot p \land \lnot q) \lthen \lnot r, r \lseq p \lor q$
+      \begin{solution} \fulltrue \end{solution}
+  \end{parts}
+  \jump
+  \question
+  Sabiendo que las siguientes expresiones sobre estados del mundo evalúan
+  todas a \fulltrue, se pide que complete las tablas a continuación:
+  ~\\
+  \begin{itemize}
+    \item Todos los estados son capitalistas o comunistas.
+    \item Nadie que sea comunista es capitalista.
+    \item Nadie que sea capitalista es comunista.
+    \item Todos los capitalistas quieren destruir a los comunistas.
+    \item Dracma quiere destruir a los capitalistas.
+    \item O Creta es comunista o Aerugo es comunista.
+    \item Si Aerugo es comunista, entonces Xing lo es.
+    \item Todos los comunistas quieren destruir a Aerugo.
+    \item Amestris se quiere destruir a si misma.
+    \item Nadie más quiere destruir a nadie.
+  \end{itemize}
+  ~\\
+  \begin{tabular}{| c | c | c | c |}
+    \hline
+      & $x$ es comunista & $x$ es capitalista \\
+    \hline
+    Xing     & \false &        \\
+    \hline
+    Amestris &        & \false \\
+    \hline
+    Creta    &        &        \\
+    \hline
+    Aerugo   &        &        \\
+    \hline
+    Dracma   & \true  &        \\
+    \hline
+  \end{tabular}
+
+  \begin{tabular}{| c | c | c | c | c | c |}
+    \hline
+$x$ quieren destruir a $y$ & Xing & Amestris & Creta & Aerugo & Dracma \\
+    \hline
+    Xing     &       &       &       &      &       \\
+    \hline
+    Amestris &       &       &       &      &       \\
+    \hline
+    Creta    &       &       &       &      &       \\
+    \hline
+    Aerugo   &       &       &       &      &       \\
+    \hline
+    Dracma   &       &       &       &      &       \\
+    \hline
+  \end{tabular}
+  \begin{solution}
+    \begin{tabular}{| c | c | c | c |}
+      \hline
+        & $x$ es comunista & $x$ es capitalista \\
+      \hline
+      Xing     & \false & \true  \\
+      \hline
+      Amestris & \true  & \false \\
+      \hline
+      Creta    & \true  & \false \\
+      \hline
+      Aerugo   & \false & \true  \\
+      \hline
+      Dracma   & \true  & \false \\
+      \hline
+    \end{tabular}
+
+    \begin{tabular}{| c | c | c | c | c | c |}
+      \hline
+  $x$ quieren destruir a $y$ & Xing & Amestris & Creta & Aerugo & Dracma \\
+      \hline
+      Xing     & \false & \true  & \true & \false  & \true \\
+      \hline
+      Amestris & \true  & \false & \true & \false  & \false \\
+      \hline
+      Creta    & \false & \false & \false  & \true & \false \\
+      \hline
+      Aerugo   & \false & \true  & \true & \false  & \true  \\
+      \hline
+      Dracma   & \true & \false  & \false  & \true & \false \\
+      \hline
+    \end{tabular}
+  \end{solution}
+
+  \question
+  Los conjuntos son un objeto matemático que consiste en una colección
+  de elementos de algún tipo. Por ejemplo, podemos pensar en un conjunto
+  de números (ej. $\{1,2,3,4\}$, es el conjunto que incluye a los números
+  1, 2, 3 y 4, y ninguno más). Un conjunto, puede estar vacío (es un
+  conjunto que no contiene ningún elemento).
+
+  Considere los conjuntos \textbf{$U$} y \textbf{$C$}, \textbf{$J$} y los predicados \textbf{$x$ es un conjunto},
+  \textbf{$x$ es un número} y \textbf{$x$ está incluido en $y$}.
+
+  Se pide que desarrolle el diccionario que considere conveniente, y elabore
+  fórmulas para expresar las siguientes afirmaciones.
+  \begin{parts}
+    \part El conjunto $C$ es vacío.
+    \begin{solution}
+      $c = C$\\
+      $u = U$\\
+      $j = J$\\
+      $C(x) = x$ es un conjunto\\
+      $R(x) = x$ es un número\\
+      $I(x, y) = x$ está incluido en $y$\\
+      ~\\
+      $\nexists z.I(z, c)$
+    \end{solution}
+    \part El conjunto $U$ contiene a todos los números.
+    \begin{solution}
+      $\forall z.R(z) \lthen I(z, u)$
+    \end{solution}
+    \part El conjunto $J$ tiene a todos los números negativos.
+    \begin{solution}
+      $N(x) = x < 0$\\
+      ~\\
+      $\forall z.R(x) \land N(x) \lthen I(z, j)$
+    \end{solution}
+    \part Hay al menos un conjunto que se contiene a si mismo.
+    \begin{solution}
+      $\exists a.C(a) \land I(a, a)$
+    \end{solution}
+  \end{parts}
+
+\end{questions}
+\end{document}
+    

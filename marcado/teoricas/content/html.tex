@@ -1,0 +1,818 @@
+\section{HTML.}
+\subsection{El lenguaje.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{HTML}
+  \bolder{HyperText Markup Language} (HTML) es un lenguaje de marcado que sirve
+  para describir páginas web.
+  \jump
+  Los archivos HTML son archivos de texto, que pueden editarse con cualquier
+  editor de texto, y visualizarse con un \bolder{Browser}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Browser}
+  El \bolder{Browser} o \bolder{Navegador web} permite visualizar archivos HTML
+  que se encuentran en el equipo, así como también visualizar archivos HTML
+  que se encuentran en otros equipos (Internet).
+  \jump
+  Al solicitar un sitio web en el browser, este realiza distintos mecanismos
+  para determinar en que equipo se encuentra el archivo HTML a visualizar, lo
+  descarga, y se lo presenta al usuario.
+  \jump
+  Hay muchos browsers (algunos más populares que otros) de distintas compañías.
+  Internet Explorer o Edge de Microsoft, Chrome de Google, Safari de Apple,
+  Firefox de la Fundación Mozilla, Opera de Opera Software, son algunos de los
+  más conocidos.
+  \image[scale=0.2]{img/browsers.png}{Logos de los navegadores más populares}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Etiquetas HTML}
+	Una etiqueta HTML tiene un nombre que va dentro de los signos de etiqueta.
+	\jump
+	La mayoría de las etiquetas deben abrir y cerrar, las etiquetas de apertura
+  llevan los signos de ``<'' (menor) y ``>'' (mayor) para indicar el nombre,
+  mientras que las de cierre llevan ``</'' (menor seguido de barra) y ``>'' (mayor).
+	\jump
+	Ejemplo apertura:
+	\begin{lstlisting}[language=HTML]
+<nombre_de_etiqueta>
+	\end{lstlisting}
+
+	Ejemplo cierre
+	\begin{lstlisting}[language=HTML]
+</nombre_de_etiqueta>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Contenido HTML}
+  El contenido de una etiqueta se coloca entre la etiqueta de apertura y la de
+  cierre.
+	\jump
+	Ejemplo:
+	\begin{lstlisting}[language=HTML]
+<nombre_etiqueta> Contenido </nombre_etiqueta>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Etiquetas anidadas en HTML}
+	Una etiqueta puede contener otras etiquetas dentro, como contenido.
+	\jump
+	Ejemplo:
+	\begin{lstlisting}[language=HTML]
+<etiqueta1>
+	<etiqueta2>
+		Contenido de la etiqueta
+	</etiqueta2>
+</etiqueta1>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Atributos}
+	Algunas etiquetas llevan atributos, valores que indican cosas acerca de dicha
+	etiqueta.
+	\jump
+	Un atributo se indica dentro de las marcas de etiquetas, luego del nombre de
+	la etiqueta, indicando el nombre del atributo, el signo igual y el valor
+	asociado de dicho atributo entre comillas.
+	\jump
+	Ejemplo:
+	\begin{lstlisting}[language=HTML]
+<nombre_de_etiqueta atributo="valor">
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Atributos Cont.}
+	Los atributos se separan con espacios, y puede haber tantos como se quiera.
+	\jump
+  Ejemplo:
+	\begin{lstlisting}[language=HTML]
+<nombre attr1="val1" attr2="val2">
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Comunicación del código.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Comunicación e Indentación}
+	El código
+	\begin{lstlisting}[language=HTML]
+<etiqueta1><etiqueta2>Contenido de la etiqueta
+</etiqueta2></etiqueta1>
+	\end{lstlisting}
+	Es equivalente a
+	\begin{lstlisting}[language=HTML]
+<etiqueta1>
+	<etiqueta2>
+		Contenido de la etiqueta
+	</etiqueta2>
+</etiqueta1>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Indentación}
+	Sin embargo, el segundo se lee mejor.
+	\jump
+	Esto no es casual, vamos a elegir siempre indentar correctamente el código.
+	\jump
+	La indentación es el tabulado, o sangría que se coloca en el código, de forma
+	tal de hacerlo más legible. También implica los saltos de línea de forma correcta.
+	\jump
+\begin{lstlisting}[language=HTML]
+<etiqueta1>
+	<etiqueta2>
+		Contenido de la etiqueta
+	</etiqueta2>
+</etiqueta1>
+\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Comentarios}
+	Los comentarios permiten agregar información que ayudan a entender el código
+	del sitio web, pero que es completamente ignorado por el navegador.
+	\jump
+	Un comentario es similar a una etiqueta, pero comienza con ``<!--'' y termina
+	con ``-->''.
+	\begin{lstlisting}[language=HTML]
+<!-- Esto es un comentario,
+	puede ponerse lo que se desee aquí -->
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Etiquetas del HTML}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Etiquetas básicas}
+	Veamos algunos ejemplos básicos de etiquetas:
+	\begin{itemize}
+		\item \bolder{p}: Delimita un párrafo
+		\item \bolder{strong}: Indica que una palabra o frase debe estar remarcada,
+			en negrita.
+		\item \bolder{em} Indica que una palabra o frase debe estar enfatizada, en
+			itálica.
+		\item \bolder{section}: Delimita un sección, probablemente conteniendo varios párrafos.
+			Cumple solo una función organizacional, pero no visual.
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Etiquetas de títulos}
+	También podemos generar títulos:
+	\begin{itemize}
+		\item \bolder{h1}: Título
+		\item \bolder{h2}: Subtitulo
+		\item \bolder{h3}: Título de 3er nivel
+		\item \bolder{h4}: Título de 4to nivel
+		\item \bolder{h5}: Título de 5to nivel
+		\item \bolder{h6}: Título de 6to nivel
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Etiquetas de listas}
+	Se pueden crear listas:
+	\begin{itemize}
+		\item \bolder{ul}: Lista sin orden (con viñetas). Requiere ítems adentro.
+		\item \bolder{ol}: Lista ordenada (numerada). Requiere ítems adentro.
+		\item \bolder{li}: Item de una lista
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Etiquetas de enlace e imágen}
+	O enlaces e imágenes:
+	\begin{itemize}
+		\item \bolder{a}: Un enlace. Requiere un atributo obligatorio:
+		\begin{itemize}
+			\item \bolder{href}: Indica a donde se esa enlazando.
+		\end{itemize}
+		\item \bolder{img}: Una imagen. Requiere un atributo obligatorio:
+		\begin{itemize}
+			\item \bolder{src}: Indica donde se ubica la imagen que se desea mostrar
+		\end{itemize}
+		Y otros opcionales:
+		\begin{itemize}
+			\item \bolder{width}: Indica el ancho de la imagen
+			\item \bolder{height}: Indica el alto de la imagen
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Etiquetas de tablas}
+	Se pueden crear tablas de datos (datos de dos entradas)
+	\begin{itemize}
+		\item \bolder{table}: Una tabla, requiere que se declare dentro el contenido.
+		\item \bolder{tr}: Genera una fila en la tabla. Requiere celdas dentro.
+		\item \bolder{td}: Genera una celda en la tabla, requiere contenido dentro.
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Estructura de un documento}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Estructura básica de documento}
+	Todo documento HTML comienza siempre con una pseudo-etiqueta que tiene por
+	finalidad indicarle al navegador que se trata de un documento HTML (Otros
+	lenguajes usan etiquetas similares para describir cosas distintas a páginas
+	web).
+	\jump
+	La pseudo-etiqueta debe ser en todos los casos la siguiente:
+	\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Estructura básica de documento - Cont.}
+	Luego de la pseudo-etiqueta debe haber una única etiqueta que englobe todos
+	los elementos siguientes.
+	\jump
+	Esta etiqueta tiene por nombre \bolder{html} y debe ser la única etiqueta externa.
+	\jump
+	La etiqueta html debe contener a su vez dos sub-etiquetas, \bolder{head} y \bolder{body}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Estructura básica de documento - Cont.}
+	Dentro de la etiqueta head se agregará meta-información que el browser puede
+	utilizar para saber como mostrar el contenido, como el título que debe poner
+	en la ventana, o el ícono a mostrar en la pestaña, o el lenguaje en el que se
+	espera se encuentre la página.
+	\jump
+	La etiqueta body en cambio engloba a todos los elementos que representa
+	contenido que va a ser mostrado en la página web. Si es algo visible en el
+	sitio va dentro del body.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Estructura básica de documento - Cont.}
+	Como vamos a escribir en español nos va a interesar agregar una de las etiquetas
+	de metadatos dentro de head que va a indicarle que el archivo contiene caracteres
+	en español. La etiqueta \bolder{meta} con el atributo \bolder{charset}.
+
+	Así que la estructura general del documento nos va a quedar así:
+	\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- Otros metadatos relevantes -->
+	</head>
+	<body>
+		<!-- Aquí va el contenido del sitio -->
+	</body>
+</html>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Ejemplos}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Ejemplos de HTML - 1}
+	\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html>
+	<head> <meta charset="utf-8"> </head>
+	<body>
+		<h1>Titulo principal</h1>
+		<p>
+			Este es el primer párrafo. En el se
+			puede agregar <strong>negritas</strong>
+			o <em>itálicas</em>.
+		</p>
+		<p>
+			Podemos agregar otros párrafos
+		</p>
+	</body>
+</html>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Ejemplos de HTML - 1 Cont.}
+	\image[scale=0.4]{img/html_ejemplo_1.png}{Resultado del ejemplo anterior}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Ejemplos de HTML - 2}
+	\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html>
+	<head> <meta charset="utf-8"> </head>
+	<body>
+		<h1>Enlaces y subtítulos</h1>
+		<p>
+			También podemos agregar enlaces como:
+			<a href="http://google.com">Ir a Google</a>
+		</p>
+		<h2>O subtítulos</h2>
+		<p>
+			Y luego comenzar en nuevo párrafo.
+		</p>
+	</body>
+</html>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Ejemplos de HTML - 2 Cont.}
+	\image[scale=0.4]{img/html_ejemplo_2.png}{Resultado del ejemplo anterior}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Ejemplos de HTML - 3}
+	\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Listas</h1>
+		<h3>Una lista numerada:</h3>
+		<ol>
+			<li>El primer elemento</li>
+			<li>El segundo elemento</li>
+			<li>El tercero</li>
+		</ol>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Ejemplos de HTML - 3 - Cont.}
+	\begin{lstlisting}[language=HTML]
+		<h3>Una lista con viñetas:</h3>
+		<ul>
+			<li>El primer elemento</li>
+			<li>El segundo elemento</li>
+			<li>El tercero</li>
+		</ul>
+	</body>
+</html>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Ejemplos de HTML - 3 Cont.}
+	\image[scale=0.4]{img/html_ejemplo_3.png}{Resultado del ejemplo anterior}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Ejemplos de HTML - 4}
+	\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html>
+	<head> <meta charset="utf-8"> </head>
+	<body>
+		<h1>Una tabla de ejemplo</h1>
+		<table>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Edad</th>
+			</tr> <tr>
+				<td>Juan</td>
+				<td>Perez</td>
+				<td>25</td>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Ejemplos de HTML - 4 Cont.}
+	\begin{lstlisting}[language=HTML]
+			</tr> <tr>
+				<td>Cosme</td>
+				<td>Fulanito</td>
+				<td>23</td>
+			</tr> <tr>
+				<td>Susana</td>
+				<td>Mengano</td>
+				<td>28</td>
+			</tr>
+		</table>
+	</body>
+</html>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Ejemplos de HTML - 4 Cont.}
+	\image[scale=0.4]{img/html_ejemplo_4.png}{Resultado del ejemplo anterior}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Etiquetas de estructura}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Etiquetas de estructura}
+	Unas de las etiquetas más importantes son las etiquetas que indican estructura.
+	\jump
+	Estas etiquetas no cumplen una función visual, sino que simplemente indican
+	secciones importantes del sitio, agrupando los contenidos de forma semántica
+	\jump
+	El poder agrupar semánticamente los contenidos permite no solo comprender
+	mejor el código, sino también que servicios como Google u otros comprender
+	mejor el contenido del sitio e indexarlo correctamente.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Etiquetas de estructura}
+	\begin{itemize}
+		\item \bolder{header}: Indica la cabecera del sitio (logo de la página con el
+			nombre, otros elementos que suelen ser constante en los diseños de los sitios).
+			Pueden haber headers dentro de una sección o artículo, en casos muy raros.
+			NO DEBE SER CONFUNDIDO CON HEAD.
+		\item \bolder{nav}: Indica una barra de navegación que contiene links a distintas
+			secciones del sitio. Suele estar dentro del header.
+		\item \bolder{footer}: El footer es el pie de página, suele indicar cosas como
+			el nombre del autor, información de contacto, información de copyright, etc.
+		\item \bolder{article}: Se puede usar en sitios de noticias y blogs para englobar
+			la nota y otros contenidos.
+		\item \bolder{section}: Indica una sección del sitio, por ejemplo, dentro de una
+			nota, puede haber varias secciones.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Etiquetas de estructura}
+	\begin{itemize}
+		\item \bolder{section}: Indica una sección del sitio, por ejemplo, dentro de una
+			nota, puede haber varias secciones.
+		\item \bolder{aside}:
+			Suele usarse para contenidos secundarios, que no son parte prioritaria del
+			contenido del sitio. Por ejemplo, cosas que van en las barras laterales de
+			un sitio, incluyendo publicidades, calendarios, etc.
+		\item \bolder{div}: Aquellas agrupaciones que no caen en ninguna de las
+			otras categorías o que se usan por cuestiones semánticas o de estilo.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Etiquetas de estructura - Ejemplo}
+	Ej. La información en un sitio web de noticias:
+	\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+<section>
+	<h2>Noticias destacadas del día</h2>
+	<article>
+		<h4>Los liberales se levantan en armas</h4>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Etiquetas de estructura - Ejemplo}
+	\begin{lstlisting}[language=HTML]
+		<p>
+			El coronel <strong>Aureliano
+			Buendía</strong> habría marchado
+			a la guerra al grito de <em>
+			Viva el partido liberal</em>.
+			Se esperan fuertes repercusiones
+			en todo Macondo.
+		</p>
+	</article>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Etiquetas de estructura - Ejemplo Cont.}
+	\begin{lstlisting}[language=HTML]
+	<article>
+		<h4>Se desata la guerra contra Eurasia</h4>
+		<p>
+			La guerra contra <em>Eurasia</em> ha
+			comenzado y soldados de toda Oceanía
+			marchan hacia la frontera para defender
+			la nación.
+		</p>
+	</article>
+</section>
+</body>
+</html>
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Etiquetas de estructura - Ejemplo Cont.}
+	\image[scale=0.4]{img/html_ejemplo_seccionado.png}{Resultado del ejemplo anterior}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Uso de URIs}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{URI: Referencias absolutas}
+	Supongamos el siguiente ejemplo:
+	\jump
+	\colored{<img src=”C:/Usuarios/Juancito/Escritorio/Sitio/mi\_foto.png”>}
+	\jump
+	Si enviamos nuestro archivo HTML a otra persona, y este intenta abrir el
+	archivo, no verá la imagen, pues no la tiene en su equipo.
+	\jump
+	Peor aún, la ruta completa probablemente no exista en la máquina de nadie más
+	que Juancito.
+	\jump
+	El problema es que se están usando URIs absolutas que referéncian a un archivo
+	local.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{URI: Referencias web}
+	Ahora el siguiente ejemplo:
+	\jump
+	\colored{<img src=”https://imgs.xkcd.com/comics/tags\_2x.png”>}
+	\jump
+	Si enviamos nuestro archivo HTML a otra persona, este verá la imagen,
+	siempre y cuando tenga conexión a internet (http y https se usan para recursos
+	web).
+	\jump
+	No está bueno si no sabemos con seguridad que la otra persona tiene conexión.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{URI: Rutas locales}
+	Un sitio web de verdad está compuesto, no solo de su HTML, sino de todos
+	los archivos que lo acompañan, por ejemplo, imágenes, videos, etc.
+	\jump
+	Generalmente uno recurre a colocar todo dentro de una carpeta, con subcarpetas
+	de ser necesario. Una vez hecho esto, uno puede referenciar a los archivos de
+	esa carpeta con URIs relativas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{URI: Rutas locales}
+	Consideremos la siguiente estructura:
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\image[scale=0.4]{img/folders.png}{Estructuras de carpetas del proyecto HTML}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			Desde el archivo sitio.html ahora podemos hacer referencia a las imágenes
+			del sitio refiriéndonos siempre al camino que hay que seguir desde la
+			carpeta principal del proyecto.
+			\jump
+			\colored{<img src=”fotos/principal.png”>}
+			\jump
+			\colored{<img src=”fotos/personales/juan.jpg”>}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{TIP Entregas}
+	Cuando debamos enviar un sitio web que contenga recursos adicionales al HTML,
+	siempre debemos utilizar rutas relativas y enviar toda la carpeta completa.
+	\jump
+	Cuando no se tengan archivos adicionales, basta con el archivo HTML.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Relación con Markdown}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Relación con Markdown}
+	Para ser visualizado, los visualizadores de Markdown
+	transforman el archivo en un archivo HTML, para luego
+	mostrar el mismo.
+	\jump
+	Así se puede transformar un código de markdown a un código en HTML.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Relación con Markdown - Ejemplo}
+	\begin{lstlisting}
+# Titulo
+## Subtitulo
+
+Esto es texto **simple**
+y aquí hay un [enlace](http://google.com)
+
+* Elemento 1
+* Elemento 2
+* Elemento 3
+		\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Relación con Markdown - Ejemplo Cont}
+		\begin{lstlisting}[language=HTML]
+<html>
+	<head> <meta charset="utf-8"> </head>
+	<body>
+		<h1>Titulo</h1>  <h2>Subtitulo</h2>
+		<p> Esto es texto <strong>simple</strong>
+			y aquí hay un <a href="http://google.com">
+			enlace</a></p>
+		<ul>
+			<li>Elemento 1</li>
+			<li>Elemento 2</li>
+			<li>Elemento 3</li>
+		</ul>
+	</body>
+</html>
+		\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Estándar}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{W3C}
+	La w3c (\bolder{World Wide Web Consortium}) es un consorcio internacional
+	creado por \bolder{Tim Berners-Lee}, creador de la URL, el HTTP y el HTML.
+	\jump
+	El consorcio comienza con la participación del MIT (Massachusetts Institute of
+	Technology) al que luego se unió el INRIA (Institut National de Recherche en
+	Informatique et en Automatique) de Francia, el ERCIM (European Research
+	Consortium for Informatics and Mathematics) y la Universidad de Keiō en Japón.
+	\jump
+	La organización cuenta con miembros especialistas e investigadores en ciencias
+	de la computación. Está encargada de definir los estándares de diferentes
+	lenguajes y tecnologías: HTML, XML, SVG, SOAP, RDP, entre otras.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Estándar HTML}
+	El lenguaje HTML está en su versión 5 (HTML5), pero existen versiones
+	anteriores.
+	\jump
+	Cada nueva versión es compatible con las anteriores en mayor parte.
+	Algunas etiquetas desaparecen, porque se vuelven obsoletas, y otras nuevas
+	que resultan necesarias aparecen.
+	\jump
+	El estándar HTML5 es un estándar vivo, es decir que no está en su versión
+	final, sino que constantemente se está cambiando.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Estándar HTML - Cont.}
+	Un archivo HTML correcto debería cumplir con todos los estándares postulados
+	por la w3c.
+	\jump
+	A veces, los navegadores web no cumplen los estándares y por tanto toman
+	determinación de mostrar el HTML incluso si este no es correcto.
+	\jump
+	Para validar que un HTML es correcto podemos usar el validador que proporciona
+	la w3c en: \colored{\href{https://validator.w3.org/}{https://validator.w3.org/}}
+	\jump
+	Archivos que no cumplen el estándar pueden parecer verse bien en un navegador,
+	pero puede verse mal en otro.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Resultados de validación}
+	El validador da dos tipos de mensajes en caso de que haya cosas incorrectas en
+	el sitio:
+	\begin{itemize}
+		\item \bolder{Errores}: cuando se rompe una regla HTML estricta
+		\item \bolder{advertencias}: Cuando no se siguen buenas prácticas que son
+			recomendables, o se tiene elementos innecesarios en el sitio web.
+	\end{itemize}
+	Ej. error: la etiqueta ``hgroup'' está en un lugar no permitido:
+	\image[scale=0.3]{img/w3c_error.png}{Resultado del validador de la W3C con errores}
+	Ej. advertencia: la etiqueta “h1” debería ser utilizado solo como
+	encabezado principal del sitio:
+	\image[scale=0.3]{img/w3c_warn.png}{Resultado del validador de la W3C con advertencias}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Estilos e interactividad}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Estilos}
+	Las páginas web que podemos crear con HTML, se ven bastante planas.
+	Sin embargo, los sitios que vemos en internet se ven muy distintos.
+	\jump
+	La pregunta sería entonces, ¿Cómo hacer para tener un sitio como alguno de los
+	siguientes?
+	\jump
+	\image[scale=0.4]{img/css.png}{Muestra de CSS}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Cascade Style Sheets}
+	\bolder{CSS} es un lenguaje adicional que permite describir “cómo” se va a
+	ver un determinado contenido en una página web.
+	\jump
+	También es desarrollado y mantenido por la W3C.
+	\jump
+	Permite definir, por ejemplo, tipos y tamaños de fuentes, colores de texto y
+	fondo, alineados de texto, sombreado de elementos, transparencias, posicionado
+	de elementos complejos, etc.
+	\jump
+	Puede agregarse al HTML mediante una etiqueta “style”, o mejor aún, en un
+	archivo separado utilizando la etiqueta “link”
+	\jump
+	\small
+	\colored{\textit{Aprender este lenguaje no es pertinente a esta asignatura.}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Interactividad}
+	\bolder{JavaScript} es un lenguaje de programación que ejecuta directamente
+	en el navegador.
+	\jump
+	También desarrollado y mantenido por la W3C.
+	\jump
+	Permite realizar interactividad con el usuario de formas avanzadas, mediante
+	el agregado o quitado de etiquetas y contenido al HTML tras una determinada
+	acción del usuario.
+	\jump
+	\small
+	\colored{\textit{Aprender este lenguaje no es pertinente a esta asignatura.}}
+\end{frame}

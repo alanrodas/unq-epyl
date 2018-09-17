@@ -1,0 +1,582 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = es_AR
+%% Add the word "answers" to document class parameters in order to print the solutions.
+\documentclass[12pt, addpoints]{../../common/epyl_exam_template}
+
+\title{Práctica 2.2 - Lógica Proposicional}
+\date{2018.1}
+
+\begin{document}
+\makeexamheader
+\makeexamtitle
+\examrule
+\begin{questions}
+  \question
+    Identifique cuales de las siguientes son proposiciones y cuales no lo son.
+    \begin{parts}
+      \part Microsoft es la empresa detrás del sistema operativo Windows.
+      \begin{solution} \fulltrue \end{solution}
+      \part ¿Hay vida en Marte?
+      \begin{solution} \fullfalse \end{solution}
+      \part Las células eucariotas tienen núcleo y las procariotas no lo tienen.
+      \begin{solution} \fulltrue \end{solution}
+      \part ¡Eres un impostor!
+      \begin{solution} \fullfalse \end{solution}
+      \part ¿Es un celular inteligente?
+      \begin{solution} \fullfalse \end{solution}
+      \part No es cierto que haya empresas que beneficien a algunos políticos
+      \begin{solution} \fulltrue \end{solution}
+    \end{parts}
+
+  \question
+    Identifique las conectivas y las proposiciones involucradas en las
+    siguientes oraciones:
+    \begin{parts}
+      \part Safari es un navegador y viene instalado en macOS.
+      \begin{solution}
+        Proposiciones:
+        \begin{itemize}
+          \item Safari es un navegador.
+          \item Safari viene instalado en macOS.
+        \end{itemize}
+
+        Frase con conectivas:
+        \begin{itemize}
+          \item Safari es un navegador $\land$ Safari viene instalado en macOS.
+        \end{itemize}
+      \end{solution}
+
+      \part Safari es un navegador, y no es cierto que viene instalado en Windows.
+      \begin{solution}
+        Proposiciones:
+        \begin{itemize}
+          \item Safari es un navegador.
+          \item Safari viene instalado en Windows.
+        \end{itemize}
+
+        Frase con conectivas:
+        \begin{itemize}
+          \item Safari es un navegador $\land$ $\lnot$ Safari viene instalado en
+          macOS.
+        \end{itemize}
+      \end{solution}
+
+      \part Linux funciona en computadoras de escritorio, en dispositivos móviles
+      o en otros dispositivos
+      \begin{solution}
+        Proposiciones:
+        \begin{itemize}
+          \item Linux funciona en computadoras de escritorio
+          \item Linux funciona en dispositivos móviles
+          \item Linux funciona en otros dispositivos
+        \end{itemize}
+
+        Frase con conectivas:
+        \begin{itemize}
+          \item Linux funciona en computadoras de escritorio $\lor$
+          Linux funciona en dispositivos móviles $\lor$
+          Linux funciona en otros dispositivos
+        \end{itemize}
+      \end{solution}
+
+      \part GIMP no es ni un sistema operativo ni un navegador
+      \begin{solution}
+        Proposiciones:
+        \begin{itemize}
+          \item GIMP es un sistema operativo
+          \item GIMP es un navegador
+        \end{itemize}
+
+        Frase con conectivas:
+        \begin{itemize}
+          \item $\lnot$ GIMP es un sistema operativo $\land$ $\lnot$
+          GIMP es un navegador
+        \end{itemize}
+      \end{solution}
+
+      \part Manjaro es una distribución de Linux basada en Arch y viene con
+          el escritorio Gnome, el escritorio KDE u otros escritorio
+        \begin{solution}
+          Proposiciones:
+          \begin{itemize}
+            \item Manjaro es una distribución de Linux basada en Arch
+            \item Manjaro viene con el escritorio Gnome
+            \item Manjaro viene con el escritorio KDE
+            \item Manjaro viene con otros escritorios
+          \end{itemize}
+
+          Frase con conectivas:
+          \begin{itemize}
+            \item Manjaro es una distribución de Linux basada en Arch $\land$
+              (Manjaro viene con el escritorio Gnome $\lor$ Manjaro viene con el
+              escritorio KDE $\lor$ Manjaro viene con otros escritorios)
+          \end{itemize}
+        \end{solution}
+
+      \part No es cierto que Debian sea la distribución más vieja de Linux, pero
+        Slackware si lo es.
+        \begin{solution}
+          Proposiciones:
+          \begin{itemize}
+            \item Debian es la distribución más vieja de Linux
+            \item Slackware es la distribución más vieja de Linux
+          \end{itemize}
+
+          Frase con conectivas:
+          \begin{itemize}
+            \item $\lnot$ Debian es la distribución más vieja de Linux $\land$
+            Slackware es la distribución más vieja de Linux
+          \end{itemize}
+        \end{solution}
+      \end{parts}
+
+  \question
+    Dados los siguientes razonamientos, identifique los indicadores de premisa,
+    los indicadores de conclusión, y estructure el razonamiento en premisas y
+    conclusión.
+    \begin{parts}
+      \part Será Santino quien venga a la fiesta. Dado que a la fiesta
+      iba a venir o bien Guadalupe o bien Santino. Pero Guadalupe no va
+      a venir.
+      \begin{solution}
+        Indicador de premisa: ``Dado que''
+
+        Premisas:
+        \begin{itemize}
+          \item A la fiesta iba a venir o bien Guadalupe o bien Santino.
+          \item Guadalupe no va a venir.
+        \end{itemize}
+
+        Conclusión:
+        \begin{itemize}
+          \item Será Santino quien venga a la fiesta.
+        \end{itemize}
+      \end{solution}
+
+      \part Si hay bananas o hay manzanas, entonces hay fruta. No hay manzanas.
+        Pero hay fruta. Por lo tanto, hay bananas.
+        \begin{solution}
+          Indicador de conclusión: ``Por lo tanto''
+
+          Premisas:
+          \begin{itemize}
+            \item Si hay bananas o hay manzanas, entonces hay fruta.
+            \item No hay manzanas.
+            \item Hay fruta.
+          \end{itemize}
+
+          Conclusión:
+          \begin{itemize}
+            \item Hay bananas.
+          \end{itemize}
+        \end{solution}
+
+      \part La Tierra es plana o es redonda. Si la Tierra es redonda entonces no
+        nos caeremos por el borde. En cambio, si la Tierra es plana, si nos
+        caeremos por el borde. Pero la Tierra no es plana. En consecuencia, no nos
+        caeremos por el borde.
+        \begin{solution}
+          Indicador de conclusión: ``En consecuencia''
+
+          Premisas:
+          \begin{itemize}
+            \item La Tierra es plana o es redonda.
+            \item Si la Tierra es redonda entonces no nos caeremos por el borde.
+            \item Si la Tierra es plana, nos caeremos por el borde.
+            \item La Tierra no es plana.
+          \end{itemize}
+
+          Conclusión:
+          \begin{itemize}
+            \item No nos caeremos por el borde.
+          \end{itemize}
+        \end{solution}
+
+      \part El ascensor está en movimiento. Esto es así ya que si el ascensor no
+        abre sus puertas es porque o bien está en movimiento, o bien se está preparando
+        para moverse. Y la puerta está cerrada y el ascensor no se está preparando
+        para moverse.
+        \begin{solution}
+          Indicador de premisas: ``Esto es así ya que''
+
+          Premisas:
+          \begin{itemize}
+            \item Si el ascensor no abre sus puertas es porque o bien está en
+              movimiento, o bien se está preparando para moverse.
+            \item La puerta está cerrada y el ascensor no se está preparando para moverse.
+          \end{itemize}
+
+          Conclusión:
+          \begin{itemize}
+            \item El ascensor está en movimiento.
+          \end{itemize}
+        \end{solution}
+
+        \part Si la celda actual está pintada de rojo y la celda siguiente a la
+          derecha está pintada de negro, entonces el cabezal se moverá dos
+          lugares a la de derecha. El cabezal no se movió dos lugares a la
+          derecha. En consiguiente, o bien la celda actual no estaba pintada de
+          rojo, o bien la celda siguiente a la derecha no estaba pintada de
+          negro.
+          \begin{solution}
+            Indicador de conclusión: ``En consiguiente''
+
+            Premisas:
+            \begin{itemize}
+              \item Si la celda actual está pintada de rojo y la celda siguiente a
+                la derecha está pintada de negro, entonces el cabezal se moverá
+                dos lugares a la de derecha.
+              \item El cabezal no se movió dos lugares a la derecha.
+            \end{itemize}
+
+            Conclusión:
+            \begin{itemize}
+              \item O bien la celda actual no estaba pintada de rojo, o bien la
+                celda siguiente a la derecha no estaba pintada de negro.
+            \end{itemize}
+          \end{solution}
+
+        \part Los pasajeros no murieron. Por tanto, la U.S.S Enterprise
+          descendió con éxito en la superficie. Ya qué, si la U.S.S. Enterprise
+          no descendía con éxito en la superficie, entonces los pasajeros morirían.
+          \begin{solution}
+            Indicador de conclusión: ``Por tanto''\\
+            Indicador de premisa: ``Ya qué''
+
+            Premisas:
+            \begin{itemize}
+              \item Los pasajeros no murieron.
+              \item Si la U.S.S. Enterprise no descendía con éxito en la superficie,
+                entonces los pasajeros morirían.
+            \end{itemize}
+
+            Conclusión:
+            \begin{itemize}
+              \item La U.S.S Enterprise descendió con éxito en la superficie.
+            \end{itemize}
+          \end{solution}
+      \end{parts}
+
+    \question
+      Dadas las siguientes estructuras de razonamientos, analizar si los
+      mismos son válidos o inválidos.\footnote{Si le cuesta pensar en términos
+        de las proposiciones ``Se cumple P'', ``Se cumple Q'', ``Se cumple R'',
+        puede reemplazar las mismas por otras tres proposiciones que le resulten
+        más intuitivas.}
+
+      \newcommand\secump[1]{\text{Se cumple #1}}
+
+      \begin{parts}
+        \small
+        \part $\secump{P} \land \secump{Q} \lseq \secump{P}$
+        \begin{solution}
+          \centerline{\begin{tabular}{c c | c || c }
+            \hline
+            Concl. && Premisa 1 & implic. \\
+            $P$ & $Q$ & $P \land Q$ & $(P \land Q) \lthen P$\\
+            \hline
+            \true  & \true  & \true  & \true \\
+            \true  & \false & \false & \true \\
+            \false & \true  & \false & \true \\
+            \false & \false & \false & \true \\
+          \end{tabular}}
+          Válido
+        \end{solution}
+        \part $\secump{P} \lor \secump{Q}, \lnot \secump{Q} \lseq \lnot \secump{P}$
+        \begin{solution}
+          \footnotesize
+          \centerline{\begin{tabular}{c c | c | c | c | c || c}
+            && Premisa 1 & Premisa 2 & & Concl. & implic. \\
+            \hline
+            $P$ & $Q$ & $P \lor Q$ & $\lnot Q$ & $(P \lor Q) \land (\lnot Q)$
+              & $\lnot P$ & $((P \lor Q) \land (\lnot Q)) \lthen (\lnot P)$\\
+            \hline
+            \true  & \true  & \true  & \false & \false & \false & \true \\
+            \true  & \false & \true  & \true  & \true  & \false & \false \\
+            \false & \true  & \true  & \false & \false & \true  & \true \\
+            \false & \false & \false & \true  & \false & \true  & \true \\
+          \end{tabular}}
+          \normalsize Inválido
+        \end{solution}
+        \part $\secump{P} \lor \secump{Q}, \lnot \secump{Q} \lseq \secump{P}$
+        \begin{solution}
+          \centerline{\begin{tabular}{c c | c | c | c || c}
+            Concl. && Premisa 1 & Premisa 2 & & implic. \\
+            \hline
+            $P$ & $Q$ & $P \lor Q$ & $\lnot Q$ & $(P \lor Q) \land (\lnot Q)$
+              & $((P \lor Q) \land (\lnot Q)) \lthen (P)$\\
+            \hline
+            \true  & \true  & \true  & \false & \false & \true \\
+            \true  & \false & \true  & \true  & \true  & \true \\
+            \false & \true  & \true  & \false & \false & \true \\
+            \false & \false & \false & \true  & \false & \true \\
+          \end{tabular}}
+          Válido
+        \end{solution}
+        \part $\secump{P} \lthen \secump{Q}, \secump{P} \lseq \secump{Q}$
+        \begin{solution}
+          \centerline{\begin{tabular}{c c | c | c || c}
+            Premisa 2 & Concl. & Premisa 1 & & implic. \\
+            \hline
+            $P$ & $Q$ & $P \lthen Q$ & $(P \lthen Q) \land (P)$ & $((P \lthen Q) \land (P)) \lthen Q$  \\
+            \hline
+            \true  & \true  & \true  & \true  & \true  \\
+            \true  & \false & \false & \false & \true \\
+            \false & \true  & \true  & \false & \true  \\
+            \false & \false & \true  & \false & \true \\
+          \end{tabular}}
+          Válido
+        \end{solution}
+        \part $\lnot \secump{P} \lthen \secump{Q}, \lnot \secump{Q} \lseq \lnot \secump{P}$
+        \begin{solution}
+          \footnotesize
+            \centerline{\begin{tabular}{c c | c | c | c | c || c}
+            && Concl. & Premisa 1 & Premisa 2 & & implic.\\
+            \hline
+            $P$ & $Q$ & $\lnot P$ & $\lnot P \lthen Q$ & $\lnot Q$ &
+              $(\lnot P \lthen Q) \land (\lnot Q)$ & $((\lnot P \lthen Q) \land (\lnot Q)) \lthen \lnot P$\\
+            \hline
+            \true  & \true  & \false & \true  & \false & \false & \true \\
+            \true  & \false & \false & \true  & \true  & \true  & \true \\
+            \false & \true  & \true  & \true  & \false & \false & \true \\
+            \false & \false & \true  & \false & \true  & \false & \true \\
+          \end{tabular}}
+          \normalsize Inválido
+        \end{solution}
+        \part $\secump{P} \lthen \secump{Q}, \lnot \secump{Q} \lseq \lnot \secump{P}$
+        \begin{solution}
+          \footnotesize
+          \centerline{\begin{tabular}{c c | c | c | c | c || c}
+            && Concl. & Premisa 1 & Premisa 2 & & implic.\\
+            \hline
+            $P$ & $Q$ & $\lnot P$ & $P \lthen Q$ & $\lnot Q$ &
+              $(P \lthen Q) \land (\lnot Q)$ & $((P \lthen Q) \land (\lnot Q)) \lthen \lnot P$\\
+            \hline
+            \true  & \true  & \false & \true  & \false & \false & \true \\
+            \true  & \false & \false & \false & \true  & \false & \true \\
+            \false & \true  & \true  & \true  & \false & \false & \true \\
+            \false & \false & \true  & \true  & \true  & \true  & \true \\
+          \end{tabular}}
+          \normalsize Válido
+        \end{solution}
+        \part \footnotesize $(\secump{P} \lthen \secump{Q}), (\secump{Q} \lthen \secump{R}), \secump{P} \lseq \secump{R}$ \normalsize
+        \begin{solution}
+          \scriptsize
+            \centerline{\begin{tabular}{c c c | c | c | c || c}
+            Premisa 3 & Concl. & Premisa 1 & Premisa 2 & & & implic.\\
+            \hline
+            $P$ & $Q$ & $R$ & $P \lthen Q$ & $Q \lthen R$ & $A = (P \lthen Q) \land (Q \lthen R) \land (P)$ & $A \lthen R$\\
+            \hline
+            \true  & \true  & \true  & \true  & \true  & \true  & \true \\
+            \true  & \true  & \false & \true  & \false & \false & \true \\
+            \true  & \false & \true  & \false & \true  & \false & \true \\
+            \true  & \false & \false & \false & \true  & \false & \true \\
+            \false & \true  & \true  & \true  & \true  & \false & \true \\
+            \false & \true  & \false & \true  & \false & \false & \true \\
+            \false & \false & \true  & \true  & \true  & \false & \true \\
+            \false & \false & \false & \true  & \true  & \false & \true \\
+          \end{tabular}}
+          \normalsize Válido
+        \end{solution}
+        \part \footnotesize $(\secump{P}~\lor~\secump{Q}) \lthen \secump{R}, \secump{P} \land \lnot \secump{Q} \lseq \secump{R}$ \normalsize
+        \begin{solution}
+          \scriptsize
+          \centerline{\begin{tabular}{c c c c c | c | c | c || c}
+            && Concl. &&& Premisa 1 & Premisa 2 & & implic. \\
+            \hline
+            $P$ & $Q$ & $R$ & $\lnot Q$ & $P \lor Q$ & $A = (P \lor Q) \lthen R$ & $B = P \land \lnot Q$ & $A \land B$ & $(A \land B) \lthen R$\\
+            \hline
+            \true  & \true  & \true  & \false & \true  & \true  & \true  & \true  & \true \\
+            \true  & \true  & \false & \false & \true  & \false & \false & \false & \true \\
+            \true  & \false & \true  & \true  & \true  & \true  & \true  & \true  & \true \\
+            \true  & \false & \false & \true  & \true  & \false & \false & \false & \true \\
+            \false & \true  & \true  & \false & \true  & \true  & \false & \false & \true \\
+            \false & \true  & \false & \false & \true  & \false & \false & \false & \true \\
+            \false & \false & \true  & \true  & \false & \true  & \false & \false & \true \\
+            \false & \false & \false & \true  & \false & \true  & \false & \false & \true \\
+          \end{tabular}}
+          \normalsize Válido
+        \end{solution}
+      \end{parts}
+  \normalsize
+
+  \question
+    Analice los siguientes razonamientos y extrapole la fórmula lógica de cada
+    proposición. Luego, pruebe si el razonamiento es válido o inválido.
+    \begin{parts}
+      \part
+        Si hay bananas o hay manzanas entonces hay fruta. No hay manzanas.
+        Por tanto, no hay fruta.
+        \begin{solution}
+          p = Hay bananas\\
+          q = Hay manzanas\\
+
+          $p \lor q, \lnot q \lseq \lnot p$\\
+          % TODO Los pibes se maman en esto porque no les dan los resultados.
+          % Habría que agregar las tablas de verdad para cada uno para mostrar
+          % que es válido o inválido.
+          Es un razonamiento Inválido.
+        \end{solution}
+      \part 
+        Si se comienza a tratar el calentamiento global se podrá detener a tiempo.
+        Pero no se comienza a trata el calentamiento global. Por tanto, no se
+        podrá detener a tiempo.
+        \begin{solution}
+          p = Se comienza a tratar el calentamiento global\\
+          q = Se detendrá el calentamiento global a tiempo\\
+
+          $p \lthen q, \lnot p \lseq \lnot q$\\
+          % TODO Agregar tabla de verdad
+          Es un razonamiento Inválido.
+        \end{solution}
+      \part 
+        No es cierto que se deba detener el ascensor. Dado que, el ascensor
+        se debe detener solo si está frente a la puerta de un piso. Y no es
+        cierto que el ascensor esté frente a la puerta de un piso.
+        \begin{solution}
+          p = El ascensor está frente a la puerta de un piso\\
+          q = Se debe detener el ascensor\\
+
+          $p \liff q, \lnot p \lseq \lnot q$\\
+          % TODO Agregar tabla de verdad
+          Es un razonamiento Válido.
+        \end{solution}
+      \part
+        Se han movilizado tropas aliadas al norte. Por lo tanto, hay ejércitos
+        enemigos al norte. Ya qué si no hay ejércitos enemigos al norte entonces
+        no es necesario movilizar tropas aliadas en esa dirección.
+        \begin{solution}
+          p = Se han movilizado tropas aliadas al norte\\
+          q = Hay ejércitos enemigos al norte\\
+
+          $\lnot q \lthen \lnot p, p \lseq q$\\
+          % TODO Agregar tabla de verdad
+          Es un razonamiento Válido.
+        \end{solution}
+      \part
+        Si un software es libre, entonces tiene una licencia libre. Si un
+        software tiene licencia libre entonces garantiza las cuatro libertades
+        del software libre. Por lo tanto, si un software es libre, entonces
+        garantiza las cuatro libertades del software libre.
+        \begin{solution}
+          p = El software es libre\\
+          q = El software tiene una licencia libre\\
+          r = El software garantiza las cuatro libertades del software libre\\
+
+          $p \lthen q, q \lthen r \lseq p \lthen r$\\
+          % TODO Agregar tabla de verdad
+          Es un razonamiento Válido.
+        \end{solution}
+      \part
+        La teoría de cuerdas une la gravedad con la mecánica cuántica, por tanto,
+        es una teoría de como funciona nuestro universo. La teoría de cuerdas
+        requiere de diez dimensiones para funcionar. En consecuencia, nuestro
+        universo cuenta con diez dimensiones.
+        \begin{solution}
+          p = La teoría de cuerdas une la gravedad con la mecánica cuántica\\
+          q = La teoría de cuerdas es una teoría de como funciona nuestro universo\\
+          r = La teoría de cuerdas requiere de diez dimensiones para funcionar\\
+          s = Nuestro universo cuenta con diez dimensiones.
+
+          $p \lor q, r \lseq s$\\
+          % TODO Agregar tabla de verdad
+          Es un razonamiento Inválido.
+          
+          Se espera que no realicen la tabla de verdad llegado este punto, sino
+          que les resulte natural comprender que, si en la conclusión tengo algo
+          que no depende de las premisas, entonces es claramente un razonamiento
+          inválido.
+        \end{solution}
+      \part
+        Hay que verificar su existencia o hay que tener fe ciega en su existencia.
+        Es posible verificar su existencia solo si se cuenta con el equipo adecuado.
+        No se cuenta con el equipo adecuado. En consiguiente, hay que tener fe ciega
+        en su existencia.
+        \begin{solution}
+          p = Hay que verificar su existencia\\
+          q = Hay que tener fe ciega en su existencia\\
+          r = Se cuenta con el equipo adecuado\\
+
+          $p \lor q, p \liff r, \lnot r \lseq q$\\
+          % TODO Agregar tabla de verdad
+          Es un razonamiento Válido.
+        \end{solution}
+      \part 
+        Si y solo si se cuenta con suficiente dinero se podrá construir el
+        edificio. Si se ha vendido suficiente cantidad de mineral, entonces se
+        contará con suficiente dinero. Por ende, se puede construir el edificio. 
+        \begin{solution}
+          p = Se cuenta con suficiente dinero\\
+          q = Se podrá construir el edificio\\
+          r = Se ha vendido suficiente cantidad de mineral\\
+
+          $p \liff q, r \lthen p \lseq q$\\
+          % TODO Agregar tabla de verdad
+          Es un razonamiento Inválido.
+        \end{solution}
+    \end{parts}
+
+  \question
+    \begin{parts}
+      \part
+        ¿Será lo mismo la frase \colored{``Hay vida en Marte y hay vida en Ganimedes''}
+        a la frase \colored{``Hay vida en Ganimedes y hay vida en Marte''}?
+        \begin{solution}
+          Si, son lo mismo. Esto nos indica que la propiedad conmutativa vale en la
+          conjunción. Podemos probarlo mostrando que $(p \land q) \liff (q \land p)$
+          es una tautología.
+        \end{solution}
+      \part
+        ¿Será lo mismo la frase \colored{``Hay vida en Marte o hay vida en Ganimedes''}
+        a la frase \colored{``Hay vida en Ganimedes o hay vida en Marte''}?
+        \begin{solution}
+          Si, son lo mismo. Esto nos indica que la propiedad conmutativa vale en la
+          disyunción. Podemos probarlo mostrando que $(p \lor q) \liff (q \lor p)$
+          es una tautología.
+        \end{solution}
+      \part
+        ¿Será lo mismo la frase \colored{``Si hay vida en Marte entonces hay vida en Ganimedes''}
+        a la frase \colored{``Si hay vida en Ganimedes entonces hay vida en Marte''}?
+        \begin{solution}
+          En este caso no son lo mismo, por tanto, la conmutatividad no aplica.
+          Podemos ver que son claramente distintos probando $(p \lthen q) \liff (q \lthen p)$
+          y viendo que efectivamente no da una tautología.
+        \end{solution}
+      \part
+        ¿Será lo mismo la frase \colored{``No es cierto que no hay vida en Marte''}
+        a la frase \colored{``Hay vida en Marte''}?
+        \begin{solution}
+          Si, son lo mismo. Esto nos muestra que la doble negación es equivalente
+          a la frase sin negar. Lo probamos mediante $\lnot (\lnot p) \liff p$
+          y viendo que es una tautología.
+        \end{solution}
+      \part
+        ¿Será lo mismo la frase \colored{``No es cierto que, hay vida en Marte o hay vida en Ganimedes''}
+        a la frase \colored{``No hay vida en Marte y no hay vida en Ganimedes''}?
+        \begin{solution}
+          Si, son lo mismo. Esto nos muestra que negar una disyunción, es lo mismo
+          que negar ambas partes de la conjunción. Primer caso de De Morgan. Se
+          puede probar mediante $\lnot (p \lor q) \liff (\lnot p \land \lnot q)$
+          y viendo que es una tautología.
+        \end{solution}
+      \part
+        ¿Será lo mismo la frase \colored{``No es cierto que, hay vida en Marte o hay vida en Ganimedes''}
+        a la frase \colored{``No hay vida en Marte y no hay vida en Ganimedes''}?
+        \begin{solution}
+          Si, son lo mismo. Esto nos muestra que negar una disyunción, es lo mismo
+          que negar ambas partes de la conjunción. Primer caso de De Morgan. Se
+          puede probar mediante $\lnot (p \lor q) \liff (\lnot p \land \lnot q)$
+          y viendo que es una tautología.
+        \end{solution}
+      \part
+        ¿Será lo mismo la frase \colored{``No es cierto que, hay vida en Marte y hay vida en Ganimedes''}
+        a la frase \colored{``No hay vida en Marte o no hay vida en Ganimedes''}?
+        \begin{solution}
+          Si, son lo mismo. Esto nos muestra que negar una conjunción, es lo mismo
+          que negar ambas partes de la disyunción. Segundo caso de De Morgan. Se
+          puede probar mediante $\lnot (p \land q) \liff (\lnot p \lor \lnot q)$
+          y viendo que es una tautología.
+        \end{solution}
+    \end{parts}
+\end{questions}
+\end{document}

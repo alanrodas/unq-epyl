@@ -1,0 +1,893 @@
+
+\section{Valores de verdad (Booleanos).}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Valores de verdad}
+  Como ya vimos la clase pasada, la lógica nos va a permitir hacer preguntas
+  que se responden con si o no.
+  \jump
+  Otras acepciones de \colored{``si''} podrían ser \colored{``cierto''},
+  \colored{``afirmativo''} o \colored{``verdadero''}
+  \jump
+  Mientras tanto, para \colored{``no''} podrían ser \colored{``mentira''},
+  \colored{``negativo''} o \colored{``falso''}.
+  \jump
+  \bolder{Lo importante es que la respuesta es binaria, o una u otra, y no hay una
+  tercera posibilidad}.
+  \jump
+  Más aún, \bolder{las respuestas son dicotómicas}. Es decir, no es posible que una
+  respuesta sea ``si'' y ``no'' al mismo tiempo, y una es complementaria a la
+  otra.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Booleanos}
+  A este tipo de respuestas se las conoce como \bolder{valores de verdad}, pues
+  nos dicen si algo es verdadero o no. En general se resumen las respuestas
+  afirmativas como ``Verdadero'' y las negativas como ``Falso''.
+  \jump
+  También se les llama \bolder{booleanos}. Se llaman así en honor a George Boole, un matemático y lógico británico
+  quien estudió en profundidad las respuestas lógicas. Desarrolló un álgebra
+  basada en la lógica (álgebra de Boole), la cual marca los fundamentos de la
+  aritmética computacional moderna. Es considerado uno de los fundadores de las
+  ciencias de la computación.
+  \jump
+  \bolder{Un booleano entonces, puede tener dos valores, los cuales son
+  complementarios, ``Verdadero'' o ``Falso''}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Respuestas a preguntas lógicas}
+  Volvamos a las preguntas de nuestra verdulería mística. Las respuestas que nos
+  dará el verdulero son entonces, respuestas booleanas.
+  \jump
+  \bolder{Cualquier pregunta que hagamos en la lógica, tendrá una respuesta booleana}
+  \jump
+  Así, si retomamos las preguntas que hicimos, podemos asignarles como respuestas
+  ``\fulltrue'' (a aquellas que se respondieron con ``Si'') o ``\fullfalse'' (A
+  aquellas que se respondieron con ``No'')
+  \jump
+  A lo largo de las diapositivas vamos a utilizar \true como ``\fulltrue'' y
+  \false como ``\fullfalse''.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Preguntas usando la lógica.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Haciendo preguntas lógicas}
+  Volviendo al ejemplo de la verdulería, imaginemos que hacemos las siguientes
+  preguntas y obtenemos las respuestas que se muestran.
+  \jump
+  \begin{itemize}
+    \item ¿Hay bananas? \true
+    \item ¿Hay manzanas? \true
+    \item ¿Hay naranjas? \false
+    \item ¿Hay limones? \true
+  \end{itemize}
+  \jump
+  Ahora bien, volvamos a formular nuestras queridas preguntas
+  \colored{``¿Hay para una ensalada de frutas?''} y
+  \colored{``¿Hay para preparar un bizcochuelo?''}.
+  Recordemos, para que haya para una ensalada de frutas, necesitamos que hayan
+  bananas, manzanas y naranjas. Por su parte, para poder preparar un bizcochuelo
+  necesitamos que haya, o bien naranjas, o bien limones.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Haciendo preguntas lógicas - Cont}
+  Habíamos visto como:
+  \jump
+  \bolder{¿Hay para una ensalada de frutas? = ¿Hay bananas, naranjas y manzanas?}
+  \jump
+  La segunda pregunta, por la redacción que le damos en español por cuestiones
+  de forma y estilo.
+  \jump
+  En realidad, se están preguntando tres cosas distintas en una sola pregunta:
+  \begin{enumerate}
+    \item El hecho de haber bananas
+    \item El hecho de haber naranjas
+    \item El hecho de haber manzanas
+  \end{enumerate}
+  \jump
+  Por eso vamos a optar y preferir una redacción más redundante y que no suena
+  necesariamente bien en español, pero que deja claro cuales son las partes que
+  componen a nuestra pregunta.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Haciendo preguntas lógicas - Cont}
+  Así vamos a decir que \colored{``¿Hay para una ensalada de frutas?''} es lo
+  mismo que preguntar \colored{``¿hay bananas? y ¿hay naranjas y ¿hay manzanas?''}
+  \jump
+  De forma similar, y como ya habíamos visto, la pregunta
+  \colored{``¿Hay para preparar un bizcochuelo?''}, sería lo mismo que preguntar
+  \colored{``¿hay naranjas o  limones?''}, lo cual con nuestro esquema de
+  redacción es equivalente a \colored{``¿hay naranjas? o ¿hay limones?''}
+  \jump
+  Analicemos un poco cuales serán las respuestas a estas preguntas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Respuestas a preguntas compuestas}
+  La respuesta a \colored{``¿Hay para una ensalada de frutas?''} debería ser
+  \fullfalse, pues carecemos de uno de los ingredientes claves para poder hacer
+  la ensalada, las naranjas, a pesar de que tengamos los otros dos ingredientes,
+  las manzanas y las bananas.
+  \jump
+  La respuesta a \colored{``¿Hay para preparar un bizcochuelo?''} debería ser
+  \fulltrue, pues a pesar de que no tenemos naranjas, podríamos usar limones.
+  \jump
+  Veamos un último ejemplo:
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Haciendo preguntas lógicas 2}
+  A Ana le encanta lo que cocina su madre, quien le ha preparado un bizcochuelo.
+  Sin embargo, lo que más le gusta a Ana es la ensalada de fruta. Por tanto, le
+  ha pedido a su madre que solo le prepare bizcochuelo si le es imposible prepararle
+  ensalada de frutas.
+  \jump
+  Ana, desconfiando de su madre, recurre al verdulero para preguntarle acerca
+  de las frutas disponibles y ver que a su madre le haya sido imposible prepararle
+  la ensalada de frutas que ella tanto desea.
+  \jump
+  Así, Ana no desea preguntar \colored{``¿Hay para una ensalada de frutas?''},
+  sino más bien, lo opuesto, \colored{``¿Es cierto que no hay para una ensalada de frutas?''}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Haciendo preguntas lógicas 2 - Cont}
+  Pero, pensemos que significa en términos de lo que conocemos
+  \colored{``¿Es cierto que no hay para una ensalada de frutas?''}
+  \jump
+  Para que no haya para ensalada, tendría que haber faltante de alguna de las
+  frutas que requerimos. Es decir algunas de las siguientes tres preguntas,
+  tendría que ser verdadera.
+  \begin{itemize}
+    \item \colored{¿Es cierto que no hay bananas?}
+    \item \colored{¿Es cierto que no hay manzanas?}
+    \item \colored{¿Es cierto que no hay naranjas?}
+  \end{itemize}
+  \jump
+  Pero, ¿Sabemos las respuestas a esas preguntas?
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Haciendo preguntas lógicas 2 - Cont}
+  Si lo pensamos, \colored{``¿Es cierto que no hay naranjas?''} solo
+  puede ser \fulltrue cuando la respuesta a \colored{``¿hay naranjas?''}
+  es \fullfalse.
+  \jump
+  De haber naranjas, es decir, la respuesta a \colored{``¿hay naranjas?''} es
+  \fulltrue, entonces la respuesta a \colored{``¿Es cierto que no hay naranjas?''}
+  será claramente \fullfalse.
+  \jump
+  Es decir, las preguntas \colored{``¿hay naranjas?''} y
+  \colored{``¿Es cierto que no hay naranjas?''} son preguntas complementarias.
+  El valor de una, depende de la otra, y son contrarios.
+  \jump
+  No hay forma de que el valor de ambas sean \fulltrue al mismo tiempo, o
+  \fullfalse al mismo tiempo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Haciendo preguntas más complejas}
+  Qué pasa si queremos hacer un bizcochuelo de banana. Sencillo, necesitamos
+  poder hacer un bizcochuelo, pero además agregarle bananas. Pensemos entonces
+  en la pregunta:
+  \jump
+  \colored{¿Hay para preparar un bizcochuelo de banana?}
+  \jump
+  ¿A qué sería equivalente dicha pregunta? Bien, sabemos que primero debemos
+  saber si es posible hacer un bizcochuelo, por lo que la respuesta a
+  la pregunta \colored{``¿Hay para preparar un bizcochuelo?''} debería ser
+  \fulltrue. También tiene que haber bananas, por lo que la respuesta a la
+  pregunta \colored{``¿Hay bananas?''} también debería ser \fulltrue.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Haciendo preguntas más complejas}
+  Podemos entonces encontrar que la conectiva que debe unir dichas dos preguntas
+  es ``y'', ya que ambas partes deben cumplirse. Así, encontramos la equivalencia
+  \jump
+  \centerline{\colored{¿Hay para preparar un bizcochuelo de banana?}}
+  \centerline{\colored{=}}
+  \centerline{\colored{¿Hay para preparar un bizcochuelo? y ¿Hay bananas?}}
+  \jump
+  Ya definimos previamente que significa que haya para preparar un bizcochuelo
+  en términos de preguntas más simples. Por tanto, no nos hace falta definirlo
+  nuevamente.
+  \jump
+  La gracia de esta parte de la lógica va a radicar precisamente en qué
+  \colored{si ya definimos una pregunta en terminos de preguntas básicas,
+  podemos reutilizar ahora esta pregunta como si fuera una pregunta básica}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Haciendo preguntas más complejas}
+  Esto último es vital para un programador.
+  \jump
+  Lo que queremos es poder definir preguntas en torno a otras preguntas, las
+  cuales, pueden a su vez estar en torno a otras preguntas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Formalismos lógicos}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lo que importa es la forma}
+  Volvamos al ejemplo de la ensalada de frutas. La respuesta a
+  \colored{``¿hay bananas? y ¿hay naranjas? y ¿hay manzanas?''} será \fulltrue
+  solo cuando las respuestas individuales de \colored{``¿hay bananas?''},
+  \colored{``¿hay naranjas?''} y \colored{``¿hay manzanas?''} son todas \fulltrue.
+  \jump
+  Supongamos ahora que en lugar de una verdulería estamos en un supermercado,
+  y queremos saber si tenemos los elementos necesarios para una fiesta infantil
+  (chizitos, papitas y palitos).
+  \jump
+  Así podríamos desarrollar la pregunta \colored{``¿hay elementos para fiesta infantil?''}
+  como un análogo a la pregunta \colored{``¿hay chizitos? y ¿hay papitas? y ¿hay palitos?''}.
+  \jump
+  La respuesta a dicha pregunta será \fulltrue cuando las respuestas a las partes
+  individuales (\colored{¿hay chizitos?}, \colored{¿hay papitas?} y
+  \colored{¿hay palitos?}) sean todas \fulltrue.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lo que importa es la forma}
+  Podríamos decir que las preguntas \colored{``¿hay bananas? y ¿hay naranjas? y ¿hay manzanas?''}
+  y \colored{``¿hay chizitos? y ¿hay papitas? y ¿hay palitos?''} ambas tienen la misma
+  \bolder{forma}.
+  \jump
+  Para la lógica es indistinto si estamos en la verdulería o en el supermercado,
+  pues lo que nos va a dar son herramientas para trabajar con la forma de las
+  preguntas, y no con su contenido.
+  \jump
+  \bolder{Por este motivo decímos que la lógica es una ciencia formal. Porque
+  estudia las formas.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lo que importa es la forma}
+  Así, preguntas compuestas distintas que tengan la misma forma, tendrán
+  respuestas que dependen de sus partes más sencilla de la misma forma
+  (En el ejemplo anterior, todas las partes deben ser \fulltrue).
+  \jump
+  Así, un formalismo lógico nos va a decir como deben ser las formas y que
+  reglas valen dentro de ellas, sin hablarnos nunca acerca del contenido de
+  lo que estamos preguntando.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Conectivas.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conectivas}
+  Como vimos, al armar preguntas a partir de otras más simples, debemos unirlas
+  con alguna palabra. Vimos dos: ``y'' y ``o''.
+  \jump
+  Pero, ¿cuando usamos una y cuando la otra? Y más importante, ¿Por qué?
+  \jump
+  Para ello, los formalismos lógicos definen el concepto de \bolder{conectiva},
+  también llamado \bolder{conector lógico}. Una conectiva es una palabra que,
+  de alguna forma, va a unir dos preguntas, o va a modificar la pregunta
+  original de alguna forma.
+  \jump
+  Veremos entonces las distintas conectivas desde un punto intuitivo primero,
+  para luego ver como los formalismos lógicos trabajan con dichas conectivas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conjunción}
+  La \bolder{conjunción} es el nombre formal que recibe unir preguntas con un
+  \colored{``y''}.
+  \jump
+  \bolder{Cuando unimos preguntas con un ``y'' es porque esperamos que las
+  preguntas sencillas que unimos tengan todas \fulltrue como respuesta para
+  que la respuesta a la pregunta compuesta sea \fulltrue.}
+  \jump
+  Un ejemplo es el de la ensalada de frutas. La respuesta a
+  \colored{``¿hay bananas? y ¿hay naranjas? y ¿hay manzanas?''} será \fulltrue
+  solo cuando las respuestas individuales de \colored{``¿hay bananas?''},
+  \colored{``¿hay naranjas?''} y \colored{``¿hay manzanas?''} son todas \fulltrue.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conjunción}
+  Imaginemos dos preguntas cualquiera, llamémoslas ``$p$'' y ``$q$'' (`$a$'' y ``$b$''
+  es indistinto).
+  \jump
+  Lo que nos dicen los formalismos lógicos acerca de la conjunción, es que si
+  elaboramos una pregunta compuesta a partir de ``$p$'' y ``$q$'' uniendo ambas
+  preguntas con ``y'', entonces, la respuesta a esa pregunta compuesta será
+  \fulltrue solo cuando las respuestas a ``$p$'' y a ``$q$'' son \fulltrue.
+  En cualquier otro caso, la respuesta a la pregunta compuesta será \fullfalse.
+  \jump
+  Eso queda expresado en la siguiente tabla:
+  \jump
+  \centerline{\begin{tabular}{c c | c}
+    $p$ & $q$ & $p$ ``y'' $q$ \\
+    \hline
+    \true & \true & \true \\
+    \true & \false & \false \\
+    \false & \true & \false \\
+    \false & \false & \false \\
+  \end{tabular}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conjunción}
+  ¿Esto significa que solo podemos unir dos preguntas más chicas?
+  \jump
+  Bueno, si y no. Lo que nos dice es que si queremos unir más términos, en
+  realidad tendremos que asociar en partes.
+  \jump
+  Por ejemplo, si se quiere una pregunta que sea \colored{$p$ ``y'' $q$ ``y'' $r$}
+  entonces lo que se debe hacer son dos preguntas \colored{$p$ ``y'' $q$} por
+  un lado, y luego una pregunta que involucre esta última con $r$:
+  \colored{($(p$ ``y'' $q)$ ``y'' $r$}
+  \jump
+  El concepto es idéntico a lo que hacemos en matemática con la suma o la
+  multiplicación, las cuales están definidas para dos elementos, pero eso no
+  implica que no podamos escribir ``$3+5+7$''.
+  \jump
+  Dentro de un momento veremos bien que significa ``resolver'' en
+  términos lógicos.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Disyunción}
+  Otra de las formas de unir las preguntas es mediante un ``o'', lo que se
+  conoce como \bolder{disyunción}.
+  \jump
+  La disyunción nos dice que para que una pregunta compuesta sea \fulltrue basta
+  con que alguna de las preguntas más sencillas que las componen sea \fulltrue.
+  \jump
+  Tal es el ejemplo del bizcochuelo. Si hay naranjas y limones, podemos elegir
+  cualquiera de los dos para hacer el bizcochuelo, si solo hay naranjas,
+  utilizaremos naranjas, y si solo hay limones, usaremos limones. Solo en el caso
+  en que no haya ni naranjas ni limones nos será imposible preparar el bizcochuelo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Disyunción}
+  Volvamos a suponer dos preguntas cualquiera ``$p$'' y ``$q$''.
+  \jump
+  Lo que nos dicen los formalismos lógicos acerca de la disyunción, es que si
+  elaboramos una pregunta compuesta a partir de ``$p$'' y ``$q$'' uniendo ambas
+  preguntas con ``o'', entonces, la respuesta a esa pregunta compuesta será
+  \fulltrue cuando la respuestas a ``$p$'' sea y a ``$q$'' sean ambas \fulltrue,
+  o cuando la respuesta a ``$p$'' sea \fulltrue y a ``$q$'' sea \fullfalse, o
+  cuando a ``$p$'' sea \fullfalse y a ``$q$'' sea \fulltrue.
+  En el caso, en que tanto ``$p$'' como ``$q$'' sean \fullfalse la respuesta a
+  la pregunta compuesta será \fullfalse.
+  \jump
+  Esto se expresa en la siguiente tabla:
+  \jump
+  \centerline{\begin{tabular}{c c | c}
+    $p$ & $q$ & $p$ ``o'' $q$ \\
+    \hline
+    \true & \true & \true \\
+    \true & \false & \true \\
+    \false & \true & \true \\
+    \false & \false & \false \\
+  \end{tabular}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Negación}
+  La \bolder{negación} es la única conectiva que trabaja sobre solo una
+  pregunta.
+  \jump
+  Usamos la negación cuando queremos que una pregunta sea \fulltrue, cuando
+  la pregunta original sobre la que actúa sea \fullfalse. Es decir, cuando
+  queremos el complemento de la pregunta original.
+  \jump
+  Tal es el caso de la pregunta \colored{``¿Es cierto que no hay naranjas?''}.
+  En esa pregunta lo que nos interesa preguntar es por el complemento de 
+  \colored{``¿hay naranjas?''}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Negación}
+  Así, si suponemos una pregunta cualquiera ``$p$'', vamos a decir que
+  la conectiva de negación aplicada a esa pregunta (``no'' $p$), va a darnos el
+  complemento de $p$.
+  \jump
+  Es decir, si ``$p$'' es \fulltrue, entonces ``no $p$'' será \fullfalse. En
+  cambio si ``$p$'' es \fullfalse, entonces ``no $p$'' será \fulltrue.
+  \jump
+  Esto está dado por el siguiente cuadro:
+  \jump
+  \centerline{\begin{tabular}{c | c}
+    $p$ & ``no'' $p$ \\
+    \hline
+    \true & \false \\
+    \false & \true
+  \end{tabular}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conectivas}
+  Cada conectiva está formalizada con un símbolo (Así como la suma está
+  formalizada con el signo ``+'')
+  \jump
+  Así, a la conjunción se le asigna el signo $\land$, a la disyunción el signo
+  $\lor$ y a la negación el signo $\lnot$.
+  \jump
+  Para resumir entonces, vimos tres conectivas, con las siguientes tablas:
+  \jump
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+      \centerline{\bolder{Conjunción}}
+      \centerline{\begin{tabular}{c c | c}
+        $p$ & $q$ & $p \land q$ \\
+        \hline
+        \true & \true & \true \\
+        \true & \false & \false \\
+        \false & \true & \false \\
+        \false & \false & \false \\
+      \end{tabular}}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \centerline{\bolder{Disyunción}}
+      \centerline{\begin{tabular}{c c | c}
+        $p$ & $q$ & $p \lor q$ \\
+        \hline
+        \true & \true & \true \\
+        \true & \false & \true \\
+        \false & \true & \true \\
+        \false & \false & \false \\
+      \end{tabular}}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \centerline{\bolder{Negación}}
+      \centerline{\begin{tabular}{c | c}
+        $p$ & ``no'' $p$ \\
+        \hline
+        \true & \false \\
+        \false & \true
+      \end{tabular}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Tablas de Verdad.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{¿Cuando algo es verdadero?}
+  Pensemos un momento. ¿Como sabemos cuando una pregunta compuesta es
+  \fulltrue y cuando es \fullfalse?
+  \jump
+  La realidad es que hasta el momento solamente lo sabemos de forma intuitiva,
+  y esto es sencillo con preguntas que tienen pocas conectivas y pocas partes,
+  pero puede volverse muy complejo muy rápidamente.
+  \jump
+  Pensemos por ejemplo en una persona que va a la verdulería para saber si
+  puede preparar alguno de varios platillos. Para ello elabora la siguiente
+  pregunta compuesta:
+  \jump
+  \colored{¿hay papas? y ¿hay batatas?, o ¿hay papas? y ¿hay zanahorias?, o
+  ¿es cierto que no hay papas? y ¿hay puerro?}
+  \jump
+  La pregunta en si es bastante ambigua, pero saber cuando es verdadero o falso
+  es bastante complejo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{¿Cuando algo es verdadero?}
+  Por suerte la lógica nos da una forma bastante eficaz de saber cuando
+  una pregunta compuesta es \fulltrue y cuando es \fullfalse.
+  \jump
+  El método se conoce como \bolder{ánalisis mediante tabla de verdad}, y consiste
+  en elaborar una tabla a partir de las preguntas más básicas. Así, se puede
+  obtener que valores deben tener las mismas para que la pregunta compuesta
+  sea \fulltrue.
+  \jump
+  Así como en matemática una cuenta compleja se resuelve paso a paso solucionando
+  cada una de las operaciones en un orden determinado, en las tablas de verdad
+  la resolución se realiza paso a paso, y estará dada por las tablas de las
+  conectivas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo}
+  Intentemos entonces elaborar una tabla de verdad para el ejemplo que vimos:
+  \colored{¿hay papas? y ¿hay batatas?, o ¿hay papas? y ¿hay zanahorias?, o
+  ¿es cierto que no hay papas? y ¿hay puerro?}.
+  \jump
+  El primer paso consiste en encontrar las preguntas sencillas que componen esa
+  pregunta compuesta.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo}
+  Intentemos entonces elaborar una tabla de verdad para el ejemplo que vimos:
+  \colored{¿hay papas? y ¿hay batatas?, o ¿hay papas? y ¿hay zanahorias?, o
+  ¿es cierto que no hay papas? y ¿hay batatas?}.
+  \jump
+  El primer paso consiste en encontrar las preguntas sencillas que componen esa
+  pregunta compuesta. Tenemos:
+  \begin{itemize}
+    \item ¿hay papas?
+    \item ¿hay batatas?
+    \item ¿hay zanahoria?
+  \end{itemize}
+  \jump
+  Note que ``¿es cierto que no hay papas?'' es una pregunta que se resuelve
+  sabiendo ``¿hay papas?'', pues es su complemento.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo Cont}
+  Una vez que tenemos esas preguntas, nos será necesario formalizar la
+  pregunta en términos de nuestras conectivas de forma clara. Es decir,
+  colocando paréntesis para separar claramente las cosas, y replanteando
+  algunas preguntas en términos de complementos.
+  \jump
+  Nos quedaría de la siguiente forma:
+  \jump
+  \colored{(¿hay papas? $\land$ ¿hay batatas?) $\lor$ (¿hay papas? $\land$ ¿hay zanahorias?) $\lor$
+  (($\lnot$ ¿hay papas?) $\land$ ¿hay batatas?)}.
+  \jump
+  Ahora si podremos armar la tabla.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo Cont}
+  Comenzamos por colocar una columna por cada pregunta que tenemos que contestar.
+  \jump
+  \begin{tabular}{c  c  c}
+    ¿hay papas? & ¿hay batatas? & ¿hay zanahorias? \\
+    \hline
+  \end{tabular}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo Cont}
+  Cada una de esas preguntas se responde, o bien con \fulltrue o bien con \fullfalse.
+  A su vez, puede darse que haya papas y batatas, pero no zanahorias. O que haya
+  papas, pero no haya batatas ni zanahorias. A priori no sabemos como nos
+  responderá el verdulero, y por eso tenemos que analizar todos los posibles casos.
+  \jump
+  Para cada caso, completamos con una nueva fila, colocando los valores de las
+  respuestas a cada una de las preguntas que tendrían en dicho caso.
+  \jump
+  En la primer fila se muestra el caso de que todas las respuestas sean \fulltrue,
+  y en la segunda, el caso en donde solo falta zanahoria.
+  \jump
+  \centerline{\begin{tabular}{c  c  c}
+    ¿hay papas? & ¿hay batatas? & ¿hay zanahorias? \\
+    \hline
+    \fulltrue & \fulltrue & \fulltrue \\
+    \fulltrue & \fulltrue & \fullfalse
+  \end{tabular}
+  }
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo Cont}
+  Completamos con los casos restantes.
+  \jump
+  La cantidad de casos es $2^n$ donde $n$ es la cantidad de preguntas sencillas
+  a responder por el verdulero. En este caso son 3, y por tanto habrá $2^3 = 8$
+  posibles casos.
+  \jump
+  \centerline{\begin{tabular}{c  c  c}
+    ¿hay papas? & ¿hay batatas? & ¿hay zanahorias? \\
+    \hline
+    \fulltrue & \fulltrue & \fulltrue \\
+    \fulltrue & \fulltrue & \fullfalse \\
+    \fulltrue & \fullfalse & \fulltrue \\
+    \fulltrue & \fullfalse & \fullfalse \\
+    \fullfalse & \fulltrue & \fulltrue \\
+    \fullfalse & \fulltrue & \fullfalse \\
+    \fullfalse & \fullfalse & \fulltrue \\
+    \fullfalse & \fullfalse & \fullfalse
+  \end{tabular}
+  }
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo Cont}
+  Ahora empezamos a agregar columnas para cada una de las preguntas compuestas
+  a resolver. En el primer paréntesis por ejemplo, debemos responder
+  ``(¿hay papas? $\land$ ¿hay batatas?)''.
+  \jump
+  A su vez, completamos las distintas
+  filas teniendo en cuenta las respuestas que toman cada una de los componentes de
+  esa pregunta en dicha fila y la conectiva utilizada.
+  \jump
+  Así, la primera y segunda fila se completarán con \fulltrue, pues hay tanto
+  papas como batatas, pero esto no ocurrirá en ninguna otra fila, por lo que el
+  resto lo completaremos con \fullfalse. Esto es lo que dice la tabla de la
+  conjunción.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo Cont}
+  \Tiny{
+  \centerline{\begin{tabular}{c  c  c | c }
+    ¿hay papas? & ¿hay batatas? & ¿hay zanahorias? & ¿hay papas? $\land$ ¿hay batatas?)\\
+    \hline
+    \fulltrue & \fulltrue & \fulltrue & \fulltrue \\
+    \fulltrue & \fulltrue & \fullfalse & \fulltrue \\
+    \fulltrue & \fullfalse & \fulltrue & \fullfalse \\
+    \fulltrue & \fullfalse & \fullfalse & \fullfalse \\
+    \fullfalse & \fulltrue & \fulltrue & \fullfalse \\
+    \fullfalse & \fulltrue & \fullfalse & \fullfalse \\
+    \fullfalse & \fullfalse & \fulltrue & \fullfalse \\
+    \fullfalse & \fullfalse & \fullfalse & \fullfalse \\
+  \end{tabular}
+  }}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo Cont}
+  Seguimos el proceso para cada paréntesis. En este punto vemos que vamos a obtener
+  una tabla bastante grande, por lo que es conveniente simplificar la tabla.
+  \jump
+  Llamaremos ``$p$'' a ``¿hay papas?'', ``$b$'' a ``¿hay batatas?'' y ``$z$'' a
+  ``¿hay zanahoria?'' para que ocupen menos lugar. Completamos luego con los
+  paréntesis que siguen.
+  \jump
+  \centerline{\begin{tabular}{c  c  c | c | c | c}
+    $p$ & $b$ & $z$ & $p \land b$ & $p \land z$ & $\lnot p$\\
+    \hline
+    \true  & \true  & \true  & \true  & \true  & \false \\
+    \true  & \true  & \false & \true  & \false & \false \\
+    \true  & \false & \true  & \false & \true  & \false \\
+    \true  & \false & \false & \false & \false & \false \\
+    \false & \true  & \true  & \false & \false & \true \\
+    \false & \true  & \false & \false & \false & \true \\
+    \false & \false & \true  & \false & \false & \true \\
+    \false & \false & \false & \false & \false & \true \\
+  \end{tabular}
+  }
+\end{frame}
+
+\begin{frame}{Tabla de verdad - Ejemplo Cont}
+  En este punto ya tenemos que agregar columnas que usan los valores de las
+  columnas que calculamos anteriormente para resolverse, como es el caso de 
+  ``($\lnot$ ¿hay papas?) $\land$ ¿hay batatas?''. El proceso es idéntico,
+  solo que realizamos la tabla mirando la columna de ``$\lnot p$'' y la de
+  ``$b$''.
+  \jump
+  \centerline{\begin{tabular}{c  c  c | c | c | c | c | c }
+    $p$ & $b$ & $z$ & $p \land b$ & $p \land z$ & $\lnot p$ & $(\lnot p) \land b $\\
+    \hline
+    \true  & \true  & \true  & \true  & \true  & \false & \false \\
+    \true  & \true  & \false & \true  & \false & \false & \false \\
+    \true  & \false & \true  & \false & \true  & \false & \false \\
+    \true  & \false & \false & \false & \false & \false & \false \\
+    \false & \true  & \true  & \false & \false & \true  & \true \\
+    \false & \true  & \false & \false & \false & \true  & \true \\
+    \false & \false & \true  & \false & \false & \true  & \false \\
+    \false & \false & \false & \false & \false & \true  & \false \\
+  \end{tabular}
+  }
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo Cont}
+  Por ultimo resolvemos las disyunciones por partes, de derecha a izquierda, pues
+  no hay paréntesis para desambiguar allí. Siempre usando la columna de los
+  resultados que fuimos obteniendo y completando según las tablas de las
+  conectivas.
+  \jump
+  \Tiny{
+  \centerline{\begin{tabular}{c  c  c | c | c | c | c | c || c }
+    $p$ & $b$ & $z$ & $p \land b$ & $p \land z$ & $\lnot p$ & $(\lnot p) \land b $ & $(p \land b) \lor (p \land z)$ &  $((p \land b) \lor (p \land z)) \lor ((\lnot p) \land b)$\\
+    \hline
+    \true  & \true  & \true  & \true  & \true  & \false & \false & \true  & \true  \\
+    \true  & \true  & \false & \true  & \false & \false & \false & \true  & \true  \\
+    \true  & \false & \true  & \false & \true  & \false & \false & \true  & \true  \\
+    \true  & \false & \false & \false & \false & \false & \false & \false & \false \\
+    \false & \true  & \true  & \false & \false & \true  & \true  & \false & \true  \\
+    \false & \true  & \false & \false & \false & \true  & \true  & \false & \true  \\
+    \false & \false & \true  & \false & \false & \true  & \false & \false & \false \\
+    \false & \false & \false & \false & \false & \true  & \false & \false & \false \\
+  \end{tabular}
+  }}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tabla de verdad - Ejemplo Cont}
+  Una vez que tenemos la tabla completa, podemos descartar los resultados
+  intermedios, pues no los utilizaremos.
+  \jump
+  \centerline{\begin{tabular}{c  c  c || c }
+    $p$ & $b$ & $z$ & $(p \land b) \lor (p \land z) \lor ((\lnot p) \land b)$\\
+    \hline
+    \true  & \true  & \true  & \true  \\
+    \true  & \true  & \false & \true  \\
+    \true  & \false & \true  & \true  \\
+    \true  & \false & \false & \false \\
+    \false & \true  & \true  & \true  \\
+    \false & \true  & \false & \true  \\
+    \false & \false & \true  & \false \\
+    \false & \false & \false & \false \\
+  \end{tabular}
+  }
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Analizando el resultado de una tabla de verdad}
+  Si miramos las filas resultantes de una tabla de verdad, podremos ver en que
+  casos la respuesta será \fulltrue de forma un poco más sencilla.
+  \jump
+  Por ejemplo, podemos apreciar que basta con que haya papas y alguna otra
+  verdura (batatas o zanahorias) o que haya batatas y no papas, independientemente
+  de si hay zanahorias o no.
+  \jump
+  No solo nos permite entender mejor los casos de verdad y de falsedad de la
+  pregunta, sino que nos va a permitir comprender mejor la naturaleza de la
+  misma, y por tanto formular nuevas preguntas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Valuaciones.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Valuaciones}
+  Una \bolder{valuación} consiste en la asignación de valores de verdad a cada
+  una de las preguntas. Al hacer esto estamos indicando que el universo es de
+  una manera particular (estamos imaginando la forma en la que nos respondería
+  el verdulero)
+  \jump
+  No siempre podemos saber como es el universo, pero podemos analizar todas las
+  posibles valuaciones y encontrar cosas interesantes.
+  \jump
+  Cada fila de una tabla de verdad se corresponde con una valuación.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tautologías}
+  Imaginemos la siguiente pregunta compuesta:
+  \jump
+  \colored{¿hay naranjas? o ¿es cierto que no hay naranjas?}
+  \jump
+  La forma lógica de esta pregunta es:
+  \jump
+  \colored{¿hay naranjas? $\lor$ $\lnot$ ¿hay naranjas?}
+  \jump
+  Analicemos las posibles valuaciones para dicha fórmula.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tautologías}
+  Solo hay una pregunta, \colored{``¿hay naranjas?''}. Esa pregunta puede
+  tener dos posibles respuestas, \fulltrue o \fullfalse.
+  \jump
+  Veamos mediante la tabla de verdad, que pasa con la pregunta compuesta en
+  cada caso:
+  \jump
+  \centerline{
+    \begin{tabular}{c | c || c}
+      ¿hay naranjas? & $\lnot$ ¿hay naranjas? & ¿hay naranjas? $\lor$ $\lnot$ ¿hay naranjas? \\
+      \hline
+      \fulltrue & \fullfalse & \fulltrue \\
+      \fullfalse & \fulltrue & \fulltrue \\
+    \end{tabular}
+  }
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tautologías}
+  \bolder{Decimos que una pregunta es una tautología, si todas las valuaciones
+  posibles dan siempre \fulltrue}.
+  \jump
+  Note que una pregunta simple, nunca es una tautología, pues puede ser
+  respondida tanto con \fulltrue como con \fullfalse.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Contradicciones}
+  Imaginemos ahora la siguiente pregunta compuesta:
+  \jump
+  \colored{¿hay naranjas? y ¿es cierto que no hay naranjas?}
+  \jump
+  La forma lógica de esta pregunta es:
+  \jump
+  \colored{¿hay naranjas? $\land$ $\lnot$ ¿hay naranjas?}
+  \jump
+  Analicemos las posibles valuaciones para dicha fórmula.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Contradicciones}
+  Nuevamente, solo hay una pregunta, \colored{``¿hay naranjas?''}. Esa pregunta
+  puede tener dos posibles respuestas, \fulltrue o \fullfalse.
+  \jump
+  Veamos mediante la tabla de verdad, que pasa con la pregunta compuesta en
+  cada caso:
+  \jump
+  \centerline{
+    \begin{tabular}{c | c || c}
+      ¿hay naranjas? & $\lnot$ ¿hay naranjas? & ¿hay naranjas? $\land$ $\lnot$ ¿hay naranjas? \\
+      \hline
+      \fulltrue & \fullfalse & \fullfalse \\
+      \fullfalse & \fulltrue & \fullfalse \\
+    \end{tabular}
+  }
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Contradicciones}
+  \bolder{Decimos que una pregunta es una contradicción, si todas las valuaciones
+  posibles dan siempre \fullfalse}.
+  \jump
+  Nuevamente, note que una pregunta simple, nunca es una contradicción, pues
+  puede ser respondida tanto con \fulltrue como con \fullfalse.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Contingencias}
+  \bolder{Decimos que una pregunta es una contingencia, si algunas de las
+  valuaciones posibles dan \fulltrue y otras dan \fullfalse}.
+\end{frame}

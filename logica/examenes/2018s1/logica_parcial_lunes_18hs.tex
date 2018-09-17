@@ -1,0 +1,228 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = es_AR
+%% Add the word "answers" to document class parameters in order to print the solutions.
+\documentclass[10pt, addpoints]{../../../common/epyl_exam_template}
+
+\title{Primer Parcial - Lógica}
+\date{2018.1}
+\professor{Alan Rodas Bonjour}
+\timelimit{2 hs}
+\topic{Lógica}
+\instance{Parcialito}
+
+\renewcommand\examlogo{\includegraphics[scale=0.07]{../../../common/unq_logo.jpg}}
+
+\begin{document}
+\makeexamheader
+\makeexamtitle
+\makeexamextradata
+
+\begin{questions}
+  \question
+  Considerando las siguientes proposiciones como base:\\
+  ~\\
+    \begin{itemize}
+      \item Gengis fue un Gran Khan del Imperio Mongól
+      \item Kublai fue un Gran Khan del Imperio Mongól
+      \item Gengis gobernó desde 1206 al 1227
+      \item Kublai gobernó desde el 1260 al 1294
+      \item Tolui es hijo de Gengis
+      \item Kublai es hijo de Tolui
+      \item En 1290 el Imperio Mongól llegó a su máxima expansión
+      \item Gengis abolió la esclavitud en el Imperio Mongól
+      \item Kublai abolió la esclavitud en el Imperio Mongól
+    \end{itemize}
+  ~\\
+  Se le pide que exprese las expresiones a continuación en base a las anteriores:
+  \begin{parts}
+      \part \textbf{Kublai es nieto de Gengis}
+      \begin{solution}
+        Kublai es hijo de Tolui $\land$\\
+        Tolui es hijo de Gengis
+      \end{solution}
+      \part \textbf{Kublai llevó el imperio a su máxima expansión}
+      \begin{solution}
+        Kublai fue un Gran Khan del Imperio Mongól $\land$\\
+        Kublai gobernó desde el 1260 al 1294 $\land$\\
+        En 1290 el Imperio Mongól llegó a su máxima expansión
+      \end{solution}
+      \part \textbf{Un Gran Khan abolió la esclavitud en el Imperio Mongól}
+      \begin{solution}
+        (Gengis fue un Gran Khan del Imperio Mongól $\land$ Gengis abolió la esclavitud el Imperio Mongól)\\
+        $\lor$\\
+        (Kublai fue un Gran Khan del Imperio Mongól $\land$ Kublai abolió la esclavitud en el Imperio Mongól)\\
+      \end{solution}
+      \part \textbf{Hubo esclavos en el Imperio Mongol desde 1206 a 1294}
+      \begin{solution}
+        Gengis gobernó desde 1206 al 1227 $\land$\\
+        Kublai gobernó desde el 1260 al 1294 $\land$\\
+        $\lnot$ Un Gran Khan abolió la esclavitud en el Imperio Mongól
+      \end{solution}
+  \end{parts}
+
+  \jump
+
+  \question
+  Pase los siguientes razonamientos del lenguaje natural al formal de la lógica proposicional.
+  \begin{parts}
+    \part~\\
+    Solo nos convertiremos en unicornio si los inversionistas ponen más dinero.
+    Los inversionistas solo pondrán dinero si conseguimos más usuarios.
+    Pero no podemos conseguir más usuarios. Por lo tanto, no nos convertiremos
+    en unicornio.
+    \begin{solution}
+        IC = Por lo tanto\\
+        p = Nos convertiremos en unicornio\\
+        q = Los inversionistas ponen más dinero\\
+        r = Conseguimos más usuarios\\
+        $p \liff q, q \liff r, \lnot r \lseq \lnot p$
+    \end{solution}
+
+    \part~\\
+    La lista está vacía. Dado que si la lista no estuviera vacía, el
+    código habría entrado al condicional y ejecutado el comando
+    para imprimir. Y no ejecutó el comando para imprimir.
+    \begin{solution}
+        IP = Dado que\\
+        p = La lista está vacía\\
+        q = El código entra al condicional\\
+        r = Se ejecutó el comando para imprimir\\
+        $\lnot p \lthen (q \land r), \lnot r \lseq p$
+    \end{solution}
+  \end{parts}
+  
+  \jump
+  \question
+  Dadas las formulas de los siguientes razonamientos, se pide que pruebe si son
+  razonamientos válidos o inválidos.
+  \begin{parts}
+      \part $p \lthen q, q \lthen p \lseq q \liff p$
+      \begin{solution} \fulltrue \end{solution}
+      \part $(p \land q) \lthen \lnot r, r \lseq (\lnot p) \lor (\lnot q)$
+      \begin{solution} \fulltrue \end{solution}
+  \end{parts}
+  \jump
+  \question
+  Sabiendo que las siguientes expresiones sobre estados del mundo evalúan
+  todas a \fulltrue, se pide que complete las tablas a continuación:
+  ~\\
+  \begin{itemize}
+    \item Todos los estados son capitalistas o comunistas.
+    \item Nadie que sea comunista es capitalista.
+    \item Nadie que sea capitalista es comunista.
+    \item Todos los capitalistas quieren destruir a los comunistas.
+    \item Aerugo quiere destruir a los capitalistas.
+    \item O Creta es comunista o Dracma es comunista.
+    \item Si Dracma es comunista, entonces Amestris lo es.
+    \item Todos los comunistas quieren destruir a Dracma.
+    \item Xing se quiere destruir a si misma.
+    \item Nadie más quiere destruir a nadie.
+  \end{itemize}
+  ~\\
+  \begin{tabular}{| c | c | c | c |}
+    \hline
+      & $x$ es comunista & $x$ es capitalista \\
+    \hline
+    Amestris       & \false &        \\
+    \hline
+    Xing       &        & \false \\
+    \hline
+    Dracma &        &        \\
+    \hline
+    Creta &        &        \\
+    \hline
+    Aerugo       & \true  &        \\
+    \hline
+  \end{tabular}
+
+  \begin{tabular}{| c | c | c | c | c | c |}
+    \hline
+$x$ quieren destruir a $y$ & Amestris & Xing & Dracma & Creta & Aerugo \\
+    \hline
+    Amestris       &       &       &       &      &       \\
+    \hline
+    Xing       &       &       &       &      &       \\
+    \hline
+    Dracma &       &       &       &      &       \\
+    \hline
+    Creta &       &       &       &      &       \\
+    \hline
+    Aerugo       &       &       &       &      &       \\
+    \hline
+  \end{tabular}
+  \begin{solution}
+    \begin{tabular}{| c | c | c | c |}
+      \hline
+        & $x$ es comunista & $x$ es capitalista \\
+      \hline
+      Amestris       & \false & \true  \\
+      \hline
+      Xing       & \true  & \false \\
+      \hline
+      Dracma & \false & \true  \\
+      \hline
+      Creta & \true  & \false \\
+      \hline
+      Aerugo       & \true  & \false \\
+      \hline
+    \end{tabular}
+
+    \begin{tabular}{| c | c | c | c | c | c |}
+      \hline
+  $x$ quieren destruir a $y$ & Amestris & Xing & Dracma & Creta & Aerugo \\
+      \hline
+      Amestris & \false & \true  & \false & \true  & \true \\
+      \hline
+      Xing     & \true  & \false & \false & \true  & \false \\
+      \hline
+      Dracma   & \false & \true  & \false & \true  & \true  \\
+      \hline
+      Creta    & \false & \false & \true  & \false & \false \\
+      \hline
+      Aerugo   & \true & \false  & \true  & \false & \false \\
+      \hline
+    \end{tabular}
+  \end{solution}
+
+  \question
+  Los conjuntos son un objeto matemático que consiste en una colección
+  de elementos de algún tipo. Por ejemplo, podemos pensar en un conjunto
+  de números (ej. $\{1,2,3,4\}$, es el conjunto que incluye a los números
+  1, 2, 3 y 4, y ninguno más). Un conjunto, puede estar vacío (es un
+  conjunto que no contiene ningún elemento).
+
+  Considere los conjuntos \textbf{$U$} y \textbf{$C$} y los predicados \textbf{$x$ es un conjunto},
+  \textbf{$x$ es un número} y \textbf{$x$ está incluido en $y$}.
+
+  Se pide que desarrolle el diccionario que considere conveniente, y elabore
+  fórmulas para expresar las siguientes afirmaciones.
+  \begin{parts}
+    \part El conjunto $C$ no es vacío.
+    \begin{solution}
+      $c = C$\\
+      $u = U$\\
+      $C(x) = x$ es un conjunto\\
+      $R(x) = x$ es un número\\
+      $I(x, y) = x$ está incluido en $y$\\
+      ~\\
+      $\exists z.I(z, c)$
+    \end{solution}
+    \part El conjunto $U$ contiene a todos los números.
+    \begin{solution}
+      $\forall z.R(z) \lthen I(z, u)$
+    \end{solution}
+    \part El conjunto C tiene a todos los números negativos.
+    \begin{solution}
+      $N(x) = x < 0$\\
+      ~\\
+      $\forall z.R(x) \land N(x) \lthen I(z, u)$
+    \end{solution}
+    \part Ningún conjunto se contiene a si mismo.
+    \begin{solution}
+      $\nexists a.C(a) \land I(a, a)$
+    \end{solution}
+  \end{parts}
+
+\end{questions}
+\end{document}
+    

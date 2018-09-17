@@ -1,0 +1,481 @@
+\section{¿Qué es la lógica?}
+\subsection{Definición.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{¿Qué es la lógica?}
+  \begin{block}{Lógica}
+    La lógica es la ciencia formal que estudia los principios de la
+    demostración y la inferencia válida.
+  \end{block}
+  \jump
+  O sea, es una ciencia muuuuuuy amplia que se se dedica a estudiar como
+  razonamos los seres humanos, cuando un razonamiento es válido y cuando no,
+  como describir el mundo de forma precisa y sin ambigüedades, entre otras
+  cosas.
+  \jump
+  Comencemos por analizar la definición por partes.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ciencia formal}
+  Se dice que es una \bolder{ciencia formal} pues estudia las formas, y no los
+  objetos.
+  \jump
+  Otra ciencia formal que conocemos es la matemática.
+  \jump
+  Por ejemplo, en matemática estudiamos como se suman números, por ejemplo,
+  $1+2$. Pero no nos centramos en si estamos sumando manzanas, naranjas o
+  bananas, nos importa la forma (las cantidades) no los objetos.
+  \jump
+  La lógica, como veremos luego, es similar en ese sentido.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Demostración}
+  Una \bolder{demostración} es una prueba, matemática, que mediante el uso
+  de teoremas y axiomas, argumenta de forma deductiva (luego veremos que
+  significa esto) la verdad de una proposición matemática.
+  \jump
+  O sea, la lógica asiste en la matemática para demostrar que algunas cosas
+  realmente valen.
+  \jump
+  En matemática, si no podemos demostrarlo, entonces no se puede demostrar su
+  validez ni su invalidez.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Inferencias válidas}
+  La inferencia es el proceso mental mediante el cual, a partir de cierta
+  información dada, se obtienen conclusiones. Es decir, se llega a un nuevo
+  resultado a partir de cosas que ya se tienen, mediante la razón.
+  \jump
+  Por supuesto que llegar a resultados a partir de información previa,
+  puede hacerse de forma correcta o incorrecta. Si razonamos mal, entonces
+  las conclusiones a las que arribamos no van a tener sentido.
+  \jump
+  Nos interesa por tanto solo aquellos razonamientos que son válidos, es decir,
+  en donde el proceso de razonamiento es correcto. Más adelante veremos que
+  procesos son correctos y cuales no.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Distintos tipos de lógicas y razonamientos}
+  La lógica es tan amplia y asiste a tantas disciplinas, que hay distintos
+  sistemas formales y distintos enfoques que pueden aplicarse.
+  \jump
+  Esto no quiere decir que sean independientes y distintas, sino que todas usan
+  los mismos principios subyacentes.
+  \jump
+  Nos vamos a centrar en analizar la lógica desde el punto de vista de la
+  matemática y las ciencias de la computación, y nos vamos a olvidar
+  completamente del resto.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Razonamientos.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos}
+  Un razonamiento es entonces el proceso mediante el cual, partiendo de cierta
+  información previa, a las que se denomina \bolder{premisas}, arribamos a una
+  nueva información, a la que se denomina \bolder{conclusión}.
+  \jump
+  Hay varios tipos de razonamientos, que dependen de la forma:
+  \begin{itemize}
+    \item Razonamientos inductivos por enumeración
+    \item Razonamientos inductivos por analogía
+    \item Razonamientos deductivos
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos inductivos por enumeración}
+  Son razonamientos que consisten en observar una serie de casos particulares
+  que hablan sobre individuos de cierto tipo, que cumplen alguna propiedad.
+  A partir de analizar esos casos, se arriba a que todos los individuos de ese
+  tipo deberían cumplir esa propiedad.
+  \jump
+  Ejemplo
+  \begin{enumerate}
+    \item Vi un primer cuervo y era negro
+    \item Vi un segundo cuervo y era negro
+    \item Vi un tercer cuervo y era negro
+    \item ...
+    \item Vi el cuervo 500 y era negro
+  \end{enumerate}
+  Por tanto, concluyo que \colored{todos los cuervos son negros}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos inductivos por enumeración}
+  Surgen varias preguntas:
+  \begin{itemize}
+    \item ¿Son 500 cuervos suficiente muestra?
+    \item ¿Cómo se que no había un cuervo 501 que fuera blanco?
+    \item ¿Es imposible que mañana nazca un nuevo cuervo que sea blanco?
+  \end{itemize}
+  Este tipo de razonamientos se usan mucho en las ciencias empíricas (biología,
+  química, física, etc.) y sirven para, a partir de una serie de experimentos,
+  arribar a una conclusión probabilística.
+  \jump
+  Por ejemplo, si hago 1000 experimentos en el éxito de un medicamento para curar
+  algo y solo 5 resultan fallidos, puedo aseverar que el medicamento funciona en
+  el 99.95\% de los casos.
+  \jump
+  \bolder{La conclusión de un razonamiento inductivo no es necesariamente veradera}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos inductivos por analogía}
+  Son razonamientos que consisten en observar una serie de casos particulares
+  que hablan sobre individuos de cierto tipo, que cumplen alguna propiedad.
+  A partir de analizar esos casos, se arriba a que el siguiente individuo que
+  encuentre deberá cumplir dicha propiedad.
+  \jump
+  Ejemplo
+  \begin{enumerate}
+    \item Juan asaltó un banco y fue condenado a 20 años de prisión
+    \item Luis asaltó un banco y fue condenado a 20 años de prisión
+    \item María asaltó un banco y fue condenada a 20 años de prisión
+    \item ...
+    \item Ana asaltó un banco y fue condenada a 20 años de prisión
+  \end{enumerate}
+  Por tanto, \bolder{José quien acaba de asaltar un banco será condenado a
+  20 años de prisión}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos inductivos por analogía}
+  Este tipo de razonamientos son muy utilizados en ciencias legales, en casos
+  de jurisprudencia. También en ciencias empíricas.
+  \jump
+  Los razonamientos inductivos por analogía sufren de las mismas problemáticas
+  que los inductivos por enumeración.
+  \jump
+  \bolder{La conclusión de un razonamiento inductivo no es necesariamente veradera}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos deductivos}
+  Un razonamiento deductivo es aquel en el que las premisas implican lógica y
+  necesariamente a la conclusión.
+  \jump
+  \bolder{Es decir, en un razonamiento deductivo, si las premisas son verdaderas, la
+  conclusión necesariamente deberá ser verdadera.}
+  \jump
+  En un razonamiento deductivo, la conclusión no contiene nueva información,
+  sino que contiene la misma información que tienen las premisas, replanteada
+  de alguna forma particular.
+  \jump
+  Este tipo de razonamiento es el utilizado en la matemática y en las ciencias
+  de la computación. Es el único razonamiento que nos va a interesar en esta
+  materia.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos deductivos}
+  El ejemplo clásico de razonamiento deductivo es:
+  \begin{enumerate}
+    \item Todos los humanos son mortales.
+    \item Sócrates es humano.
+    \item Por lo tanto, \colored{Sócrates es mortal}.
+  \end{enumerate}
+  \jump
+  Sin embargo, no todos los razonamientos deductivos tienen esa forma.
+  Más adelante veremos que hay formas, o esquemas, que hacen que un razonamiento
+  sea válido.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Razonamientos deductivos incorrectos}
+  Un razonamiento deductivo puede arribar a conclusiones falsas en dos casos:
+  \begin{enumerate}
+    \item Cuando el razonamiento es inválido (tiene un esquema incorrecto)
+    \item Cuando alguna o varias de las premisas (la información de partida) es falsa
+  \end{enumerate}
+  \jump
+  Ejemplo de razonamiento inválido.
+  \begin{enumerate}
+    \item Todos los humanos son mortales
+    \item Sócrates es un humano
+    \item Por lo tanto, \colored{Sócrates no es mortal}.
+  \end{enumerate}
+  \jump
+  Ejemplo de razonamiento válido con premisas falsas
+  \begin{enumerate}
+    \item Todos los humanos son inmortales
+    \item Sócrates es un humano
+    \item Por lo tanto, \colored{Sócrates es inmortal}.
+  \end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Válidez de un razonamiento}
+  La validez de un razonamiento depende solamente de su estructura,
+  independientemente del valor de sus premisas y de su conclusión.
+  \jump
+  En el segundo ejemplo de la diapositiva anterior, el razonamiento es
+  válido, aunque la conclusión sea falsa pues se parte de premisas falsas.
+  \jump
+  En cambio el primer ejemplo es inválido, pues su forma no es válida.
+  \jump
+  Lo importante es: \bolder{Si un razonamiento deductivo es válido y parte
+  de premisas verdaderas, siempre la conclusión será verdadera}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Estructura de razonamiento}
+  El ejemplo clásico de razonamiento deductivo es:
+  \begin{enumerate}
+    \item Todos los humanos son mortales.
+    \item Sócrates es humano.
+    \item Por lo tanto, \colored{Sócrates es mortal}.
+  \end{enumerate}
+  \jump
+  Otro ejemplo que sigue la misma estructura es:
+  \begin{enumerate}
+    \item Todos los perros son animales.
+    \item Firulais es un perro.
+    \item Por lo tanto, \colored{Firulais es un animal}.
+  \end{enumerate}
+  \jump
+  Sin embargo, no todos los razonamientos deductivos tienen esa forma,
+  más adelante veremos distintos formas que pueden tomar estos razonamientos.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{La lógica como descripción del universo.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{La lógica como descripción del universo - Ejemplo}
+  La lógica tiene la capacidad de describir sin ambigüedades el universo,
+  o al menos, una parte de él que nos resulte relevante.
+  \jump
+  Pensemos en el caso de una escuela rural en donde solo cursan dos chicos y
+  dos chicas: Juan, Luis, María y Ana.
+  \jump
+  Estas personas tienen afinidad entre si en algunos casos, y entre otros no.
+  Por lo tanto, vamos a decir que un chico ``quiere'' a otro si se da el caso de que
+  tienen afinidad. Puede darse el caso de que un chico se quiera o no se quiera
+  a si mismo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{La lógica como descripción del universo - Ejemplo Cont}
+  Podemos representar el universo con una tabla de doble entrada que leeremos de
+  izquierda a derecha, como la siguiente:
+  \jump
+  \centerline{\begin{tabular}{| c | c | c | c | c |}
+    \hline
+          & Juan & Luis & María & Ana \\
+    \hline
+    Juan  & X &   & X &   \\
+    \hline
+    Luis  &   & X & X & X \\
+    \hline
+    María & X &   & X &   \\
+    \hline
+    Ana   & X &   &   & X \\
+    \hline
+  \end{tabular}}
+  \jump
+  En esta tabla podemos ver lo siguiente:
+  \begin{itemize}
+    \item Todos los chicos se quieren a si mismos
+    \item Juan quiere a María
+    \item María quiere a Juan
+    \item Luis quiere a María y a Ana
+    \item Ana quiere a Juan
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cantidad de posibles universos}
+  Hay muchos posibles universos considerando solo nuestra escuela de $4$ chicos.
+  Si una persona puede o no querer a otra, es decir hay dos posibilidades, y
+  hay 16 posibles combinaciones de esas posibilidades, eso implica que existen
+  $2^{16}$ (o $65.536$) universos distintos posibles.
+  \jump
+  Cuanta más información tenemos acerca del universo más podemos describirlo.
+  Descripciones pobres nos imposibilitan saber exactamente de que universo se trata.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{La lógica como descripción del universo - Ejemplo}
+  Hagamos ahora el paso inverso. Partiendo de información, intentemos determinar
+  el estado del universo.
+  \jump
+  \begin{itemize}
+    \item Nadie se quiere a si mismo
+    \item Todo chico quiere a una y solo una chica
+    \item Toda chica quiere a un y solo un chico
+    \item Ningún chico quiere a un chico
+    \item Ninguna chica quiere a una chica
+    \item Ana quiere a Juan
+    \item María quiere a Juan
+  \end{itemize}
+  \jump
+  Si completamos nuestro cuadro veremos ahora que hay información que no podremos
+  completar.
+  \centerline{\begin{tabular}{| c | c | c | c | c |}
+    \hline
+          & Juan & Luis & María & Ana \\
+    \hline
+    Juan  &   &   & ? & ? \\
+    \hline
+    Luis  &   &   & ? & ? \\
+    \hline
+    María & X &   &   &   \\
+    \hline
+    Ana   & X &   &   &   \\
+    \hline
+  \end{tabular}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{La lógica como descripción del universo - Ejemplo Cont}
+  Hay 4 posibles universos que cumplen la condición.
+  \begin{enumerate}
+    \item Juan quiere a María y Luis quiere a María
+    \item Juan quiere a María y Luis quiere a Ana
+    \item Juan quiere a Ana y Luis quiere a María
+    \item Juan quiere a Ana y Luis quiere a Ana
+  \end{enumerate}
+  \jump
+  La información que tenemos no nos determina exactamente el universo, pero nos
+  da suficiente información para algunas cosas.
+  \jump
+  Por ejemplo, tal vez mi interés pase por saber si Juan tiene chances de
+  ponerse de novio con alguna de las chicas. No puedo saber con qué chica, pues
+  no puedo saber exactamente si Juan quiere a María o a Ana, pero se que quiere
+  a alguna de las dos, y que ambas lo quieren a el. Por tanto, seguro podrá
+  ponerse de novio. Por otro lado, sabemos que Luis no tendrá chance de hacerlo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{La lógica como descripción del universo}
+  \bolder{Lo importante es que la lógica nos va a permitir saber cómo es el
+  universo que se describe, y nos va a permitir describir un universo que
+  observemos.}
+  \jump
+  Vamos a usar activamente esta propiedad para describir e interpretar cosas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{La lógica como generador de preguntas.}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{La lógica como generador de preguntas}
+  Otra cosa que vamos a querer hacer es usar la lógica para formular
+  preguntas más precisas y con menos ambigüedad.
+  \jump
+  Por ejemplo, formular preguntas acerca del universo, y, en base a la
+  respuesta, poder determinar en que condiciones se encuentra el universo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{La lógica como formulador de preguntas - Ejemplo}
+  Imaginemos que nuestro universo es una gran verdulería. Un verdulero místico
+  va a responder todas nuestras preguntas con una de dos posibles palabras,
+  o bien con ``Si'' o bien con ``No''.
+  \jump
+  Ahora bien, a nuestro verdulero podemos preguntarle cosas como
+  \begin{itemize}
+    \item ¿Hay bananas?
+    \item ¿Hay manzanas?
+    \item ¿Hay naranjas?
+  \end{itemize}
+  El verdulero místico se fijará en su stock, y nos responderá a cada pregunta
+  con si o no.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{La lógica como formulador de preguntas - Ejemplo Cont}
+  Nuestro verdulero sabe mucho sobre las frutas y verduras que tiene en stock,
+  y podemos preguntarle si tiene cualquiera de ellas. Pero nada sabe sobre
+  recetas de cocina.
+  \jump
+  Supongamos ahora que queremos preparar una ensalada de frutas (usando bananas,
+  manzanas y naranjas). No podemos simplemente preguntarle al verdulero
+  ``¿Hay para una ensalada de frutas?'' pues no tiene idea de como se hace
+  una ensalada de frutas.
+  \jump
+  Sin embargo, podemos reformular la pregunta en términos de cosas que el
+  verdulero si sabe responder. Por ejemplo ``¿Hay bananas, manzanas y naranjas?''
+  Es decir, en una sola pregunta englobamos tres preguntas más sencillas:
+  \begin{enumerate}
+    \item ¿Hay bananas?
+    \item ¿Hay manzanas?
+    \item ¿Hay naranjas?
+  \end{enumerate}
+  \jump
+  Si la respuesta a todas ellas es afirmativa, sabemos que hay frutas suficientes
+  para preparar una ensalada de frutas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{La lógica como formulador de preguntas - Ejemplo Cont}
+  Podríamos también querer preparar un buen bizcochuelo. Todo buen bizcochuelo
+  lleva, o bien ralladura de limón, o bien ralladura de naranja.
+  \jump
+  En este caso cualquiera de las dos nos sirve. Por lo que preguntar
+  ``¿Hay para preparar un bizcochuelo?'' podría ser equivalente a preguntar
+  ``¿Hay naranjas o limones?''.
+  \jump
+  Es decir, se involucran dos preguntas más simples: 
+  \begin{enumerate}    
+    \item ¿Hay naranjas?
+    \item ¿Hay limones?
+  \end{enumerate}
+  \jump
+  Si la respuesta a cualquiera de ellas es afirmativa, podremos preparar un
+  bizcochuelo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{La lógica como formulador de preguntas - Ejemplo Cont}
+  Nótese que preguntar ``¿Hay naranjas o limones?'' es muy distinto a
+  preguntar ``¿Hay naranjas y limones?''. En el primer caso nos basta con
+  que alguna de las respuestas sea afirmativa, mientras que en el segundo
+  esperaríamos que ambas lo sean.
+  \jump
+  Comprender esas pequeñas diferencias y entender cuando utilizar un ``y'' y
+  cuando un ``o'' es fundamental para un programador, y es parte de lo que
+  estudia la lógica y que trataremos en futuras clases.
+\end{frame}

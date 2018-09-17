@@ -1,0 +1,312 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = es_AR
+%% Add the word "answers" to document class parameters in order to print the solutions.
+\documentclass[10pt, addpoints]{../../common/epyl_exam_template}
+
+\title{Parcialito Lógica}
+\date{2018.1}
+\professor{Alan Rodas Bonjour}
+\timelimit{2 hs}
+\topic{Lógica}
+\instance{Parcialito}
+
+\begin{document}
+\makeexamheader
+\makeexamtitle
+\makeexamextradata
+
+\begin{questions}
+  \question
+  Considerando las siguientes proposiciones como base:
+  ~\\
+  \begin{itemize}
+    \item El paquete pesa más de 10 Kg
+    \item El paquete pesa menos de 10 Kg
+    \item El paquete mide más de 1 metro
+    \item El paquete mide menos de 1 metro
+  \end{itemize}
+  ~\\
+  Se le pide que exprese las expresiones a continuación en base a las anteriores:
+  \begin{parts}
+      \part \textbf{El paquete paga arancel especial} (Los paquetes que pesan mucho o que son muy largos pagan un arancel especial)
+      \begin{solution} El paquete pesa más de 10 Kg $\lor$ El paquete mide más de 1 metro \end{solution}
+      \part \textbf{El paquete se entrega en domicilio} (Si el paquete pesa menos de 10 Kg y mide menos de un metro)
+      \begin{solution} El paquete pesa menos de 10 Kg $\land$ El paquete mide menos de 1 metro \end{solution}
+      \part \textbf{Se retira en aduana} (Cualquier paquete que no se pueda entregar a domicilio y que pague un arancel especial)
+      \begin{solution}$\lnot$ El paquete se entrega en domicilio $\land$ El paquete paga arancel especial \end{solution}
+      \part \textbf{Se retira en sucursal} (Cualquier paquete que no pague arancel especial y pese más de 10 Kg)
+      \begin{solution} $\lnot$ El paquete paga arancel especial $land$ El paquete pesa más de 10 Kg \end{solution}
+  \end{parts}
+
+  \jump
+
+  \question
+  Dados los siguientes razonamientos, identifique las indicadores de conclusión
+  o de premisa que encuentra, especifique cuales son las premisas, cual es la
+  conclusión, y pase a lenguaje formal de la lógica proposicional indicando
+  claramente el diccionario y las conectivas para cada proposición.
+  \begin{parts}
+    \part~\\
+    Si hubiera tenido una computadora de pequeño y me hubieran enseñado a
+    programar en ese momento, entonces este curso me sería trivial. Pero no me
+    enseñaron a programar de pequeño. Es por eso que este curso no me es trivial.
+    \begin{solution}
+        IC = Es por eso que\\
+        p = Hubiera tenido una computadora de pequeño\\
+        q = Me hubieran enseñado a programar de pequeño\\
+        r = El curso me es trivial\\
+        $(p \land q) \lthen r, \lnot q \lseq \lnot r$
+    \end{solution}
+
+    \part~\\
+    La mesa no es adecuada, ya que una mesa es adecuada si y solo si tiene lugar para ocho
+    personas o bien puede soportar mucho peso. Pero esta mesa ni tiene lugar para ocho
+    personas ni soporta mucho peso.
+    \begin{solution}
+        p = La mesa tiene lugar para ocho personas\\
+        q = La mesa soporta mucho peso\\
+        r = La mesa es adecuada\\
+        $(p \lor q) \liff r, \lnot p \land \lnot q \lseq \lnot r$
+    \end{solution}
+  \end{parts}
+  
+  \jump
+  \question
+  Dadas las formulas de los siguientes razonamientos, se pide que pruebe si son
+  razonamientos válidos o inválidos.
+  \begin{parts}
+      \part $\lnot p \lthen q, \lnot p \lseq q$
+      \begin{solution}
+        \begin{tabular}{ c c | c | c | c || c}
+          & Concl. & Premisa 2 & Premisa 1 & & Implic.\\
+          \hline
+          $p$ & $q$ & $\lnot p$ & $\lnot p \lthen q$ &
+            $(\lnot p \lthen q) \land (\lnot p)$ & $((\lnot p \lthen q) \land (\lnot p)) \lthen q$ \\
+          \hline
+          \true  & \true  & \false & \true  & \false & \true  \\
+          \true  & \false & \false & \true  & \false & \true  \\
+          \false & \true  & \true  & \true  & \true  & \true  \\
+          \false & \false & \true  & \false & \false & \true  \\
+        \end{tabular}
+
+        Es un razonamiento VÁLIDO.
+      \end{solution}
+      \part $p \lthen q, \lnot p \lseq \lnot q$
+      \begin{solution}
+        \begin{tabular}{ c c | c | c | c | c || c}
+          && Premisa 1 & Premisa 2 & & Concl. & Implic.\\
+          \hline
+          $p$ & $q$ & $p \lthen q$ & $\lnot p$ & $(p \lthen q) \land (\lnot p)$
+            & $\lnot q$ & $((p \lthen q) \land (\lnot p)) \lthen (\lnot q)$ \\
+          \hline
+          \true  & \true  & \true  & \false & \false & \false & \true  \\
+          \true  & \false & \false & \false & \false & \true  & \true  \\
+          \false & \true  & \true  & \true  & \true  & \false & \false \\
+          \false & \false & \true  & \true  & \true  & \true  & \true  \\
+        \end{tabular}
+
+        Es un razonamiento INVÁLIDO.
+      \end{solution}
+      \part $(p \land q) \lor r, \lnot p \lseq r$
+      \begin{solution}
+        \begin{tabular}{ c c c c | c | c | c || c}
+          && Concl. && Premisa 1 & Premisa 2 & & Implic.\\
+          \hline
+          $p$ & $q$ & $r$ & $p \land q$ & $(p \land q) \lor r$ & $\lnot p$
+            & $A = ((p \land q) \lor r) \land (\lnot p)$ & $A \lthen r$ \\
+          \hline
+          \true  & \true  & \true  & \true  & \true  & \false & \false & \true \\
+          \true  & \true  & \false & \true  & \true  & \false & \false & \true \\
+          \true  & \false & \true  & \false & \true  & \false & \false & \true \\
+          \true  & \false & \false & \false & \false & \false & \false & \true \\
+          \false & \true  & \true  & \false & \true  & \true  & \true  & \true \\
+          \false & \true  & \false & \false & \false & \true  & \false & \true \\
+          \false & \false & \true  & \false & \true  & \true  & \true  & \true \\
+          \false & \false & \false & \false & \false & \true  & \false & \true \\
+        \end{tabular}
+        
+        Es un razonamiento VÁLIDO.
+      \end{solution}
+      \part $(p \land q) \lthen r, \lnot r \lseq (\lnot p) \lor (\lnot q)$
+      \begin{solution}
+        \tiny
+        \begin{tabular}{ c c c c c c | c | c | c | c || c}
+          &&&&&& Premisa 1 & Premisa 2 & & Concl. & Implic.\\
+          \hline
+          $p$ & $q$ & $r$ & $\lnot p$ & $\lnot q$ & $p \land q$ & $A = (p \land q) \lthen r$ & $\lnot r$
+            & $B = A \land (\lnot r)$ & $C = (\lnot p) \lor (\lnot q)$ & $B \lthen C$ \\
+          \hline
+          \true  & \true  & \true  & \false & \false & \true  & \true  & \false & \false & \false & \true \\
+          \true  & \true  & \false & \false & \false & \true  & \false & \true  & \false & \false & \true \\
+          \true  & \false & \true  & \false & \true  & \false & \true  & \false & \false & \true  & \true \\
+          \true  & \false & \false & \false & \true  & \false & \true  & \true  & \true  & \true  & \true \\
+          \false & \true  & \true  & \true  & \false & \false & \true  & \false & \false & \true  & \true \\
+          \false & \true  & \false & \true  & \false & \false & \true  & \true  & \true  & \true  & \true \\
+          \false & \false & \true  & \true  & \true  & \false & \true  & \false & \false & \true  & \true \\
+          \false & \false & \false & \true  & \true  & \false & \true  & \true  & \true  & \true  & \true \\
+        \end{tabular}
+        \normalsize
+        
+        Es un razonamiento VÁLIDO.
+      \end{solution}
+  \end{parts}
+  \jump
+  \question
+  Sabiendo que las siguientes expresiones evalúan todas a \fulltrue, se pide
+  que complete las tablas a continuación:
+  ~\\
+  \begin{itemize}
+    \item Todos son o bien atléticos o bien inteligentes.
+    \item Nadie que sea atlético es inteligente.
+    \item Nadie que sea inteligente es atlético.
+    \item Todos los que son atléticos son buenos en los deportes.
+    \item Algunas personas inteligentes son buenos en los deportes.
+    \item Mario no es bueno en los deportes.
+    \item Todos los inteligentes aman a los demás inteligentes.
+    \item Todos los atléticos aman a los demás atléticos.
+    \item Toad ama a Luigi.
+    \item Aquellos que son buenos en los deportes, aman a Luigi.
+    \item Mario se ama a si mismo.
+    \item Nadie más ama a nadie.
+  \end{itemize}
+  ~\\
+  \begin{tabular}{| c | c | c | c |}
+    \hline
+      & $x$ es atlético & $x$ es inteligente & $x$ es bueno en los deportes \\
+    \hline
+    Mario & \false &        &        \\
+    \hline
+    Luigi &        & \false &        \\
+    \hline
+    Peach & \false &        &        \\
+    \hline
+    Toad  &        &        & \false \\
+    \hline
+    Yoshi & \true  &        &        \\
+    \hline
+    Daisy & \true  &        &        \\
+    \hline
+  \end{tabular}
+  
+  \begin{tabular}{| c | c | c | c | c | c | c |}
+    \hline
+$x$ ama a $y$ & Mario & Luigi & Peach & Toad & Yoshi & Daisy \\
+    \hline
+    Mario     &       &       &       &      &       &       \\
+    \hline
+    Luigi     &       &       &       &      &       &       \\
+    \hline
+    Peach     &       &       &       &      &       &       \\
+    \hline
+    Toad      &       &       &       &      &       &       \\
+    \hline
+    Yoshi     &       &       &       &      &       &       \\
+    \hline
+    Daisy     &       &       &       &      &       &       \\
+    \hline
+  \end{tabular}
+  \begin{solution}
+    \begin{tabular}{| c | c | c | c |}
+      \hline
+        & $x$ es atlético & $x$ es inteligente & $x$ es bueno en los deportes \\
+      \hline
+      Mario & \false & \true  & \false \\
+      \hline
+      Luigi & \true  & \false & \true  \\
+      \hline
+      Peach & \false & \true  & \true  \\
+      \hline
+      Toad  & \false & \true  & \false \\
+      \hline
+      Yoshi & \true  & \false & \true  \\
+      \hline
+      Daisy & \true  & \false & \true  \\
+      \hline
+    \end{tabular}
+    
+    \begin{tabular}{| c | c | c | c | c | c | c |}
+      \hline
+  $x$ ama a $y$ & Mario  & Luigi  & Peach  & Toad   & Yoshi  & Daisy  \\
+      \hline
+      Mario     & \true  & \false & \true  & \true  & \false & \false \\
+      \hline
+      Luigi     & \false & \true  & \false & \false & \true  & \true  \\
+      \hline
+      Peach     & \true  & \true  & \false & \true  & \false & \false \\
+      \hline
+      Toad      & \true  & \true  & \true  & \false & \false & \false \\
+      \hline
+      Yoshi     & \false & \true  & \false & \false & \false & \true  \\
+      \hline
+      Daisy     & \false & \true  & \false & \false & \true  & \false \\
+      \hline
+    \end{tabular}
+  \end{solution}
+
+  \jump
+  \question
+  Considere $a$, $b$ números naturales. Se pide exprese en términos
+  lógicos las siguientes expresiones, definiendo los elementos del diccionario
+  que crea convenientes para hacerlo.
+  \begin{parts}
+    \part Ningún número es menor que $a$
+    \begin{solution}
+      Constantes: $a$, $b$ \\
+      Predicados:\\
+      \quad Menor($x$, $y$) = $x$ es menor a $y$ (o en términos matemáticos $x < y$)\\
+      ~\\
+      $\nexists z. Menor(z, a)$
+
+      \textbf{También se puede expresar de forma lógico matemática como:}
+
+      $\nexists z. z < a$
+    \end{solution}
+    \part Existe un número tal que es más grande que $a$ y más chico que $b$
+    \begin{solution}
+      Constantes: $a$ \\
+      Predicados:\\
+      \quad Menor($x$, $y$) = $x$ es menor a $y$ (o en términos matemáticos $x < y$)\\
+      \quad Mayor($x$, $y$) = $x$ es mayor a $y$ (o en términos matemáticos $x > y$)\\
+      ~\\
+      $\exists z. Mayor(z, a) \land Menor(z, b)$
+
+      \textbf{También se puede usar solo Menor}
+
+      $\exists z. Menor(a, z) \land Menor(z, b)$
+
+      \textbf{También se puede expresar de forma lógico matemática como:}
+
+      $\exists z. a < z \land z < b$
+    \end{solution}
+    \part Todo número más grande que $b$ es más grande que $a$
+    \begin{solution}
+      Constantes: $a$, $b$ \\
+      Predicados:\\
+      \quad Menor($x$, $y$) = $x$ es menor a $y$ (o en términos matemáticos $x < y$)\\
+      \quad Mayor($x$, $y$) = $x$ es mayor a $y$ (o en términos matemáticos $x > y$)\\
+      ~\\
+      $\forall z. Mayor(z, b) \lthen Mayor(z, a)$
+
+      \textbf{También se puede expresar de forma lógico matemática como:}
+
+      $\forall z. z > b \lthen z > a$
+    \end{solution}
+    \part Todo número al que se le reste $a$ es igual a si mismo.
+    \begin{solution}
+      Constantes: $a$ \\
+      Funciones:\\
+      \quad resta($x$, $y$) = $x$ restado en $y$ (o en términos matemáticos $x - y$)
+      Predicados:\\
+      \quad Iguales($x$, $y$) = $x$ es igual a $y$ (o en términos matemáticos $x = y$)\\
+      ~\\
+      $\forall z. Iguales(resta(z, a), z)$
+
+      \textbf{También se puede expresar de forma lógico matemática como:}
+
+      $\forall z. z - a = z$
+    \end{solution}
+  \end{parts}
+
+\end{questions}
+\end{document}
+        

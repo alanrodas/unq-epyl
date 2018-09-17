@@ -1,0 +1,1192 @@
+
+\section{Lógica de Predicados}
+\subsection{Limitaciones de la lógica proposicional}
+\frame{\tableofcontents[currentsection,currentsubsection]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Limitaciones de la lógica proposicional}
+  Intentemos analizar el siguiente razonamiento:
+  \jump
+  \colored{
+    \begin{lreasoning}
+      \lpremise{Todos los perros son animales.}
+      \lpremise{Firularis es un perro.}
+      \lconclusion{Firulais es un animal.}
+    \end{lreasoning}
+  }
+  \jump
+  Suena lógico, ¿verdad? Pareciera que esto debería ser cierto, que el
+  razonamiento y las premisas desde las cual partimos, son verdaderas.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Limitaciones de la lógica proposicional}
+  Intentemos formalizar el razonamiento. Cada oración es independiente, y no
+  contiene conectivas. Cada una es una única proposición. Por lo tanto, tenemos:
+  \jump
+  \colored{
+    p = Todos los perros son animales\\
+    q = Firulais es un perro\\
+    r = Firulais es un animal\\
+  }
+  \jump
+  Donde $p$ y $q$ son nuestras premisas y $r$ sería la conclusión. Quedando:\\
+  \colored{
+    $p, q \lseq r$
+  }
+  \jump
+  Como ya vimos, como la conclusión es independiente de las premisas, esta puede
+  ser \fulltrue o \fullfalse, y por tanto, el razonamiento es inválido.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Limitaciones de la lógica proposicional}
+  ¿Cuál es el problema en nuestro razonamiento? ¿Será que el razonamiento es
+  realmente inválido y que nuestra intuición nos miente?
+  \jump
+  La problemática radica en que las proposiciones hablan de una condición que
+  se da en el universo, pero no dicen nada acerca de la estructura interna de
+  esa condición.
+  \jump
+  En este caso, parte de las cosas que dice $p$ se usa en $q$ y otra parte en $r$,
+  el mismo individuo (Firulais) es mencionado tanto en $q$ como en $r$, y sin
+  embargo la lógica proposicional no dice nada acerca de estos hechos.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lógica de predicados al rescate}
+  Por eso, necesitamos un nuevo tipo de lógica, la \bolder{lógica de predicados},
+  o también llamada \bolder{lógica de orden uno} o \bolder{lógica de primer orden}.
+  \jump
+  \bolder{La lógica de primer orden nos va a permitir formalizar oraciones que hablan
+  sobre individuos, sobre las propiedades de esos individuos, y sobre como esos
+  individuos se relacionan entre si.}
+  \jump
+  La lógica de orden uno engloba a la lógica de orden cero. Es decir, que todo
+  lo que se puede formalizar con lógica proposicional se puede formalizar en
+  lógica de predicados, pero no al revés.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Individuos y Propiedades}
+
+\begin{frame}{Individuos}
+  La lógica de predicados va a hablar sobre \bolder{individuos}.
+  \jump
+  Un individuo es un elemento único e irrepetible del universo. Por ejemplo,
+  una persona (Juan, Luis, María, etc.) un animal (Firulais, Michifus, etc.),
+  o un elemento más abstracto (un número, un color, etc.)
+  \jump
+  Lo importante para que algo sea un individuo es que sea identificable de
+  forma inequívoca. Por ejemplo, si hablamos de ``Juan'', solo hay un ``Juan'',
+  podemos saber quien es y señalarlo con el dedo. Si hubiera dos personas con
+  el nombre ``Juan'' deberíamos desambiguar para saber claramente sobre quien
+  estamos hablando.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Universo de discurso}
+  Como llamamos a nuestros individuos va a depender del contexto. Es decir,
+  depende de lo que estemos hablando. Por ejemplo, si estamos hablando de un
+  grupo de amigos, ``Juan'' será un individuo puntual al cual podremos
+  identificar.
+  \jump
+  Sin embargo, si estamos hablando de todos los alumnos de la universidad,
+  deberemos ser mucho más específicos acerca de qué ``Juan'' se trata.
+  \jump
+  Pero ``Juan'' es solo el nombre, y uno no es solo su nombre, uno es lo que es.
+  Lo que importa no es el nombre sino el individuo en si.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Mismo individuo, muchos nombres}
+  Los números por ejemplo, son elementos que son únicos e irrepetibles. \colored{
+  Cinco es cinco}, siempre.
+  \jump
+  Sin embargo, podemos decir \bolder{``cinco''}, pero si habláramos en otro
+  idioma diríamos por ejemplo \bolder{``cinq''}, \bolder{``cinque''},
+  \bolder{``five''}, \bolder{``fem''}, etc.
+  \jump
+  Incluso en nuestro lenguaje cotidiano, sin hablar otro idioma, tenemos símbolos
+  que representan al mismo individuo como ``5'', o ``V'' (en números romanos).
+  \jump
+  Más aún, si escribimos ``3+2'' o ``4+1'', ¿Qué representan?. Podríamos decir
+  que es otra forma de escribir cinco.
+  \jump
+  Lo que importa no es como lo escribimos, sino lo que estamos queriendo
+  representar, el individuo en si. Suena filosófico, pero es así...al fin de
+  cuentas, la lógica nace en la filosofía.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Propiedades}
+  Nos va a interesar hablar de ciertas cosas de esos individuos. Por ejemplo,
+  vamos a querer decir cosas como \colored{``Juan es grande''},
+  \colored{``Firulais es un perro''}, o \colored{``Cinco es un número primo''}.
+  \jump
+  Vamos a decir entonces que los individuos tienen \bolder{propiedades}.
+  \jump
+  \bolder{Una propiedad es una cualidad o atributo que puede o no aplicarse a un
+  individuo.}  
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Propiedades - Cont}
+  La idea es que vamos a pensar en una propiedad como algo que, dado un individuo,
+  la misma puede o no aplicar a ese individuo. Si aplicamos la propiedad
+  al individuo, la podemos tratar como una proposición. Es decir, es
+  algo de lo que vamos a decir que es \fulltrue o \fullfalse.
+  \jump
+  Por ejemplo, si la propiedad es \colored{``Ser grande''}, vamos a
+  \bolder{aplicar} a \colored{``Juan''} esa propiedad para obtener
+  \colored{``Juan es grande''}. Esto como vemos es una proposición tradicional,
+  es algo de lo que podemos decir que es \fulltrue o \fullfalse.
+  \jump
+  Si en cambio aplicamos a \colored{``Luis''} la misma propiedad, obtenemos la
+  proposición \colored{``Luis es grande''} la cual tiene también un valor de
+  verdad, no necesariamente igual a aplicar la propiedad a Juan.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Propiedades Ejemplo}
+  Con la lógica de predicados vamos a intentar describir el universo. Mejor dicho,
+  vamos a describir una parte puntual y significativa del universo.
+  \jump
+  Supongamos entonces que queremos hablar de una escuela a la que solo asisten
+  cuatro alumnos, dos chicos (Juan y Luis), y dos chicas (María y Ana).
+  \jump
+  Juan, Luis, María y Ana van a ser los individuos sobre los que vamos a hablar.
+  Una posible propiedad sobre ellos será \colored{``Es hombre''}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Propiedades Ejemplo - Cont}
+  Podemos representar las propiedades como una tabla de doble entrada, con los
+  individuos como filas y las propiedades como columnas.
+  \jump
+  \centerline{
+  \begin{tabular}{| r | c |}
+    \hline
+    & Es hombre \\
+    \hline
+    Juan & \\
+    \hline
+    Luis & \\
+    \hline
+    María & \\
+    \hline
+    Ana & \\
+    \hline
+  \end{tabular}}
+  \jump
+  La tabla podremos completarla con \fulltrue o \fullfalse, dependiendo del
+  valor que toma la propiedad de la columna aplicada al individuo en esa fila.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Propiedades Ejemplo - Cont}
+  \centerline{
+  \begin{tabular}{| r | c |}
+    \hline
+    & Es hombre \\
+    \hline
+    Juan  & \true \\
+    \hline
+    Luis  & \true \\
+    \hline
+    María & \false \\
+    \hline
+    Ana   & \false \\
+    \hline
+  \end{tabular}}
+  \jump
+  Vemos entonces como la propiedad ``Es hombre'' se aplica a ``Juan'', quedando
+  \colored{``Juan es hombre''} y teniendo esa proposición el valor de verdad
+  \fulltrue. Lo mismo sucede en el caso de Luis. Por otro lado, cuando aplicamos
+  la propiedad a ``María'' y a ``Ana'', la proposición tiene valor \fullfalse.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Propiedades que dependen de otras propiedades}
+  Agreguemos ahora una segunda propiedad a nuestro ejemplo, la propiedad
+  \colored{``Es mujer''}.
+  \jump
+  Sabemos (intuitivamente) que la propiedad ``Es mujer'' se aplica a ``Juan'',
+  quedando \colored{``Juan es mujer''} y teniendo esa proposición el valor de
+  verdad \fullfalse. Lo mismo ocurre con Luis.
+  \jump
+  También sabemos que para los casos de ``María'' y de ``Ana'', la propiedad
+  aplicada a ellas tiene valor \fulltrue.
+  \jump
+  Veamos ambas propiedades en la tabla.
+  \centerline{
+  \begin{tabular}{| r | c | c |}
+    \hline
+    & Es hombre & Es mujer \\
+    \hline
+    Juan  & \true  & \false \\
+    \hline
+    Luis  & \true  & \false \\
+    \hline
+    María & \false & \true \\
+    \hline
+    Ana   & \false & \true \\
+    \hline
+  \end{tabular}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Propiedades que dependen de otras propiedades}
+  Si bien podemos tratar a ambas propiedades como independientes,
+  hay una clara relación entre \colored{``Es hombre''} y \colored{``Es mujer''}.
+  \jump
+  En particular, si alguien es hombre, entonces seguro no es mujer. Y si es mujer,
+  entonces seguro no es hombre. Es decir, ambas son complementarias.
+  \jump
+  Ya conocemos una conectiva que representa el concepto de complemento, la
+  negación. Podemos reformular la propiedad \colored{``Es mujer''} en términos
+  de \colored{``Es hombre''}.
+  \jump
+  \colored{Es mujer = $\lnot$ Es hombre}
+  \jump
+  Así, vemos como podemos tener propiedades que son dependientes de
+  otras propiedades.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Propiedades que dependen de otras propiedades}
+  Asumamos ahora que conocemos dos nuevas propiedades que aplican en nuestro ejemplo,
+  \colored{``Usa zapatos''} y \colored{``Usa corbata''}.
+  \jump
+  Podemos crear nuevas propiedades a partir de las que conocemos. Podemos decir
+  por ejemplo, que si un hombre usa zapatos y corbata, entonces es elegante.
+  \jump
+  \colored{Es elegante = Es hombre $\land$ Usa zapatos $\land$ Usa corbata}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Propiedades que dependen de otras propiedades}
+  ¿Qué significa entonces aplicar la propiedad \colored{``Es elegante''} a
+  \colored{``Juan''}?
+  \jump
+  Significa que Juan debe cumplir con ser hombre, con usar zapatos y con usar
+  corbata. Es decir que debemos aplicar a Juan cada una de las propiedades que
+  componen a ser elegante, y que en todos los casos el resultado debe ser \fulltrue.
+  \jump
+  \colored{Juan es elegante = Juan es hombre $\land$ Juan usa zapatos $\land$ Juan usa corbata}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Relaciones simples}
+\frame{\tableofcontents[currentsection,currentsubsection]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{¿Propiedades que incluyen individuos?}
+  Pensemos ahora en una frase un poco más compleja, y tratemos de formalizarla:
+  \colored{``Juan está enamorado de María''}.
+  \jump
+  Sencillo, podríamos tener una propiedad que sea
+  \colored{``Estar enamorado de María''}, y nos basta con aplicar la propiedad
+  a Juan para obtener la oración anterior.
+  \jump
+  Pero ¿Qué pasa si ahora queremos escribir  \colored{``Ana está enamorada de Luis''}?
+  \jump
+  Necesitamos otra propiedad \colored{``Estar enamorada de Luis''} y aplicar la
+  misma a Ana.
+  \jump
+  Sin embargo, vemos que hay una relación entre ambas frases, ambas hablan de
+  lo mismo, de estar enamorado de alguien más.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Relaciones}
+  Cuando vemos que en nuestra propiedad estamos mencionando a un individuo (Por ejemplo
+  a María en ``Estar enamorado de María''), lo que queremos en realidad es expresar
+  una relación entre dos individuos (en este caso, Juan a quien será aplicada la
+  propiedad y María, que forma parte de la propiedad). Lo que buscamos es una
+  \bolder{relación}.
+  \jump
+  Una relación es similar a una propiedad, en el sentido que se aplica sobre
+  individuos, pero en lugar de aplicar sobre un solo individuo, aplica sobre dos.
+  \jump
+  Así, nuestra relación será \colored{``Está enamorado de''}, y si lo aplicamos
+  a \colored{``Juan''} y a \colored{``María''} obtenemos la frase
+  \colored{``Juan está enamorado de María''}.
+  \jump
+  \bolder{Una relación vincula dos individuos a través de una caracteristica.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Dirección de las relaciones}
+  El hecho de que Juan esté enamorado de María no hace que María necesariamente
+  le corresponda. Por lo que las relaciones son dirigidas.
+  \jump
+  Es decir, aplicar \colored{``Está enamorado de''} a \colored{``Juan''} y luego
+  a \colored{``María''} representa \colored{``Juan está enamorado de María''}.
+  Pero aplicar  \colored{``Está enamorado de''} primero a \colored{``María''} y
+  en segundo lugar a \colored{``Juan''} nos dará \colored{``María está enamorada de Juan''}.
+  \jump
+  El valor de verdad de ambas proposiciones formadas no es necesariamente idéntico.
+  \jump
+  \bolder{El orden en el que aplicamos la relación a los distintos individuos da
+  como resultado diferentes proposiciones con diferente valor de verdad.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Relaciones complejas}
+  De forma similar a lo que ocurre con las propiedades, las relaciones pueden
+  estar dadas en términos de otras relaciones.
+  \jump
+  Por ejemplo, podríamos decir que estar enamorado requiere de dos cosas,
+  atracción física y atracción intelectual. Así:
+  \jump
+  \colored{Está enamorado de = Siente atracción fisica $\land$ Siente atracción intelectual}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Relaciones complejas - Ejemplo}
+  La frase \colored{Siente atracción física} nos resulta un poco obvia en su aplicación.
+  \jump
+  Por ejemplo, apliquemos \colored{``Está enamorado de''} a ``Juan'' y a ``María''.
+  \jump
+  Cómo sabemos que la equivalencia es:
+  \jump
+  \colored{Juan siente atracción fisica por María $\land$ Juan siente atracción intelectual por María}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Relaciones con orden en la aplicación}
+  Pensemos ahora en la relación \colored{``es amado por''}. Podríamos definir
+  ``es amado por'' en términos de ``está enamorado de''. Por ejemplo:
+  \colored{María es amada por Juan = Juan está enamorado de María}.
+  \jump
+  Pero si definimos:
+  \jump
+  \colored{Es amado por = Esta enamorado de}
+  \jump
+  No resulta evidente que el orden de mis individuos cambia en la equivalencia.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Parámetros}
+  Para solucionar el problema anterior, tenemos que introducir un nuevo elemento.
+  Los \bolder{parámetros}.
+  \jump
+  Un \bolder{parámetro} no es más que un nombre que va a representar a un individuo,
+  pero que al momento de la definición, no sabemos quien es.
+  \jump
+  Vamos a usar los parámetros en nuestras propiedades y relaciones. Así por ejemplo
+  en lugar de decir que la propiedad es \colored{``Es hombre''} vamos a decir
+  \colored{``$x$ es hombre''}.
+  \jump
+  ¿Quién es $x$? La respuesta es $x$ va a ser reemplazado en el texto por un individuo
+  cuando apliquemos la propiedad al mismo. Por ejemplo, si aplicamos ahora
+  \colored{``$x$ es hombre''} a \colored{``Juan''}, lo que hacemos es reemplazar
+  la $x$ por ``Juan'' y quedarnos con la oración formada \colored{``Juan es hombre''}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Parámetros - Cont}
+  Esto aplica también a las relaciones, ahora que tenemos más de un individuo,
+  necesitamos más de un parámetro.
+  \jump
+  Volvamos a nuestra relación \colored{``Es amado por''}. Si lo
+  replanteamos usando parámetros podemos escribir
+  \colored{``$x$ es amado por $y$''}. Si aplicamos entonces ahora a
+  ``Juan'' y ``María'', obtenemos  \colored{``Juan es amado por María''}.
+  \jump
+  Ahora, si miramos la definición de es amado por, podemos dejar más claro que
+  el orden de los individuos se invierte.
+  \jump
+  \colored{$x$ es amado por $y$ = $y$ está enamorado de $x$}
+  \jump
+  Luego veremos que llamarlos $x$ e $y$ es arbitrario, pero de momento vamos a
+  decir que $x$ representa al individuo que aplicamos la relación primero e $y$
+  al segundo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Parámetros - Cont}
+  No solo es el caso en donde se invierte el orden de los parámetros en
+  donde sirve, sino donde el individuo se repite en la frase equivalente.
+  \jump
+  Pensemos en la relación \colored{``Se casará con''}. Una persona se
+  va a casar con otra si están enamorados mutuamente. Tratemos de plantearlo
+  en términos de nuestra otra relación:
+  \jump
+  \colored{Se casará con = Está enamorado de $\land$ Está enamorado de}
+  \jump
+  El segundo ``Está enamorado de'' debería indicar de alguna forma que ya no es
+  el primer individuo del segundo, sino el segundo del primero. Sin embargo, lo
+  que escribimos no dice nada de eso.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Parámetros - Cont}
+  Replanteemos la relación utilizando parámetros. Es decir, pensemos ahora
+  que significa \colored{``$x$ se casará con $y$''}.
+  \jump
+  \colored{$x$ se casará con $y$ = $x$ está enamorado de $y$ $\land$ $y$ está enamorado de $x$}
+  \jump
+  Queda de esta forma claramente expresado cuales son las relaciones que se deben
+  cumplir.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Representando relaciones}
+  Podemos representar una relación de forma similar a las propiedades, es decir,
+  mediante una tabla de doble entrada.
+  \jump
+  A diferencia de la tabla sencilla de las propiedades, en la cual podíamos
+  representar más de una propiedad en la misma tabla, aquí toda la tabla representa
+  una sola relación. Las filas representarán el individuo al que aplicamos primero
+  la relación ($x$) y las columnas al que aplicamos segundo ($y$).
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Representando relaciones}
+  Veamos la tabla de nuestro ejemplo:
+  \jump
+  \begin{tabular}{| r | c | c | c | c |}
+    \hline
+    $x$ está enamorado de $y$ & Juan   & Luis   & María  & Ana \\
+    \hline
+    Juan  & \false & \false & \true  & \false \\ 
+    \hline
+    Luis  & \false  & \true & \false & \false \\ 
+    \hline
+    María & \true  & \true  & \false & \false \\ 
+    \hline
+    Ana   & \false & \true & \false  & \false \\ 
+    \hline
+  \end{tabular}
+  \jump
+  En la tabla se ve como Juan está enamorado de María, y esta está enamorada de
+  él, por lo que van a casarse. Ana está enamorada de Luis, pero Luis solo
+  está enamorado de si mismo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Relaciones múltiples}
+  Podemos tener relaciones que tienen más de dos individuos como elementos.
+  \jump
+  Por ejemplo la relación \colored{``$x$ conoce a $y$ gracias a $z$''}. Podríamos
+  decir entonces \colored{``Ana conoce a Luis gracias a María''}.
+  \jump
+  Para obtener esa proposición basta aplicar la relación primero a Ana, luego a
+  Luis y por último a María.
+  \jump
+  Este tipo de relaciones ya no se pueden interpretar utilizando una tabla, por
+  lo que hay que aplicar nuestra mejor capacidad mental y de abstracción para
+  comprender plenamente estas relaciones.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Todos}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Todos}
+  Volvamos a nuestro ejemplo de la escuela y sus chicos. ¿Qué significaría la
+  frase \colored{``Todos son inteligentes''}?
+  \jump
+  Pensémoslo en términos de nuestra tabla de propiedades:
+  \jump
+  \centerline{\begin{tabular}{| r | c |}
+    \hline
+    & $x$ es inteligente\\
+    \hline
+    Juan & \\
+    \hline
+    Luis & \\
+    \hline
+    María & \\
+    \hline
+    Ana & \\
+    \hline
+  \end{tabular}}
+  \jump
+  ¿Cómo deberíamos completar los espacios en blanco? 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Todos - Cont}
+  Podemos pensar la frase \colored{``Todos son inteligentes''} como una propiedad
+  que depende de otras propiedades. En particular:
+  \jump
+  \colored{Todos son inteligentes = Juan es inteligente $\land$ Luis es
+    inteligente $\land$ María es inteligente $\land$ Ana es inteligente
+  }
+  \jump
+  Es decir, la idea de que todos son inteligentes nos dice que cada uno de los
+  chicos es inteligente.
+  \jump
+  Precisamente, \bolder{La palabra ``Todos'' nos indica que la propiedad
+  aplica a cada uno de los individuos de nuestro universo}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Todos - Cont}
+  Si vamos al caso del ejemplo anterior, nuestra tabla para interpretar el
+  universo quedaría así:
+  \jump
+  \centerline{\begin{tabular}{| r | c |}
+    \hline
+    & $x$ es inteligente\\
+    \hline
+    Juan  & \fulltrue \\
+    \hline
+    Luis  & \fulltrue \\
+    \hline
+    María & \fulltrue \\
+    \hline
+    Ana   & \fulltrue \\
+    \hline
+  \end{tabular}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Nadie}
+  ¿Y qué pasa si decimos \colored{``Nadie se porta mal''}?
+  \jump
+  Nadie es lo mismo que decir que, ni Juan, ni Luis, ni María, ni Ana se portan
+  mal. Podemos pensarlo como una dependencia de otras propiedades.
+  \jump
+  \colored{Nadie se porta mal = ($\lnot$ Juan se porta mal) $\land$
+    ($\lnot$ Luis se porta mal) $\land$ ($\lnot$ María se porta mal) $\land$
+    ($\lnot$ Ana se porta mal)
+  }
+  \jump
+  Como ya sabemos, La negación implica que la propiedad sea falsa. Es decir que,
+  en nuestra tabla, esto estaría representado de la siguiente forma:
+  \jump
+  \centerline{\begin{tabular}{| r | c | c |}
+    \hline
+    & $x$ es inteligente & $x$ se porta mal \\
+    \hline
+    Juan  & \fulltrue & \fullfalse \\
+    \hline
+    Luis  & \fulltrue & \fullfalse \\
+    \hline
+    María & \fulltrue & \fullfalse \\
+    \hline
+    Ana   & \fulltrue & \fullfalse \\
+    \hline
+  \end{tabular}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Alguien}
+  Hay otro tipo de oraciones que nos brindan información lógica acerca del
+  universo. Pensemos en el siguiente ejemplo \colored{``Alguien juega a la pelota''}.
+  \jump
+  Podemos pensar en términos de nuestra tabla.
+  \centerline{\begin{tabular}{| r | c |}
+    \hline
+    & $x$ juega a la pelota \\
+    \hline
+    Juan  &  \\
+    \hline
+    Luis  &  \\
+    \hline
+    María &  \\
+    \hline
+    Ana   &  \\
+    \hline
+  \end{tabular}}
+  \jump
+  ¿Cómo completamos la tabla?
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Alguien}
+  La realidad es que la frase no nos dice mucho. Solo nos
+  dice que hay alguien que juega a la pelota, pero bien podría ser que haya más
+  de una persona que lo haga.
+  \jump
+  Es decir solo sabemos que alguno de los casos es \fulltrue, pero el resto
+  podrían ser \fullfalse o \fulltrue.
+  \jump
+  Es decir, hablar de alguno, es hablar de disyunciones entre los individuos.
+  \jump
+  \colored{Alguien juega a la pelota = Juan juega a la pelota $\lor$ Luis juega
+    a la pelota $\lor$ María juega a la pelota $\lor$ Ana juega a la pelota}
+  \jump
+  Para que la disyunción sea verdadera, alguno de los términos de la disyunción
+  debe ser verdadera, pero no sabemos cuál. Si combinamos esa información con
+  otra, tal vez podamos deducir quien sea.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Todos los...}
+  Otro tipo de oración que solemos utilizar cuando hablamos, involucran hablar
+  de un subgrupo de elementos.
+  \jump
+  Por ejemplo la oración \colored{``Todos los hombres se escaparon de la escuela''}
+  \jump
+  ¿Qué significa esto en nuestro ejemplo? Juan y Luis, ambos son hombres, y
+  por tanto se escaparon.
+  \jump
+  ¿Qué pasa con las chicas? La respuesta es, no sabemos. La frase no dice nada
+  acerca de si María o Ana se escaparon o no de la escuela.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Todos los...}
+  En este caso hay efectivamente una relación entre la propiedad de ser hombre
+  y la propiedad de escaparse de la escuela. Podemos ponerlo de esta forma:
+  \jump
+  \colored{Todos los hombres se escaparon de la escuela =\\
+    \quad$x$ es hombre $\lthen$ $x$ se escapó de la escuela}
+  \jump
+  ¿Quién es $x$ en este caso? El individuo puntual al que aplicamos nuestra
+  propiedad, pero, en este caso, debemos aplicarlo a cada uno de los individuos
+  de nuestro universo, pues tenemos la palabra ``Todos'' adelante.
+  \jump
+  Apliquemos a \colored{``Juan''} nuestra propiedad. Como
+  \colored{``Juan es hombre''} es \fulltrue, para que la implicación sea
+  verdadera entonces \colored{``Juan se escapó de la escuela''} debe
+  necesariamente ser \fulltrue.
+  \jump
+  Apliquemos ahora a \colored{``María''}. Como \colored{``María es hombre''} es
+  \fullfalse, la implicación ya es verdadera, independientemente del valor de
+  \colored{``María se escapó de la escuela''}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Todos los... - Cont}
+  Es decir, sabiendo que \colored{``Todos los hombres se escaparon de la escuela''},
+  podemos completar la tabla de la siguiente forma.
+  \jump
+  \centerline{\begin{tabular}{| r | c | c |}
+    \hline
+    & $x$ es hombre & $x$ se escapó de la escuela \\
+    \hline
+    Juan  & \fulltrue  & \fulltrue \\
+    \hline
+    Luis  & \fulltrue  & \fulltrue \\
+    \hline
+    María & \fullfalse & ? \\
+    \hline
+    Ana   & \fullfalse & ? \\
+    \hline
+  \end{tabular}}
+  \jump
+  En los lugares en donde hay un signo de pregunta, no podemos completar nada,
+  pues la frase no contiene información sobre esos casos.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Algún...}
+  De forma similar a ``todos los ...'' podemos decir frases con la forma
+  \colored{``Alguna mujer se escapó de la escuela''}.
+  \jump
+  Es decir, que puede haber dos casos, o bien María se escapó de la escuela o bien
+  Ana se escapó de la escuela. Podríamos decir que:
+  \jump
+  \colored{Alguna mujer se escapó de la escuela =
+    (María se escapó de la escuela) $\lor$ (Ana se escapó de la escuela)}
+  \jump
+  Pero ¿Por qué agregamos solo a María y Ana a nuestra fórmula equivalente?
+  Sencillamente porque son las únicas mujeres. Pero cuando decíamos ``alguno'',
+  vimos que debíamos hacer una disyunción con todos los elementos del universo.
+  Debemos entonces buscar una formula equivalente, en donde los casos de aquellos
+  que son hombres, seguro den \fullfalse.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Algún...}
+  Así, la idea es que necesitamos realizar una conjunción de disyunciones.
+  \jump
+  \colored{Alguna mujer se escapó de la escuela =
+    (Juan es mujer $\land$ Juan se escapó de la escuela) $\lor$\\ 
+    (Luis es mujer $\land$ Luis se escapó de la escuela) $\lor$\\ 
+    (María es mujer $\land$ María se escapó de la escuela) $\lor$\\ 
+    (Ana es mujer $\land$ Ana se escapó de la escuela)
+  }
+  \jump
+  Si analizamos esa fórmula, en el caso de Juan y Luis, la conjunción dará \fullfalse
+  pues no es cierto que sean mujeres. Mientras que en el caso de María
+  dará \fulltrue solo si María se escapó de la escuela. Lo mismo ocurre para Ana.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Formalización de la lógica de predicados}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Formalización}
+  Hasta ahora hemos solamente trabajado con la lógica de predicados de forma
+  natural, intentando interpretar de forma intuitiva las oraciones que nos encontramos.
+  \jump
+  Comencemos entonces a formalizar los conceptos que hemos visto hasta ahora.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Representando individuos}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Constantes}
+  Las \bolder{constantes} representan a los individuos de nuestro universo.
+  \jump
+  En la bibliografía se denotan en general con letras minúsculas, donde la letra
+  suele estar relacionada con el individuo al que representa (Ej. \colored{j = Juan},
+  \colored{m = María})
+  \jump
+  Vamos a tener una constante para cada individuo del universo que podamos (o
+  mejor dicho, que necesitemos) nombrar.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Funciones}
+  Las \bolder{funciones} son una forma de denotar a un individuo sin hacer una
+  referencia directa al mismo.
+  \jump
+  Una función debe ser aplicada a uno o más constantes (individuos) y expresará
+  un y solo un individuo. Actúan como una función en matemática.
+  \jump
+  El ejemplo más fácil de entender sería la función \colored{sucesor}. Esta función,
+  dado un número, devuelve ese número sumado en uno. Así por ejemplo:\\
+  \colored{sucesor(0) = 1}\\
+  \colored{sucesor(1) = 2}\\
+  \colored{...}\\
+  \colored{sucesor(n) = n+1}\\
+  \jump
+  Una función puede estar expresada en lenguaje formal, como en el caso de ``sucesor''
+  que usa lenguaje matemático, o puede usar lenguaje coloquial.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Funciones - Cont}
+  Pero las funciones no son solo para números. Por ejemplo, la función
+  \colored{vecino(x)}, que dado una persona, devuelve el vecino de esa persona.
+  \jump
+  Como definimos quien es vecino de quien es ambiguo, y no va a estar dado por
+  un lenguaje formal. En todo caso, tenemos que tratar de definir que significa
+  en un lenguaje no ambiguo. Por ejemplo, para cada persona del universo, decir
+  exactamente quien es el vecino, armando una lista.
+  \jump
+  Las funciones se suelen representar en la bibliografía con una letra minúscula,
+  de forma similar a una constante.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Aridad}
+  Las funciones toman parámetros. Es decir, esperan ser aplicadas a una cantidad
+  específica de individuos. Esto se conoce como \bolder{aridad}
+  \jump
+  La \bolder{aridad} es la cantidad de parámetros que espera la función. Si una función
+  espera un solo parámetro, se dice que tiene aridad 1, si espera dos parámetros,
+  se dice que tiene aridad 2, etc.
+  \jump
+  Por ejemplo, la función \bolder{sucesor(x)} tiene aridad 1. La función
+  \bolder{suma(x, y)} tiene aridad 2.
+  \jump
+  Al formalizarlo se vuelve sencillo expresar que nombre le ponemos al parámetro,
+  es decir al individuo al que le aplicamos primero la función. En este caso,
+  el primer individuo se llama $x$, y el segundo $y$. Pero si formalizamos la
+  función como \bolder{suma(a, b)}, es la misma función, pero llamamos
+  $a$ y $b$ a nuestros parámetros. Es simplemente el nombre que le ponemos al
+  individuo para hablar de él cuando definimos que significa ``suma''.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Aplicación}
+  Cuando aplicamos una función, en lugar de colocar el nombre del parámetro
+  colocamos el nombre del individuo al cual le aplicamos la misma (Es decir,
+  nuestra constante).
+  \jump
+  Así por ejemplo, si lo que queremos es obtener el vecino de Juan, diremos
+  \colored{``v(j)''},  donde ``j'' es la constante que representa a Juan,
+  y \colored{``v(x)''} es la función que denota a un vecino de x.
+  \jump
+  Es decir, que hay que separar en dos partes. Por un lado, la definición de
+  nuestros elementos (El \bolder{diccionario}). Por otro lado, la fórmula en si,
+  es decir, lo que queremos expresar, utilizando esas definiciones.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Aplicación - Cont}
+  Ejemplo:
+  \jump
+  \colored{
+    $j$ = Juan\\
+    $v(x)$ = el vecino de $x$\\
+    ~\\
+    $v(j)$
+  }
+  \jump
+  Las primeras dos líneas definen el diccionario, mientras que la última define
+  lo que queremos expresar, en este caso ``el vecino de Juan''.
+  \jump
+  Note como la $x$ se reemplaza por la $j$ para pasar a ser ``el vecino de $j$'',
+  primero, y como luego analizamos $j$ para interpretarlo como ``el vecino de Juan''.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Resumen}
+  Podemos representar los individuos de nuestro universo de dos formas:
+  \begin{itemize}
+    \item Mediante constantes
+    \item Mediante funciones que se aplican a una o más constantes
+  \end{itemize}
+  \jump
+  Denotamos a los individuos con letras minúsculas, ya sea una constante o una
+  función.
+  \jump
+  Para ser más expresivos podemos usar nombres en minúscula, por ejemplo, ``juan''
+  puede ser una constante, y ``vecino'' una función.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Predicados}
+\toc[currentsection,currentsubsection]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Predicados}
+  Hasta ahora vimos como representar individuos, pero no las propiedades y
+  las relaciones sobre ellos.
+  \jump
+  Las propiedades y relaciones se representan mediante \bolder{predicados}.
+  \jump
+  \bolder{Un predicado es una función que se aplica a uno o más individuos y que al
+  hacerlo expresa un valor de verdad, ya sea \fulltrue o \fullfalse.}
+  \jump
+  \bolder{Los predicados también tienen aridad. Un predicado de aridad uno se
+  corresponde con una propiedad del individuo. Un predicado de aridad dos se
+  corresponde a una relación entre individuos. Un predicado de mayor aridad se
+  corresponde a relaciones entre múltiples individuos.}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Predicados - Cont}
+  Los predicados se suelen representar en la bibliografía con letras
+  mayúsculas (P, Q, R), en general relacionadas con lo que representan.
+  \jump
+  Así por ejemplo la propiedad \colored{``$x$ es hombre''} se puede representar
+  como \colored{``$H(x)$''}.
+  \jump
+  Para ganar expresividad podemos utilizar una palabra que comience con mayúscula,
+  por ejemplo \colored{``Hombre(x)''}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Aplicación}
+  Los predicados se aplican de la misma forma que las funciones. Es decir,
+  reemplazamos el parámetro por la constante que representa al individuo al
+  cual queremos aplicar el predicado.
+  \jump
+  Así podemos tener el siguiente ejemplo.\\
+  \colored{
+    $j$ = Juan\\
+    $m$ = María\\
+    $E(x, y)$ = $x$ está enamorado de $y$\\
+    ~\\
+    $E(j, m)$
+  }
+  \jump
+  Esta expresión nos dice \colored{``Juan está enamorado de María''}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Aplicación - Cont}
+  Note que \colored{``$E(j, m)$''} no es lo mismo que \colored{``$E(m, j)$''}.
+  Mientras el primero indica que \colored{``Juan está enamorado de María''},
+  el segundo nos dice que \colored{``María está enamorada de Juan''}.
+  \jump
+  El orden en el que ponemos nuestras constantes es relevante, y nos indica quien
+  debería ser tomado por $x$ y quien por $y$.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Uniendo predicados}
+  Como un predicado aplicado representa un valor de verdad, podemos unir varios
+  predicados usando conectivas lógicas. El valor de verdad final de toda la
+  fórmula será el resultado de evaluar los predicados aplicados y luego
+  usar las reglas vistas en la lógica proposicional para obtener el valor de
+  aplicar las conectivas.
+  \jump
+  Por ejemplo en el siguiente ejemplo:\\
+  \colored{$E(j, m) \land E(m, j)$}\\
+  Estamos diciendo que Juan y María están enamorados uno del otro.
+  \jump
+  En el siguiente:\\
+  \colored{$E(j, m) \land \lnot E(m, j)$}\\
+  Estamos diciendo que Juan ama a María pero María no le corresponde.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Cuantificadores y Variables}
+\frame{\tableofcontents[currentsection,currentsubsection]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cuantificadores}
+  Lo último que nos falta ver es como representar oraciones que contienen las
+  palabras ``Todos'', ``Alguno'' y ``Ninguno''.
+  \jump
+  Para representar esto surge la idea de \bolder{cuantificador}.
+  \jump
+  \bolder{Un cuantificador es una expresión que indica la cantidad de veces que
+  un predicado es \fulltrue si se aplica el mismo a cada uno de los individuos
+  del universo}.
+  \jump
+  Vamos a ver tres cuantificadores, el \bolder{cuantificador universarl}, el
+  \bolder{cuantificador existencial} y el \bolder{cuantificador existencial negado}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cuantificadores}
+  Para entender mejor el concepto supongamos que en nuestro universo tenemos
+  $n$ individuos (donde $n$ es un número cualquiera).
+  \jump
+  Tendremos entonces las siguientes constantes representando a dichos individuos.\\
+  \colored{$c_1, c_2, c_3, ..., c_{n-1}, c_n$}\\
+  Supongamos también que contamos con un predicado $P(x)$.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cuantificador Universal}
+  El \bolder{Cuantificador Universal} se utiliza para afirmar que \bolder{todos}
+  los individuos cumplen el predicado.
+  \jump
+  Es decir, que si aplicamos el predicado a cada uno de los individuos del universo,
+  este debe dar \fulltrue en todos los casos.
+  \jump
+  El cuantificador universal se representa con el símbolo $\forall$.
+  \jump
+  Si queremos decir que ``Todos los individuos cumplen el predicado P'' escribimos:\\
+  \colored{$\forall x . P(x)$}\\
+  \jump
+  En nuestro ejemplo, esto es equivalente a decir:\\
+  \colored{$\forall x . P(x) = P(c_1) \land P(c_2) \land P(c_3) \land ... \land P(c_{n-1}) \land P(c_n)$}\\
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cuantificador Universal}
+  Los cuantificadores no solo aplican a un predicado, sino a toda la fórmula que
+  viene luego del cuantificador.
+  \jump
+  Así por ejemplo \colored{``$\forall x. P(x) \land \lnot Q(x)$''} es equivalente
+  a decir que todos los individuos cumplen \colored{``$P(x) \land \lnot Q(x)$''}.
+  \jump
+  Así, se cumple lo siguiente:\\
+  \footnotesize
+  \colored{$\forall x . P(x) \land \lnot Q(x) = (P(c_1) \land \lnot Q(c_1)) \land
+  (P(c_2) \land \lnot Q(c_2)) \land ... \land
+  \land (P(c_n) \land \lnot Q(c_n))$}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Variables}
+  Pero, ¿Qué significa $\forall x$?, o mejor dicho, ¿De donde sale esa $x$?
+  \jump
+  La $x$ es una \bolder{variable}. Una \bolder{variable} representa, de forma
+  similar a un parámetro, a un individuo. Pero ¿A qué individuo? La respuesta es,
+  a todos.
+  \jump
+  La idea es, el cuantificador dice, \colored{``Para todo individuo del universo,
+  llamémoslo $x$, ese $x$ cumple el siguiente predicado''}.
+  \jump
+  ¿Por qué es importante ponerle un nombre al individuo? Porque podemos cuantificar
+  más de un individuo. Por ejemplo, \colored{``Para todo par de numero, llamemos
+  al primero $x$ y al segundo $y$, se cumple ...''}.
+  \jump
+  Eso podemos formalizarlo como: \colored{$\forall x. \forall y. ...$}. Otra
+  forma de representar lo mismo es \colored{$\forall x, y. ...$}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cuantificador Existencial}
+  El \bolder{cuantificador existencial} es para indicar que existe \bolder{algún}
+  elemento (o más de uno) que cumplen el predicado.
+  \jump
+  Es decir, nos indica que si aplicamos el predicado a cada individuo del universo,
+  habrá al menos uno para el cual el predicado evaluará a \fulltrue.
+  \jump
+  El cuantificador existencial se representa con el símbolo \bolder{``$\exists$''}.
+  \jump
+  Si queremos decir que ``Algún individuo cumple el predicado P'' escribimos:\\
+  \colored{$\exists x . P(x)$}\\
+  \jump
+  En nuestro ejemplo, esto es equivalente a decir:\\
+  \colored{$\exists x . P(x) = P(c_1) \lor P(c_2) \lor P(c_3) \lor ... \lor P(c_{n-1}) \lor P(c_n)$}\\
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cuantificador Existencial Negado}
+  El \bolder{cuantificador existencial negado} es para indicar que \bolder{no}
+  existe \bolder{ningún} individuo que cumple el predicado.
+  \jump
+  Es decir, nos indica que si aplicamos el predicado a cada individuo del universo,
+  todos los individuos evaluarán a \fullfalse.
+  \jump
+  El cuantificador existencial negado se representa con el símbolo \bolder{``$\nexists$''}.
+  \jump
+  Si queremos decir que ``Ningún individuo cumple el predicado P'' escribimos:\\
+  \colored{$\nexists x . P(x)$}\\
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cuantificador Existencial Negado - Cont}
+  En este sentido se pueden encontrar las siguientes equivalencias:\\
+  \colored{$\nexists x . P(x) = \forall x . \lnot P(x)$}
+  \jump
+  O lo que es lo mismo:\\
+  \colored{$\nexists x . P(x) = (\lnot P(c_1)) \land (\lnot P(c_2)) \land ... \land (\lnot P(c_n))$}
+  \jump
+  Se llama ``cuantificador existencial negado'' porque decir \colored{Ninguno ...}
+  es lo mismo que decir \colored{No existe alguno que ...}.
+  \jump
+  Sin embargo, vemos que, a nivel de fórmula, está más cerca del cuantificador
+  universal, pues también es lo mismo que decir \colored{Todos no cumplen ...}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{La lógica de predicados en la matemática}
+\frame{\tableofcontents[currentsection,currentsubsection]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lógica en la matemática}
+  La lógica de predicados es muy utilizada en matemática para exponer propiedades
+  sobre distintos elementos (por ejemplo, números, funciones, etc.)
+  \jump
+  La operaciones aritméticas como la suma, la resta, la multiplicación y la división,
+  son funciones de la lógica de predicados (En particular, de aridad dos. Dados
+  dos números, la suma devuelve otro número, por lo que es una forma de representar
+  individuos).
+  \jump
+  Las comparaciones, como la igualdad, mayor qué, menor o igual qué, etc. son
+  predicados (También en este caso de aridad dos, dados dos números, la igualdad
+  me dice \fulltrue si efectivamente son iguales, y \fullfalse en caso contrario).
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Notación lógico-matemática}
+  Como diferenciación interesante con respecto a la lógica tradicional, en matemática
+  no es necesario definir el diccionario (al menos no para las operaciones básicas),
+  pues el significado de los símbolos utilizados ya es conocido. Por eso, la notación matemática
+  se mezcla con la notación de la lógica de predicados.
+  \jump
+  Por ejemplo, en lugar de escribir ``\colored{$suma(x, y)$}'' escribimos directamente
+  ``\colored{x + y}''. También en lugar de escribir ``\colored{Igual(x, y)}''
+  escribimos ``\colored{x = y}''.
+  \jump
+  Sin embargo, solo cambia la notación. Semánticamente, el significado es el mismo.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejemplo conmutatividad de la suma}
+  Las cosas se entienden mejor con un ejemplo, veamos entonces como expresar
+  lógicamente algunas expresiones comunes.
+  \jump
+  \colored{La suma es conmutativa para todo par de números}.
+  \jump
+  \colored{
+    $\forall x \in \Re, y \in \Re. x + y = y + x$
+  }
+  \jump
+  En notación lógica tradicional escribiríamos:
+  \colored{
+    $\forall x.\forall y. EsReal(x) \land EsReal(y) \lthen Iguales(suma(x, y), suma(y, x))$
+  }
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Mas ejemplos}
+  Asociatividad:\\
+  \colored{
+    $\forall x \in \Re, y \in \Re, z \in \Re. (x + y) + z = x + (y + z)$
+  }
+  \jump
+  Distributividad:\\
+  \colored{
+    $\forall x \in \Re, y \in \Re, z \in \Re. x \cdot (y + z) = x \cdot y  + x \cdot z$
+  }
+  \jump
+  Neutros:\\
+  \colored{
+    $\forall x \in \Re. x + 0 = x$
+  }\\
+  \colored{
+    $\forall x \in \Re. x \cdot 1 = x$
+  }
+\end{frame}

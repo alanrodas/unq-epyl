@@ -1,0 +1,450 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = es_AR
+% arara: pdflatex
+% arara: pdflatex
+% arara: pdflatex
+% arara: clean: {files: [01_conectivas.aux, 01_conectivas.out, 01_conectivas.log]}
+% arara: clean: {files: [01_conectivas.fdb_latexmk, 01_conectivas.fls, 01_conectivas.vrb, 01_conectivas.synctex.gz]}
+
+%% Add the word "answers" to document class parameters in order to print the solutions.
+\documentclass[12pt, addpoints]{../../common/epyl_exam_template}
+
+\title{Práctica 2.1 - Conectivas y Tablas de Verdad}
+\date{2018.1}
+
+\begin{document}
+\makeexamheader
+\makeexamtitle
+
+\examrule
+
+\begin{questions}
+
+  \question
+    Dados los siguientes razonamientos, indique si se tratan de razonamientos
+    deductivos, razonamientos inductivos por analogía o razonamientos
+    inductivos por enumeración.
+    \begin{parts}
+      \part~\\
+        Dado que las versiones más nuevas de los navegadores soportan HTML5,
+        y dado que el Microsoft Edge es la última versión del navegador de dicha
+        empresa, se sigue que el Microsoft Edge soporta HTML5.
+        \begin{solution} Razonamiento deductivo \end{solution}
+
+      \part~\\
+        Mi primo compró una computadora aquí y tenía instalado Windows 7.\\
+        Mi hermano compró una computadora aquí y tenía instalado Windows 7.\\
+        Mi tío compró una computadora aquí y tenía instalado Windows 7.\\
+        Si compro una computadora aquí tendrá instalado Windows 7.
+        \begin{solution} Razonamiento inductivo por analogía
+          % TODO El ejemplo es bastante choto para indicar analogía, porque la
+          % conclusion real es que toda computadora que se compre ahí va a
+          % tener Windows 7. Hay que cambiar el ejercicio.
+        \end{solution}
+
+      \part~\\
+        Maria se inscribió el jueves y solo tenía habilitadas las materias del CI.\\
+        Pablo se inscribió el jueves y solo tenía habilitadas las materias del CI.\\
+        Juan se inscribió el jueves y solo tenía habilitadas las materias del CI.\\
+        Por lo tanto, todo alumno que se inscriba el jueves tiene solo habilitadas las materias del CI.
+        \begin{solution} Razonamiento inductivo por enumeración \end{solution}
+    \end{parts}
+
+  \jump
+  \question
+    Considerando las siguientes preguntas:\\
+    ~\\
+    \begin{minipage}{0.46\textwidth}
+      \begin{itemize}
+        \item ¿Hay harina?
+        \item ¿Hay manteca?
+        \item ¿Hay aceite?
+        \item ¿Hay agua?
+      \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.46\textwidth}
+      \begin{itemize}
+        \item ¿Hay huevos?
+        \item ¿Hay yerba?
+        \item ¿Hay chocolate?
+      \end{itemize}
+    \end{minipage}
+    ~\\
+    Se le pide que exprese las preguntas a continuación utilizando dichas preguntas
+    como básicas y utilizando conectivas lógicas:
+    \begin{parts}
+      \part \textbf{¿Hay para hacer una torta?} (Una torta requiere harina, huevos y manteca)
+      \begin{solution} ¿Hay harina? y ¿Hay huevos? y ¿Hay manteca? \end{solution}
+      \part \textbf{¿Hay para hacer huevos fritos?} (Requiere aceite y huevos)
+      \begin{solution} ¿Hay huevos? y ¿Hay aceite? \end{solution}
+      \part \textbf{¿Hay para hacer huevos duros?} (Requiere huevos y agua)
+      \begin{solution} ¿Hay huevos? y ¿Hay agua? \end{solution}
+      \part \textbf{¿Puedo almorzar huevos?} (Ya sean duros o fritos)
+      \begin{solution}¿Hay para hacer huevos fritos? o ¿Hay para hacer huevos duros? \end{solution}
+      \part \textbf{¿Hay para hacer una torta de chocolate?} (Lo mismo que una torta, pero además requiere chocolate)
+      \begin{solution} ¿Hay para hacer una torta? y ¿Hay chocolate? \end{solution}
+      \part \textbf{¿Solo se puede tomar té?} (Cuando no se puede tomar mate)
+      \begin{solution}
+        ¿Hay mate? = ¿Hay yerba? y ¿Hay agua?
+
+        ¿Solo se puede tomar té? = ¿Es cierto que no hay mate?
+      \end{solution}
+      \part \textbf{¿No hay nada para el mate?} (Cuando se puede tomar mate pero no hay torta de ningún tipo)
+      \begin{solution}
+        ¿Hay mate? y ¿Es cierto que no hay para hacer una torta de chocolate? y ¿Es cierto que no hay para hacer una torta?
+
+        \textbf{Aunque, como si no hay para una torta común, tampoco hay para una de chocolate, basta con:}
+
+        ¿Hay mate? y ¿Es cierto que no hay para hacer una torta?
+      \end{solution}
+    \end{parts}
+  
+  \jump
+  \question
+    Considere ahora las siguientes preguntas y sus respuestas:
+    \begin{itemize}
+      \item ¿Plutón es un planeta? \fullfalse
+      \item ¿Marte es un planeta? \fulltrue
+      \item ¿Deimos es un satélite? \fulltrue
+      \item ¿Ganímedes es un satélite? \fulltrue
+      \item ¿Eros es un satélite? \fullfalse
+    \end{itemize}
+    ~\\
+    Se pide exprese las siguientes preguntas utilizando las preguntas anteriores
+    y las conectivas vistas, y determine el valor de verdad de cada una de ellas.
+    \begin{parts}
+      \part ¿Son Marte y Plutón planetas?
+      \begin{solution} \fullfalse \end{solution}
+      \part Es Marte un planeta o es Plutón un planeta?
+      \begin{solution} \fulltrue \end{solution}
+      \part ¿Es cierto que Marte es un planeta y Plutón no lo es?
+      \begin{solution} \fulltrue \end{solution}
+      \part ¿Es cierto que Ganímedes y Eros son satélites?
+      \begin{solution} \fullfalse \end{solution}
+      \part ¿Es cierto que Eros no es un satélite, pero Deimos si lo es?
+      \begin{solution} \fulltrue \end{solution}
+      \part ¿Es Deimos un satélite o es cierto qué Marte es un planeta?
+      \begin{solution} \fulltrue \end{solution}
+    \end{parts}
+
+  \jump
+  \question
+    Sabiendo que las siguientes preguntas evalúan todas a \fulltrue\\
+    ~\\
+    \begin{itemize}
+      \item ¿La palmera está creciendo torcida? y ¿Es cierto que el árbol no dio paltas este año?
+      \item ¿Es cierto que no hay flores en el cantero? o ¿El árbol dio paltas este año?
+    \end{itemize}
+    ~\\
+    Se pide que responda las siguientes preguntas
+    \begin{parts}
+      \part ¿El árbol dio paltas este año?
+      \part ¿Hay flores en el cantero?
+      \part ¿La palmera está creciendo torcida?
+    \end{parts}
+    \begin{solution}
+      Si la primer frase es verdadera, como hay un \textbf{y} en el medio,
+      ambas partes deben ser verdaderas. O sea que sabemos que las respuestas
+      a estas dos preguntas son verdaderas:
+      \begin{itemize}
+        \item ¿La palmera está creciendo torcida?
+        \item ¿Es cierto que el árbol no dio paltas este año?
+      \end{itemize}
+
+      Por lo que, eliminando la negación de la segunda pregunta averiguamos que:
+      
+      \begin{enumerate}
+        \item ¿El árbol dio paltas este año? \fullfalse
+        \item ¿Hay flores en el cantero?
+        \item ¿La palmera está creciendo torcida? \fulltrue
+      \end{enumerate}
+
+      Analizamos ahora la segunda pregunta. Como hay un \textbf{o}, sabemos que
+      alguna de las dos partes es verdadera. Pero ya sabemos que
+      \textbf{¿El árbol dio paltas este año?} es \fullfalse, por lo que la que debe
+      ser verdadera es la otra parte. Eliminamos la negación y obtenemos:
+
+      \begin{enumerate}
+        \item ¿El árbol dio paltas este año? \fullfalse
+        \item ¿Hay flores en el cantero? \fullfalse
+        \item ¿La palmera está creciendo torcida? \fulltrue
+      \end{enumerate}
+    \end{solution}
+
+  \jump
+  \question
+    Considere las siguientes preguntas:
+    \begin{itemize}
+      \item ¿Se cumple P?
+      \item ¿Se cumple Q?
+      \item ¿Se cumple R?
+    \end{itemize}
+    Se pide analice que valuaciones dan \fulltrue y cuales \fullfalse en las
+    siguientes preguntas. Determine en qué casos se está hablando de una
+    tautología, en casos de una contradicción y en cuáles de contingencias.\footnote{
+      Si pensar en si se cumple P, Q y R lo marea, remplace esas condiciones por
+      cosas que le resulten más familiares, como ``¿Se cumple que el lobo vive en el bosque?''.
+      La gracia del ejercicio es que la pregunta no es realmente importante, sino
+      lo que podemos obtener de ellas.
+    }
+    \begin{parts}
+      \part ¿Se cumple P? y ¿No se cumple P?
+      \begin{solution}
+        \begin{tabular}{c | c || c}
+          ¿Se cumple P? & ¿No se cumple P? & ¿Se cumple P? y ¿No se cumple P? \\
+          \hline
+          &&\\
+          \fulltrue & \fullfalse & \fullfalse\\
+          \fullfalse & \fulltrue & \fullfalse\\
+        \end{tabular}
+        \\Se trata de una contradicción
+      \end{solution}
+      \part ¿Se cumple P? o ¿No se cumple P?
+      \begin{solution}
+        \begin{tabular}{c | c || c}
+          ¿Se cumple P? & ¿No se cumple P? & ¿Se cumple P? o ¿No se cumple P? \\
+          \hline
+          &&\\
+          \fulltrue & \fullfalse & \fulltrue\\
+          \fullfalse & \fulltrue & \fulltrue\\
+        \end{tabular}
+        \\Se trata de una tautología
+      \end{solution}
+      \part ¿Se cumple P? y ¿Se cumple Q?
+      \begin{solution}
+        \begin{tabular}{c | c || c}
+          ¿P? & ¿Q? & ¿P y Q? \\
+          \hline
+          &&\\
+          \fulltrue  & \fulltrue  & \fulltrue  \\
+          \fulltrue  & \fullfalse & \fullfalse \\
+          \fullfalse & \fulltrue  & \fullfalse \\
+          \fullfalse & \fullfalse & \fullfalse \\
+        \end{tabular}
+        \\Se trata de una contingencia
+      \end{solution}
+      \part ¿Se cumple P? y ¿Se cumple P o se cumple Q?
+      \begin{solution}
+        \begin{tabular}{c | c | c || c}
+          ¿P? & ¿Q? & ¿P o Q? & ¿P? y ¿P o Q?\\
+          \hline
+          &&\\
+          \fulltrue  & \fulltrue  & \fulltrue  & \fulltrue  \\
+          \fulltrue  & \fullfalse & \fulltrue  & \fullfalse \\
+          \fullfalse & \fulltrue  & \fulltrue  & \fullfalse \\
+          \fullfalse & \fullfalse & \fullfalse & \fullfalse \\
+        \end{tabular}
+        \\Se trata de una contingencia, que es igual a la anterior.
+      \end{solution}
+      \part ¿Se cumple P? o ¿Se cumple Q?
+      \begin{solution}
+        \begin{tabular}{c | c || c}
+          ¿P? & ¿Q? & ¿P o Q? \\
+          \hline
+          &&\\
+          \fulltrue  & \fulltrue  & \fulltrue  \\
+          \fulltrue  & \fullfalse & \fulltrue  \\
+          \fullfalse & \fulltrue  & \fulltrue  \\
+          \fullfalse & \fullfalse & \fullfalse \\
+        \end{tabular}
+        \\Se trata de una contingencia
+      \end{solution}
+      \part ¿No se cumple P? o ¿Se cumple Q y se cumple P?
+      \begin{solution}
+        \begin{tabular}{c | c | c || c}
+          ¿P? & ¿Q? & ¿Q y P? & ¿P? o ¿Q y P? \\
+          \hline
+          &&\\
+          \fulltrue  & \fulltrue  & \fulltrue  & \fulltrue  \\
+          \fulltrue  & \fullfalse & \fullfalse & \fulltrue  \\
+          \fullfalse & \fulltrue  & \fullfalse & \fulltrue  \\
+          \fullfalse & \fullfalse & \fullfalse & \fullfalse  \\
+        \end{tabular}
+        \\Se trata de una contingencia, nuevamente igual a la anterior
+      \end{solution}
+      \part ¿Se cumple P? y ¿Se cumple Q o se cumple R?
+      \begin{solution}
+        \begin{tabular}{c | c | c | c || c}
+          ¿P? & ¿Q? & ¿R? & ¿P y Q? & ¿P y Q? o ¿R? \\
+          \hline
+          &&&\\
+          \true  & \true  & \true  & \true  & \true  \\
+          \true  & \true  & \false & \true  & \true  \\
+          \true  & \false & \true  & \false & \true  \\
+          \true  & \false & \false & \false & \false \\
+          \false & \true  & \true  & \false & \true  \\
+          \false & \true  & \false & \false & \false \\
+          \false & \false & \true  & \false & \true  \\
+          \false & \false & \false & \false & \false \\
+        \end{tabular}
+        \\Se trata de una contingencia, nuevamente igual a la anterior
+      \end{solution}
+    \end{parts}
+
+  \jump
+  \question
+    Considerando las siguientes preguntas:\\
+    ~\\
+    \begin{minipage}{0.46\textwidth}
+      \begin{itemize}
+        \item ¿Hay ejercito enemigo al norte?
+        \item ¿Hay ejercito enemigo al este?
+        \item ¿Hay ejercito enemigo al sur?
+        \item ¿Hay ejercito enemigo al oeste?
+      \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.46\textwidth}
+      \begin{itemize}
+        \item ¿Hay ejercito aliado al norte?
+        \item ¿Hay ejercito aliado al este?
+        \item ¿Hay ejercito aliado al sur?
+        \item ¿Hay ejercito aliado al oeste?
+      \end{itemize}
+    \end{minipage}
+    \jump
+    Se le pide que exprese las preguntas a continuación utilizando dichas preguntas
+    como básicas y utilizando conectivas lógicas. Puede desarrollar preguntas
+    auxiliares que le ayuden a simplificar las preguntas a resolver.
+    \begin{parts}
+      \part \textbf{¿Se está amenazado?} (Cuando hay ejercito enemigo en alguna dirección)
+      \begin{solution}
+        ¿Hay ejercito enemigo al norte? o\\
+        ¿Hay ejercito enemigo al este? o\\
+        ¿Hay ejercito enemigo al sur? o\\
+        ¿Hay ejercito enemigo al oeste?
+      \end{solution}
+      \part \textbf{¿Se está libre de peligro?} (Cuando no hay ejércitos enemigos en ninguna dirección)
+      \begin{solution}
+        ¿Es cierto que no hay ejercito enemigo al norte? y\\
+        ¿Es cierto que no hay ejercito enemigo al este? y\\
+        ¿Es cierto que no hay ejercito enemigo al sur? y\\
+        ¿Es cierto que no hay ejercito enemigo al oeste?
+
+        \textbf{Aunque estar libre de peligro, es lo mismo que no estar amenazado, por lo
+        que basta con:}
+
+        ¿Es cierto que no se está amenazado?
+      \end{solution}
+      \part \textbf{¿Se tiene apoyo?} (Cuando hay algún ejercito aliado en alguna dirección)
+      \begin{solution}
+        ¿Hay ejercito aliado al norte? o\\
+        ¿Hay ejercito aliado al este? o\\
+        ¿Hay ejercito aliado al sur? o\\
+        ¿Hay ejercito aliado al oeste?
+      \end{solution}
+      \part \textbf{¿Se está hasta las manos?} (Cuando no hay apoyo y se está amenazado)
+      \begin{solution}
+        ¿Es cierto que no se tiene apoyo? y ¿Se está amenazado?
+      \end{solution}
+      \part \textbf{¿Se puede neutralizar alguna amenaza?} (Cuando hay un ejercito enemigo en alguna dirección, pero también hay un ejercito aliado allí)
+      \begin{solution}
+        ¿Se puede neutralizar al norte? =\\
+        \quad ¿Hay ejercito enemigo al norte? y ¿Hay ejercito aliado al norte?\\
+        ¿Se puede neutralizar al este? =\\
+        \quad ¿Hay ejercito enemigo al este? y ¿Hay ejercito aliado al este?\\
+        ¿Se puede neutralizar al sur? =\\
+        \quad ¿Hay ejercito enemigo al sur? y ¿Hay ejercito aliado al sur?\\
+        ¿Se puede neutralizar al oeste? =\\
+        \quad ¿Hay ejercito enemigo al oeste? y ¿Hay ejercito aliado al oeste?
+
+        ¿Se puede neutralizar al norte? o ¿Se puede neutralizar al este? o ¿Se puede neutralizar al sur? o ¿Se puede neutralizar al oeste?
+      \end{solution}
+      \part \textbf{¿Se puede neutralizar todas las amenazas?} (Cuando, si hay un ejercito enemigo en alguna dirección, necesariamente también hay un ejercito aliado allí)
+      \begin{solution}
+        ¿Se puede neutralizar al norte? y\\
+        ¿Se puede neutralizar al este? y\\
+        ¿Se puede neutralizar al sur? y\\
+        ¿Se puede neutralizar al oeste?
+      \end{solution}
+    \end{parts}
+
+  \question
+    Dadas las siguientes preguntas y sus respuestas:\\
+    ~\\
+    \begin{itemize}
+      \item ¿Es Willy Willy un Toki Toki? \fulltrue
+      \item ¿Es Buggy Buggy un Chiri Biri? \fullfalse
+      \item ¿Es Cuqui Cuqui un Tele Tubi? \fullfalse
+      \item ¿Es Mochi Mochi un Tutsi Tutsi? \fulltrue
+    \end{itemize}
+    ~\\
+    Responda si las siguientes preguntas son verdaderas o falsas \footnote{
+      Nuevamente, olvide las preguntas en si, y si le cuesta pensar en
+      Willy Willys y Mochi Mochis, remplace las preguntas por algunas que
+      le resulten más cómodas.
+    }
+    \begin{parts}
+      \part ¿Es cierto que Willy Willy no es un Toki Toki? o ¿Es cierto que Cuqui Cuqui no es un Tele Tubi?
+      \begin{solution} \fulltrue \end{solution}
+      \part ¿Es cierto que Buggy Buggy no es un Chiri Biri? y ¿Es Mochi Mochi un Tutsi Tutsi y Willy Willy un Toki Toki? 
+      \begin{solution} \fulltrue \end{solution}
+      \part ¿Es cierto que no es cierto que Willy Willy no es un Toki Toki?
+      \begin{solution} \fulltrue \end{solution}
+      \part ¿Es cierto que Willy Willy no es un Toki Toki o bien Cuqui Cuqui es un Tele Tubi?
+      \begin{solution} \fullfalse \end{solution}
+    \end{parts}
+  
+  \jump
+  \question
+    Se ha encontrado vida en otro planeta, y se ha decidido nombrar a los animales
+    encontrados como ``Woofle'', ``Brlfks'' y ``Morlock''.\\
+    Cada animal tiene sus características distintivas (pueden ser grandes, chicos,
+    con o sin pelo, acuáticos o terrestres, etc.).\\
+    Si las respuestas a todas las preguntas siguientes son \fulltrue, enumere que
+    características tiene cada animal. Para ello, realice la tabla de verdad de
+    cada pregunta y analice las respuestas a las preguntas base en las valuaciones
+    verdaderas.
+    ~\\
+    \begin{parts}
+      \part ¿El Woofle tiene pelo? y ¿El Woofle no es acuático?
+      \part ¿El Morlock es terrestre y es grande? y ¿El Brlfks es acuático?
+      \part ¿El Brlfks es pequeño? o ¿El Morlock es pequeño?
+      \part ¿El Woofle tiene pelo y el Brlfks no? o ¿El Brlfks no tiene pelo y el Morlock tiene pelo?
+      \part ¿El Woofle no es grande o el Brlfks es grande? y ¿El Morlock no es pequeño?
+    \end{parts}
+    \begin{solution}
+      La resolución es similar al ejercicio de la palta, las flores y la palmera,
+      pero ahora hay muchos más casos a considerar. Lo ideal es plantear el ejercicio
+      con una tabla de la forma:
+      
+      \begin{tabular}{| l | c | c | c |}
+        \hline
+          Animal & Pelo & Terrestre & Grande \\
+        \hline
+          Brlfks &&& \\
+        \hline
+          Morlock &&& \\
+        \hline
+          Woofle &&& \\
+        \hline
+      \end{tabular}
+
+      Vamos analizando luego cada oración y marcamos con verdadero o falso donde
+      corresponda. Por ejemplo, de la primera desprendemos que el Woofle tiene pelo,
+      y no es acuático (o sea, es terrestre), pues hay un \textbf{y} separando
+      ambas preguntas, por lo que ambas deben ser \fulltrue.
+
+      La tabla nos queda:
+
+      \begin{tabular}{| l | c | c | c |}
+        \hline
+          Animal & Pelo & Terrestre & Grande \\
+        \hline
+          Brlfks &&& \\
+        \hline
+          Morlock &&& \\
+        \hline
+          Woofle & \fulltrue & \fulltrue & \\
+        \hline
+      \end{tabular}
+
+      Seguimos analizando las otras preguntas y completando la tabla con la
+      misma idea. Eventualmente llegaremos a que:
+
+      Morlock: no tiene pelo, es terrestre y grande\\
+      Woofle: tiene pelo, es terrestre y pequeño\\
+      Brlfks: no tiene pelo, es acuático y pequeño
+    \end{solution}
+
+\end{questions}
+\end{document}
